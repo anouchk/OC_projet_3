@@ -3,7 +3,7 @@
 
         <meta charset="utf-8" />
 
-        <title>Mon blog</title>
+        <title>Billet simple pour l'Alaska</title>
 
     	<link href="vue/style.css" rel="stylesheet" /> 
 
