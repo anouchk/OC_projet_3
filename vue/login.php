@@ -1,3 +1,15 @@
+<?php
+
+// On démarre la session AVANT d'écrire du code HTML
+session_start();
+
+// On crée les variables de session dans $_SESSION
+$_SESSION['prenom'] = 'Jean';
+$_SESSION['nom'] = 'Dupont';
+$_SESSION['age'] = 24;
+
+?>
+
 <!DOCTYPE html>
     <head>
         <meta charset="utf-8" />
