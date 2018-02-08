@@ -46,8 +46,10 @@
 					Le <?php echo $commentaire['date_commentaire_fr'] ; ?>
 				</p>
 				<div><?php echo $commentaire['commentaire'] ; ?></div>
+
 			<?php	
 			} // fin de la boucle des commentaires 
 			?>
+			<button>Signaler ce commentaire</button>
     </body>
 </html>
