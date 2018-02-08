@@ -4,7 +4,7 @@
     <head>
         <meta charset="utf-8" />
         <title>Mon blog</title>
-        <link type="text/css" href="vue/blog/style.css" rel="stylesheet" /> 
+        <link type="text/css" href="vue/style.css" rel="stylesheet" /> 
     </head>
 
     <body>

@@ -1,7 +1,7 @@
 <?php 
  
 // On demande les 5 derniers billets (modèle) 
-include_once('modele/blog/get_billets.php'); 
+include_once('modele/get_billets.php'); 
 $billets = get_billets(0, 5); 
 // echo "<pre>";
 //var_dump($billets); 
@@ -15,4 +15,4 @@ foreach($billets as $cle => $billet)
 } 
  
 // On affiche la page (vue) 
-include_once('vue/blog/index.php'); 
+include_once('vue/index.php'); 

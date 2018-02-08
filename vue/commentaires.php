@@ -5,7 +5,7 @@
 
         <title>Mon blog</title>
 
-    	<link href="vue/blog/style.css" rel="stylesheet" /> 
+    	<link href="vue/style.css" rel="stylesheet" /> 
 
     </head>
 
