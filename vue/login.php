@@ -8,7 +8,7 @@
     <body>
 			<form action="" method="post">
 				<p><label> Login</label> : <input type="text" name="login"></p>
-				<p><label> Mot de passe</label> : <input type="text" name="password"></p>
+				<p><label> Mot de passe</label> : <input type="password" name="password"></p>
 				<input type ="hidden" name="" value="">
 				<p><input type="submit" ></p>
 			</form>	
