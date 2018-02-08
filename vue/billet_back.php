@@ -21,8 +21,8 @@
         <a href="blog.php?section=index">Retour à la liste des billets</a>
 
 			<form name="" id="" method="post" action="billet_back.php">
-				<p><label> Titre</label> : <input type="text" name="titre" value=""></p>
-				<p> <label>Contenu de l'épisode :</label> <textarea type="text" name="contenu" value=""></textarea></p>
+				<p><label> Titre</label> : <input type="text" name="titre_billet" value=""></p>
+				<p> <label>Contenu de l'épisode :</label> <textarea type="text" name="contenu_billet" value="" rows="20" cols="90"></textarea></p>
 				<input type ="hidden" name="" value="">
 				<p><input type="submit" ></p>
 			</form>
