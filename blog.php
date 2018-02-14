@@ -11,6 +11,8 @@ if (!isset($_GET['section']) OR $_GET['section'] == 'index') {
     include_once('controleur/commentaires.php');
 } else if($_GET['section'] == 'login') {
     include_once('controleur/login.php');
+} else if($_GET['section'] == 'billets_back') {
+    include_once('controleur/billets_back.php');
 }
 
 // // On démarre la session AVANT d'écrire du code HTML

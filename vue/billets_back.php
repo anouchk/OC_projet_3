@@ -39,7 +39,7 @@ $_SESSION['password'] = $_POST['password'];
 		      <td><?php echo $billet['titre']; ?></td>
 		      <td><a href="blog.php?section=commentaires&billet=<?php echo $billet['id']; ?>">#</a></td>
 		      <td> Modifier | Supprimer </td>
-		      <td>Nombre | Lien <td>
+		      <td> Nombre | Lien <td>
 		    </tr>
 		  </tbody>
 		</table>
