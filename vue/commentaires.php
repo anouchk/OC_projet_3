@@ -57,9 +57,13 @@ $_SESSION['password'] = $_POST['password'];
 				</p>
 				<div><?php echo $commentaire['commentaire'] ; ?></div>
 
+			
+			
+			<button>Signaler ce commentaire</button>
 			<?php	
 			} // fin de la boucle des commentaires 
 			?>
-			<button>Signaler ce commentaire</button>
+			
+			
     </body>
 </html>

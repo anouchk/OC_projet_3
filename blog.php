@@ -11,10 +11,10 @@ if (!isset($_GET['section']) OR $_GET['section'] == 'index') {
     include_once('controleur/commentaires.php');
 }
 
-// On démarre la session AVANT d'écrire du code HTML
-session_start();
+// // On démarre la session AVANT d'écrire du code HTML
+// session_start();
 
-// On crée les variables de session dans $_SESSION
-$_SESSION['login'] = $_POST['login'];
-$_SESSION['password'] = $_POST['password'];
+// // On crée les variables de session dans $_SESSION
+// $_SESSION['login'] = $_POST['login'];
+// $_SESSION['password'] = $_POST['password'];
 
