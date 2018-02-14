@@ -18,6 +18,7 @@ $_SESSION['password'] = $_POST['password'];
     </head>
 
     <body>
+
     	<table class="table">
 		  <thead>
 		    <tr>
@@ -29,23 +30,16 @@ $_SESSION['password'] = $_POST['password'];
 		    </tr>
 		  </thead>
 		  <tbody>
+		  	<?php
+			//var_dump($billets);
+			foreach($billets as $billet) {
+			?>
 		    <tr>
-		      <th scope="row">1</th>
-		      <td>Mark</td>
-		      <td>Otto</td>
-		      <td>@mdo</td>
-		    </tr>
-		    <tr>
-		      <th scope="row">2</th>
-		      <td>Jacob</td>
-		      <td>Thornton</td>
-		      <td>@fat</td>
-		    </tr>
-		    <tr>
-		      <th scope="row">3</th>
-		      <td>Larry</td>
-		      <td>the Bird</td>
-		      <td>@twitter</td>
+		      <td><?php echo $billet['id']; ?></td>
+		      <td><?php echo $billet['titre']; ?></td>
+		      <td><a href="blog.php?section=commentaires&billet=<?php echo $billet['id']; ?>">#</a></td>
+		      <td> Modifier | Supprimer </td>
+		      <td>Nombre | Lien <td>
 		    </tr>
 		  </tbody>
 		</table>
