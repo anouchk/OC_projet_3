@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
 // On démarre la session AVANT d'écrire du code HTML
 session_start();
 
@@ -6,7 +6,7 @@ session_start();
 $_SESSION['login'] = $_POST['login'];
 $_SESSION['password'] = $_POST['password'];
 ?>
-
+ -->
 
 <!DOCTYPE html>
     <head>
@@ -16,13 +16,13 @@ $_SESSION['password'] = $_POST['password'];
         <title>Billet simple pour l'Alaska </title>
 
     	<link href="vue/style.css" rel="stylesheet" /> 
-    	<script type="text/javascript" src="XXXXX/tiny_mce/tiny_mce.js"></script>
+    	<!-- <script type="text/javascript" src="XXXXX/tiny_mce/tiny_mce.js"></script>
     	<script type="text/javascript">
 	        tinyMCE.init({
 	            mode : "textareas",
 	            theme : "simple"
 	        });
-     	</script>
+     	</script> -->
 
     </head>
 

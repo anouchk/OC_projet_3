@@ -1,11 +1,11 @@
-<?php
+<!-- <?php
 // On démarre la session AVANT d'écrire du code HTML
 session_start();
 
 // On crée les variables de session dans $_SESSION
 $_SESSION['login'] = $_POST['login'];
 $_SESSION['password'] = $_POST['password'];
-?>
+?> -->
 
 
 <!DOCTYPE html>
