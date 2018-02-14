@@ -1,20 +1,8 @@
-<!-- <?php
-
-// On démarre la session AVANT d'écrire du code HTML
-session_start();
-
-// On crée les variables de session dans $_SESSION
-$_SESSION['login'] = $_POST['login'];
-$_SESSION['password'] = $_POST['password'];
-?> -->
-
-include_once('modele/login.php');
-
 <!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="utf-8" />
-		<title>Billet simple pour l'Alaska</title>
+		<title>TP Espace membres</title>
 	</head>
 	<body>
 		<form action="cible_connexion.php" method="post">

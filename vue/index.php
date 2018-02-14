@@ -12,13 +12,15 @@ $_SESSION['password'] = $_POST['password'];
 <html>
     <head>
         <meta charset="utf-8" />
-        <title>Mon blog</title>
+        <title>Billet simple pour l'Alaska </title>
         <link type="text/css" href="vue/style.css" rel="stylesheet" /> 
     </head>
 
     <body>
-        <h1>Mon super blog !</h1>
-        <p>Derniers billets du blog :</p>
+        <h3><a href="blog.php?section=login">Admin</a></h3>
+        <h1>Billet simple pour l'Alaska</h1>
+        <p> Découvrez le nouveau roman de l'acteur et écrivain Jean Forteroche, à mesure qu'il se construit.</p>
+        <p>Derniers épisodes :</p>
 
 <?php
 //var_dump($billets);

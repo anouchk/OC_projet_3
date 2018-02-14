@@ -23,7 +23,7 @@ $_SESSION['password'] = $_POST['password'];
 
     <body>
 
-        <h1>Mon super blog !</h1>
+        <h1>Billet simple pour l'Alaska</h1>
 
         <a href="blog.php?section=index">Retour à la liste des billets</a>
 
