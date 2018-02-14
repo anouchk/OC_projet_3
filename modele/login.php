@@ -3,7 +3,13 @@
 // Préparer la requête (:pseudo ça correspondra à $pseudo)
 $req = $bdd->prepare('SELECT id, pass, pseudo FROM auteur WHERE pseudo = :pseudo');
 // Initialisation de la variable récupérant le pseudo entré par l'utilisateur à la connexion
-$pseudo = $_POST['pseudo'];
+if (isset($_POST['pseudo'])) {
+	$pseudo = $_POST['pseudo'];
+};
+
+if (isset($_POST['pass'])) {
+	$pass = $_POST['pass'];
+};
 // Exécuter la requête : ça exécute et ça nous retourne le nombre de lignes affectées
 $req->execute(array('pseudo' => $pseudo));
 // Fetch permet de récupérer le résultat de la requête et de le renvoyer sous une certaine forme (tableau par exemple)
