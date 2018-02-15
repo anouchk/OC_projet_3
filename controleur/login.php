@@ -1,6 +1,6 @@
 <?php
 
-function login_completion_formulaire()
+function login_completion_formulaire($bdd)
 {
     include_once('vue/login.php');
 }

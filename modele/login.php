@@ -1,8 +1,4 @@
 <?php
-
-// debug avec Saysa
-var_dump($_POST);
-
 // Etape 1 : recupérer dans la bdd la ligne qui correspond au pseudo
 // Préparer la requête (:pseudo ça correspondra à $pseudo)
 $req = $bdd->prepare('SELECT id, pass, pseudo FROM auteur WHERE pseudo = :pseudo');
