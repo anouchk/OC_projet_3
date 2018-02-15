@@ -1,11 +1,6 @@
 <!-- <?php
-
 // On démarre la session AVANT d'écrire du code HTML
 session_start();
-
-// On crée les variables de session dans $_SESSION
-$_SESSION['login'] = $_POST['login'];
-$_SESSION['password'] = $_POST['password'];
 ?> -->
 
 <!DOCTYPE html>
@@ -18,7 +13,7 @@ $_SESSION['password'] = $_POST['password'];
 
 		<?php
 		if(isset($_GET['error'])) {
-			echo "<div>Identifiants erronés</div>";
+			echo "<div>Identifiants erronés. Veuillez à nouveau saisir votre pseudo et votre mot de passe :</div>";
 		}
 		?>
 

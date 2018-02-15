@@ -1,6 +1,6 @@
 <?php
 
-function login_completion_formulaire($bdd)
+function login_completion_formulaire()
 {
     include_once('vue/login.php');
 }
@@ -23,6 +23,7 @@ function login_traitement_formulaire($bdd)
         session_start();
         $_SESSION['id'] = $resultat['id'];
         $_SESSION['pseudo'] = $pseudo;
+        $_POST['pass'] = $resultat['pass'];
         // si l'id ou le pass n'est pas le bon, on renvoie vers la page de connexion avec un message d'erreur
         header('Location: blog.php?section=billets_back');
 
