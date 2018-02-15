@@ -18,7 +18,14 @@ include_once('modele/login.php');
 		<title>Billet simple pour l'Alaska</title>
 	</head>
 	<body>
-		<form action="controleur/login.php" method="post">
+
+		<?php
+		if(isset($_GET['error'])) {
+			echo "<div>Identifiants erronés</div>";
+		}
+		?>
+
+		<form action="blog.php?section=login_traitement_formulaire" method="post">
 			<p><label for "pseudo"> Pseudo</label> : <input type="text" name="pseudo" id="pseudo" value=""></p>
 			<p><label for "pass"> Mot de passe</label> : <input type="password" name="pass"></p>
 			<p><input type="submit" ></p>
