@@ -32,7 +32,7 @@ $_SESSION['password'] = $_POST['password'];
 		  <tbody>
 		  	<?php
 			//var_dump($billets);
-			foreach($billets as $billet) {
+			foreach($billets as $billet) :
 			?>
 		    <tr>
 		      <td><?php echo $billet['id']; ?></td>
@@ -41,6 +41,9 @@ $_SESSION['password'] = $_POST['password'];
 		      <td> Modifier | Supprimer </td>
 		      <td> Nombre | Lien <td>
 		    </tr>
+		    <?php
+			endforeach;
+			?>
 		  </tbody>
 		</table>
 	</body>
