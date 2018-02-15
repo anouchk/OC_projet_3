@@ -11,10 +11,12 @@ if (!isset($_GET['section']) OR $_GET['section'] == 'index') {
     include_once('controleur/commentaires.php');
 } else if($_GET['section'] == 'login') {
     include_once('controleur/login.php');
+    login_completion_formulaire();
 } else if($_GET['section'] == 'billets_back') {
     include_once('controleur/billets_back.php');
 } else if($_GET['section'] == 'login_traitement_formulaire')
-	include_once('controleur/login_traitement_formulaire.php');
+	include_once('controleur/login.php');
+	login_traitement_formulaire($bdd);
 }
 
 // // On démarre la session AVANT d'écrire du code HTML
