@@ -24,7 +24,7 @@ session_start();
 
     <body>
 
-        <a href="blog.php?section=index">Retour à la liste des billets</a>
+        <a href="blog.php?section=index">Retour à l'administration des billets</a>
 
 			<form name="" id="" method="post" action="billet_back.php">
 				<p><label> Titre</label> : <input type="text" name="titre_billet" value=""></p>
@@ -35,6 +35,4 @@ session_start();
 
     </body>
 </html>
-
-
 

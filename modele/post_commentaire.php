@@ -12,3 +12,22 @@ function post_commentaire () {
 	$requete->bindParam(':date_commentaire', $date);
 	$requete->execute();
 }
+
+function update_commentaire () {
+	// Récupération de la base de données
+    global $bdd;
+
+    // Effectuer ici la requête qui met à jour le commentaire avec $_POST dans la base de données 
+//     $requete = $bdd->prepare('UPDATE commentaires
+//     SET column1 = value1, column2 = value2, ...
+//     WHERE condition'); 
+// }
+
+function update_commentaire () {
+	// Récupération de la base de données
+    global $bdd;
+
+    // Effectuer ici la requête qui supprime le commentaire dans la base de données 
+
+
+}
