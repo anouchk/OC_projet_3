@@ -1,6 +1,7 @@
 <?php
+
 // debug avec Saysa
-//var_dump($_POST );
+var_dump($_POST);
 
 // Etape 1 : recupérer dans la bdd la ligne qui correspond au pseudo
 // Préparer la requête (:pseudo ça correspondra à $pseudo)
