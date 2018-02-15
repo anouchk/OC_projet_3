@@ -7,9 +7,6 @@ session_start();
 $_SESSION['login'] = $_POST['login'];
 $_SESSION['password'] = $_POST['password'];
 ?> -->
-<?php
-include_once('modele/login.php');
-?>
 
 <!DOCTYPE html>
 <html>
