@@ -15,6 +15,10 @@ session_start();
 
     <body>
 
+    	<div>
+    		<button><a href="blog.php?section=billet_back">Nouvel Article</a></button>
+    	</div>
+
     	<table class="table">
 		  <thead>
 		    <tr>

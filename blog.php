@@ -18,6 +18,8 @@ if (!isset($_GET['section']) OR $_GET['section'] == 'index') {
 	login_traitement_formulaire($bdd);
 } else if($_GET['section'] == 'billets_back') {
     include_once('controleur/billets_back.php');
+} else if ($_GET['section'] == 'billet_back') {
+	include_once('controleur/billet_back.php');
 }
 
 
