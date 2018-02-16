@@ -20,6 +20,8 @@ if (!isset($_GET['section']) OR $_GET['section'] == 'index') {
     include_once('controleur/billets_back.php');
 } else if ($_GET['section'] == 'billet_back') {
 	include_once('controleur/billet_back.php');
-}
+} else if ($_GET['section'] == 'commentaires_back') {
+    include_once('controleur/commentaires_back.php');
+} 
 
 
