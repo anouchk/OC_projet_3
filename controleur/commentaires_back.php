@@ -1,9 +1,10 @@
 <?php
 session_start();
 var_dump($_SESSION);
-include_once('modele/get_commentaires.php'); 
+include_once('../modele/get_commentaires.php'); 
 
 $idBillet=$_GET['billet'];
+var_dump($idBillet);
 // Exécuter la fonction get_billets(), avec les OFFSET et les LIMIT obligatoires en paramètres (à enlever d'ailleurs ?)
 $commentaires = get_commentaires(0,5, $idBillet);
 
