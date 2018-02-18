@@ -38,8 +38,8 @@ session_start();
 			?>
 		    <tr>
 		      <td><?php echo $commentaire['id']; ?></td>
-		      <td><?php echo $commentaire['auteur']; ?></td>
-		      <td><?php echo $commentaire['contenu']; ?></td>
+		      <td><?php echo $commentaire['pseudo']; ?></td>
+		      <td><?php echo $commentaire['commentaire']; ?></td>
 		      <td>OUI ou NON (vert ou rouge)</td>
 		      <td> Modifier | Supprimer </td>
 		    </tr>

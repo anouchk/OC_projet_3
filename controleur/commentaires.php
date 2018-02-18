@@ -17,8 +17,8 @@ $commentaires = get_commentaires(0, 10, $idBillet);
 foreach($commentaires as $cle => $commentaire) 
 { 
 	// var_dump($commentaire);
-    $commentaires[$cle]['auteur'] = htmlspecialchars($commentaire['auteur']); 
-    $commentaires[$cle]['commentaire'] = nl2br(htmlspecialchars($commentaire['commentaire'])); 
+    $commentaire[$cle]['auteur'] = htmlspecialchars($commentaire['auteur']); 
+    $commentaire[$cle]['commentaire'] = nl2br(htmlspecialchars($commentaire['commentaire'])); 
 } 
 // var_dump($commentaires);	
 // On affiche la page (vue) 
