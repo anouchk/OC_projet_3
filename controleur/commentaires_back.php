@@ -1,7 +1,7 @@
 <?php
 session_start();
-var_dump($_SESSION);
-include_once('../modele/get_commentaires.php'); 
+// var_dump($_SESSION);
+include_once('modele/get_commentaires.php'); 
 
 $idBillet=$_GET['billet'];
 var_dump($idBillet);
