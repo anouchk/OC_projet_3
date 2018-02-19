@@ -23,7 +23,7 @@ function update_commentaire () {
 //     WHERE condition'); 
 // }
 
-function update_commentaire () {
+function delete_commentaire () {
 	// Récupération de la base de données
     global $bdd;
 

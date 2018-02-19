@@ -41,7 +41,14 @@ session_start();
 		      <td><?php echo $commentaire['auteur']; ?></td>
 		      <td><?php echo $commentaire['commentaire']; ?></td>
 		      <td>OUI ou NON (vert ou rouge)</td>
-		      <td> Modifier | Supprimer </td>
+		      <td> Modifier | 
+		      	<!-- Pour supprimer : je veux lancer une requête DELETE sur le commentaire dont l'id sera récupéré en POST-->
+		      	<form method="post" action="modele/delete_commentaire.php">
+       				<input type="hidden" name="idCommentaire" value="<?php echo $commentaire['id']; ?>"/>
+    			</form>
+    			<buttton  onclick="">Supprimer</button>
+
+		      </td>
 		    </tr>
 		    <?php
 			endforeach;
