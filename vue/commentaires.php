@@ -55,7 +55,11 @@ session_start();
 
 			
 			
-			<button>Signaler ce commentaire</button>
+			<!-- Pour signaler : je veux modifier le boléen sur le commentaire dont l'id sera récupéré en POST-->
+		      	<form method="post" action="blog.php?section=signalement_commentaire">
+       				<input type="hidden" name="idCommentaire" value="<?php echo $commentaire['id']; ?>"/>
+       				<p><input type="submit" value="Signaler ce commentaire"></p>
+    			</form>
 			<?php	
 			} // fin de la boucle des commentaires 
 			?>
