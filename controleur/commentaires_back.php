@@ -18,6 +18,7 @@ foreach($commentaires as $cle => $commentaire)
 if (!empty($_POST['idCommentaire'])) {
 	include_once('modele/delete_commentaire.php');
 	// delete_commentaire();
+	echo "l'id du commentaire est stocké et la function delete_commentaire est intégrée";
 	var_dump($_POST['idCommentaire']);
 }
 
