@@ -28,6 +28,4 @@ function delete_commentaire () {
     global $bdd;
 
     // Effectuer ici la requête qui supprime le commentaire dans la base de données 
-
-
 }
