@@ -1,6 +1,6 @@
 <?php
 
-delete_commentaire() {
+function delete_commentaire() {
 	if (isset($_POST['idCommentaire'])) {
 	 $id = $_POST['idCommentaire'];
 	 $sql = "DELETE FROM commentaires WHERE id = :id";
