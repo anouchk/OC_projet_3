@@ -5,5 +5,5 @@ if (isset($_POST['idCommentaire'])) {
  $q = array('id' => $id);
  $req = $bdd -> prepare($sql);
  $req -> execute($q);
- header('Location:commentaires_back.php');
+ header('Location:controleur/commentaires_back.php');
 }

@@ -24,6 +24,7 @@ if (!isset($_GET['section']) OR $_GET['section'] == 'index') {
     include_once('controleur/commentaires_back.php');
 } else if ($_GET['section'] == 'suppression_commentaire') {
     include_once('controleur/commentaires_back.php');
+    // delete_commentaire();
 } 
 
 
