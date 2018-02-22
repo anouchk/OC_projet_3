@@ -43,7 +43,7 @@ session_start();
 		      <td>OUI ou NON (vert ou rouge)</td>
 		      <td> Modifier | 
 		      	<!-- Pour supprimer : je veux lancer une requête DELETE sur le commentaire dont l'id sera récupéré en POST-->
-		      	<form method="post" action="blog.php?section=suppression_commentaire">
+		      	<form method="post" action="blog.php?section=suppression_commentaire&billet=<?php echo $billet['id']; ?>">
        				<input type="hidden" name="idCommentaire" value="<?php echo $commentaire['id']; ?>"/>
        				<p><input type="submit" value="Supprimer"></p>
     			</form>
