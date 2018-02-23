@@ -37,7 +37,7 @@ function affichage_securise($idBillet) {
 	} 
 	 
 	if (!empty($_POST['idCommentaire'])) {
-		// delete_commentaire();
+		delete_commentaire($_POST['idCommentaire'], $idBillet);
 		echo "l'id du commentaire est stocké et la function delete_commentaire est intégrée";
 		var_dump($_POST['idCommentaire']);
 	}
