@@ -11,7 +11,7 @@ session_start();
 
         <title>Billet simple pour l'Alaska</title>
 
-    	<link href="vue/style.css" rel="stylesheet" /> 
+    	<link href="assets/css/style.css" rel="stylesheet" /> 
 
     </head>
 

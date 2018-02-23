@@ -9,7 +9,7 @@ session_start();
     <head>
         <meta charset="utf-8" />
         <title>Billet simple pour l'Alaska </title>
-        <link type="text/css" href="vue/style.css" rel="stylesheet" /> 
+        <link type="text/css" href="assets/css/style.css" rel="stylesheet" /> 
     </head>
 
     <body>
