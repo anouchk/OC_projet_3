@@ -22,9 +22,10 @@ if (!isset($_GET['section']) OR $_GET['section'] == 'index') {
 	include_once('controleur/billet_back.php');
 } else if ($_GET['section'] == 'commentaires_back') {
     include_once('controleur/commentaires_back.php');
+    commentaires_back_affichage_commentaires();
 } else if ($_GET['section'] == 'suppression_commentaire') {
     include_once('controleur/commentaires_back.php');
-    // delete_commentaire();
+    commentaires_back_suppression_commentaire();
 } 
 
 
