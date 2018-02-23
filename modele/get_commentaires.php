@@ -2,7 +2,11 @@
 
 function get_commentaires($offset, $limit, $idBillet) {
     // on récupère l'id du billet dont on veut afficher les commentaires
-    $idBillet=$_GET['billet'];
+    if (isset($_GET['billet'])) {
+        $idBillet=$_GET['billet'];
+    } elseif (isset($_POST['idBillet'])) {
+        $idBillet=$_POST['idBillet'];
+    }
 
     // Récupération de la base de données
     global $bdd;
