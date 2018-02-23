@@ -3,9 +3,28 @@ session_start();
 // var_dump($_SESSION);
 include_once('modele/get_commentaires.php');
 include_once('modele/delete_commentaire.php'); 
-// include_once('modele/get_billet.php')
-$idBillet=$_GET['billet'];
-var_dump($idBillet);
+
+function commentaires_back_affichage_commentaires()
+{
+    $idBillet = $_GET['billet'];
+    var_dump($idBillet);
+    $commentaires = affichage_securise($idBillet);
+
+    // On affiche la page (vue)
+    include_once('vue/commentaires_back.php');
+}
+
+function commentaires_back_suppression_commentaire()
+{
+    $idBillet = $_POST['idBillet'];
+    var_dump($idBillet);
+    $commentaires = affichage_securise($idBillet);
+
+    // On redirige
+    header('Location: Blog.php?section=commentaires_back&billet='.$idBillet);
+}
+
+
 // Exécuter la fonction get_billets(), avec les OFFSET et les LIMIT obligatoires en paramètres (à enlever d'ailleurs ?)
 $commentaires = get_commentaires(0, 15, $idBillet);
 
