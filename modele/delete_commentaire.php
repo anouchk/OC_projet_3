@@ -1,15 +1,15 @@
 <?php
 
-function delete_commentaire($id_commentaire, $id_billet) {
+function delete_commentaire($id, $id_billet) {
 	global $bdd;
 
 	if (isset($_POST['idCommentaire'])) {
 	 $id_commentaire = $_POST['idCommentaire'];
-	 $sql = "DELETE FROM commentaires WHERE id = :id_commentaire";
-	 $q = array('id' => $id_commentaire);
+	 $sql = "DELETE FROM commentaires WHERE id = :id";
+	 $q = array('id' => $id);
 	 $req = $bdd -> prepare($sql);
 	 $req -> execute($q);
-	 header('Location:controleur/commentaires_back.php&billet='.$id_billet);
+	 header('Location: blog.php?section=commentaires_back&billet='.$id_billet);
 	}
 }
 	

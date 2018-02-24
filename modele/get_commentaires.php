@@ -1,4 +1,4 @@
-  <?php
+<?php
 
 function get_commentaires($offset, $limit, $idBillet) {
     // on récupère l'id du billet dont on veut afficher les commentaires

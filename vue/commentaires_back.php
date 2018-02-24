@@ -1,11 +1,6 @@
 <?php
-var_dump($_GET['billet']);
+var_dump($idBillet);
 ?>
-
-<!-- <?php
-// On démarre la session AVANT d'écrire du code HTML
-session_start();
-?> -->
 
 
 <!DOCTYPE html>

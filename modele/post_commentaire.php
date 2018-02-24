@@ -22,6 +22,7 @@ function update_commentaire () {
 //     SET column1 = value1, column2 = value2, ...
 //     WHERE condition'); 
 // }
+}
 
 function delete_commentaire () {
 	// Récupération de la base de données

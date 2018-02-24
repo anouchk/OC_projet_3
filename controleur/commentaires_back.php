@@ -17,11 +17,11 @@ function commentaires_back_affichage_commentaires()
 function commentaires_back_suppression_commentaire()
 {
     $idBillet = $_POST['idBillet'];
-    var_dump($idBillet);
+    // var_dump($idBillet);
     $commentaires = affichage_securise($idBillet);
 
     // On redirige 
-    header('Location: Blog.php?section=commentaires_back&billet='.$idBillet);
+    header('Location: blog.php?section=commentaires_back&billet='.$idBillet);
 }
 
 function affichage_securise($idBillet) {
@@ -40,6 +40,7 @@ function affichage_securise($idBillet) {
 		delete_commentaire($_POST['idCommentaire'], $idBillet);
 		echo "l'id du commentaire est stocké et la function delete_commentaire est intégrée";
 		var_dump($_POST['idCommentaire']);
+		var_dump($idBillet);
 	}
 
 	return $commentaires;
