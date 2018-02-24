@@ -41,7 +41,24 @@ var_dump($idBillet);
 		      	<form method="post" action="blog.php?section=suppression_commentaire&billet=<?php echo $idBillet; ?>">
        				<input type="hidden" name="idCommentaire" value="<?php echo $commentaire['id']; ?>"/>
        				<input type="hidden" name="idBillet" value="<?php echo $idBillet; ?>"/>
-       				<p><input type="submit" value="Supprimer"></p>
+       				<!-- Button trigger modal -->
+       				<p><input type="submit" value="Supprimer" data-toggle="modal" data-target="#supprModal"></p>
+
+						<!-- Modal -->
+						<div class="modal fade" id="supprModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+						  <div class="modal-dialog" role="document">
+						    <div class="modal-content">
+						      <div class="modal-body">
+						        Etes-vous sûr de vouloir supprimer le commentaire "<?php echo $commentaire['commentaire']; ?>" de <?php echo $commentaire['auteur']; ?> ?
+						      </div>
+						      <div class="modal-footer">
+						        <button type="button" class="btn btn-secondary" data-dismiss="modal">Oups, non</button>
+						        <button type="button" class="btn btn-primary">Oui</button>
+						      </div>
+						    </div>
+						  </div>
+						</div>
+
     			</form>
 		      </td>
 		    </tr>
