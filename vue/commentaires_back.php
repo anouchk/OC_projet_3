@@ -41,15 +41,13 @@ var_dump($idBillet);
 		      <td><?php echo $commentaire['commentaire']; ?></td>
 		      <td>OUI ou NON (vert ou rouge)</td>
 		      <td> Modifier | 
-		      	<!-- Pour supprimer : je veux lancer une requête DELETE sur le commentaire dont l'id sera récupéré en POST-->
-		      	<form method="post" action="blog.php?section=suppression_commentaire&billet=<?php echo $idBillet; ?>">
-       				<input type="hidden" name="idCommentaire" value="<?php echo $commentaire['id']; ?>"/>
-       				<input type="hidden" name="idBillet" value="<?php echo $idBillet; ?>"/>
+		      	
        				<!-- Button trigger modal -->
-       				<p><input type="submit" value="Supprimer" data-toggle="modal" data-target="#supprModal"></p>
+       				<p><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#alert_suppr">	Supprimer
+       				</button></p>
 
 						<!-- Modal -->
-						<div class="modal fade" id="supprModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+						<div class="modal fade" id="alert_suppr" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 						  <div class="modal-dialog" role="document">
 						    <div class="modal-content">
 						      <div class="modal-body">
@@ -57,13 +55,16 @@ var_dump($idBillet);
 						      </div>
 						      <div class="modal-footer">
 						        <button type="button" class="btn btn-secondary" data-dismiss="modal">Oups, non</button>
-						        <button type="button" class="btn btn-primary">Oui</button>
+						        <!-- Pour supprimer : je veux lancer une requête DELETE sur le commentaire dont l'id sera récupéré en POST-->
+						      	<form method="post" action="blog.php?section=suppression_commentaire&billet=<?php echo $idBillet; ?>">
+				       				<input type="hidden" name="idCommentaire" value="<?php echo $commentaire['id']; ?>"/>
+				       				<input type="hidden" name="idBillet" value="<?php echo $idBillet; ?>"/>
+				       				<p><input type="submit" value="Oui"></p>
+						        </form>
 						      </div>
 						    </div>
 						  </div>
-						</div>
-
-    			</form>
+						</div>    			
 		      </td>
 		    </tr>
 		    <?php
