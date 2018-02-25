@@ -18,7 +18,7 @@ var_dump($idBillet);
 
     <body>
 
-    	<h2>Commentaires du billet : </h2>
+    	<h2>Commentaires du billet : <?php echo $billet['titre']; ?></h2>
 
     	<table class="table">
 		  <thead>
