@@ -39,7 +39,6 @@ function affichage_securise($idBillet) {
 
 	// lancer la requête de récupération des données du billet pour pouvoir afficher le titre du billet en haut de la liste des commentaires
 	get_billet();
-	return $billet;
 	
 	// lancer la requête de suppression du commentaire
 	if (!empty($_POST['idCommentaire'])) {
