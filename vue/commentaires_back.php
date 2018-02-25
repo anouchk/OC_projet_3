@@ -40,11 +40,13 @@ var_dump($idBillet);
 		      <td><?php echo $commentaire['auteur']; ?></td>
 		      <td><?php echo $commentaire['commentaire']; ?></td>
 		      <td>OUI ou NON (vert ou rouge)</td>
-		      <td> Modifier | 
+		      <td> 
+		      	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#alert_suppr">			Modifier
+       			</button>
 		      	
        				<!-- Button trigger modal -->
-       				<p><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#alert_suppr">	Supprimer
-       				</button></p>
+       				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#alert_suppr">	Supprimer
+       				</button>
 
 						<!-- Modal -->
 						<div class="modal fade" id="alert_suppr" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -59,7 +61,7 @@ var_dump($idBillet);
 						      	<form method="post" action="blog.php?section=suppression_commentaire&billet=<?php echo $idBillet; ?>">
 				       				<input type="hidden" name="idCommentaire" value="<?php echo $commentaire['id']; ?>"/>
 				       				<input type="hidden" name="idBillet" value="<?php echo $idBillet; ?>"/>
-				       				<p><input type="submit" value="Oui"></p>
+				       				<p><input type="submit" class="btn btn-secondary" value="Oui"></p>
 						        </form>
 						      </div>
 						    </div>
