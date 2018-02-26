@@ -9,7 +9,8 @@ function commentaires_back_affichage_commentaires()
 {
     $idBillet = $_GET['billet'];
     var_dump($idBillet);
-    $commentaires = affichage_securise($idBillet);
+    $commentaires = affichage_securise($idBillet)[0];
+    $billet = affichage_securise($idBillet)[1];
 
     // On affiche la page (vue)
     include_once('vue/commentaires_back.php');
@@ -39,6 +40,7 @@ function affichage_securise($idBillet) {
 
 	// lancer la requête de récupération des données du billet pour pouvoir afficher le titre du billet en haut de la liste des commentaires
 	get_billet();
+	$billet = get_billet();
 	
 	// lancer la requête de suppression du commentaire
 	if (!empty($_POST['idCommentaire'])) {
@@ -48,5 +50,5 @@ function affichage_securise($idBillet) {
 		var_dump($idBillet);
 	}
 
-	return $commentaires;
+	return [$commentaires, $billet];
 }
