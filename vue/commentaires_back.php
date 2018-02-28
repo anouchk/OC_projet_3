@@ -9,7 +9,7 @@ var_dump($idBillet);
     <head>
         <meta charset="utf-8" />
         <title>Billet simple pour l'Alaska</title>
-        <link type="text/css" href="vue/style.css" rel="stylesheet" /> 
+        <link type="text/css" href="assets/css/style.css" rel="stylesheet" /> 
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 		<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
@@ -42,9 +42,9 @@ var_dump($idBillet);
 		      <td>
 		      	<?php 
 			      	if ($commentaire['signalement'] == 1) {
-			      		echo "<span> OUI </span>";
+			      		echo "<span id='signal'> OUI </span>";
 			      	} elseif ($commentaire['signalement'] == 0) {
-			      		echo "<span> NON </span>";
+			      		echo "<span id='non_signal'> NON </span>";
 			      	}
 		      	?>
 		      </td>

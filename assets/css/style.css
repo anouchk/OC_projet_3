@@ -60,3 +60,15 @@ a
     color: blue;
 
 }
+
+#signal
+
+{
+    color: red;
+}
+
+#non_signal
+
+{
+    color: green;
+}
