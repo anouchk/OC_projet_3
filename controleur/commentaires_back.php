@@ -9,6 +9,7 @@ function commentaires_back_affichage_commentaires()
 {
     $idBillet = $_GET['billet'];
     var_dump($idBillet);
+    // var_dump(affichage_securise($idBillet));
     $commentaires = affichage_securise($idBillet)[0];
     $billet = affichage_securise($idBillet)[1];
 
