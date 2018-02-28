@@ -18,6 +18,8 @@ var_dump($idBillet);
 
     <body>
 
+    	<p><a href="blog.php?section=billets_back">Retour à la liste des billets</a></p>
+
     	<h2>Commentaires du billet : <?php echo $billet['titre']; ?></h2>
 
     	<table class="table">
