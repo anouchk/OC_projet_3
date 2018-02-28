@@ -3,7 +3,7 @@
 include_once('modele/get_commentaires.php'); 
 include_once('modele/get_billet.php');  
 
-function affichage_commentaires($idBillet) {
+function affichage_commentaires() {
 		if (!empty($_POST)) {
 		include_once('modele/post_commentaire.php');
 		post_commentaire();
