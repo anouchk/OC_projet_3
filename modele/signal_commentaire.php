@@ -5,7 +5,7 @@ function signal_commentaire() {
 	global $bdd;
 	if (isset($_POST['idCommentaire'])) {
 	 $id = $_POST['idCommentaire'];
-	 var_dump($id);
+	 // var_dump($id);
 	 $sql = "UPDATE commentaires SET signalement = 1 WHERE id = :id"; 
 	 $q = array('id' => $id);
 	 $req = $bdd -> prepare($sql);
