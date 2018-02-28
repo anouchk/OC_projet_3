@@ -1,10 +1,3 @@
-<?php
-var_dump($idBillet);
-session_start();
-var_dump($_SESSION);
-?>
-
-
 <!DOCTYPE html>
 
 <html>
@@ -37,6 +30,7 @@ var_dump($_SESSION);
 		  <tbody>
 		  	<?php
 			//var_dump($billets);
+
 			foreach($commentaires as $commentaire) :
 			?>
 		    <tr>

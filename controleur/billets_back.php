@@ -1,6 +1,5 @@
 <?php
-session_start();
-var_dump($_SESSION);
+// var_dump($_SESSION);
 include_once('modele/get_billets.php'); 
 
 // Exécuter la fonction get_billets(), avec les OFFSET et les LIMIT obligatoires en paramètres (à enlever d'ailleurs ?)

@@ -9,7 +9,7 @@ function affichage_commentaires() {
 		post_commentaire();
 	}
 	$idBillet=$_GET['billet'];
-	$billet = get_billet();
+	$billet = get_billet($_GET['billet']);
 	$commentaires = get_commentaires(0, 10, $idBillet);
 	 
 	// On effectue du traitement sur les données (contrôleur) 

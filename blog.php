@@ -1,8 +1,6 @@
 <?php
+session_start();
 
-// On démarre la session AVANT d'écrire du code HTML
-// session_start();
-//phpinfo();
 // Routeur
 include_once('modele/connexion_sql.php');
 

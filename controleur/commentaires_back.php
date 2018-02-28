@@ -1,5 +1,4 @@
 <?php
-session_start();
 // var_dump($_SESSION);
 include_once('modele/get_commentaires.php');
 include_once('modele/delete_commentaire.php'); 
@@ -40,8 +39,8 @@ function affichage_securise($idBillet) {
 	} 
 
 	// lancer la requête de récupération des données du billet pour pouvoir afficher le titre du billet en haut de la liste des commentaires
-	get_billet();
-	$billet = get_billet();
+	get_billet($idBillet);
+	$billet = get_billet($idBillet);
 	
 	// lancer la requête de suppression du commentaire
 	if (!empty($_POST['idCommentaire'])) {
