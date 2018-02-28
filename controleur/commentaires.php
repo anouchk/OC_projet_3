@@ -3,7 +3,7 @@
 include_once('modele/get_commentaires.php'); 
 include_once('modele/get_billet.php');  
 
-function affichage_commentaires () {
+function affichage_commentaires() {
 		if (!empty($_POST)) {
 		include_once('modele/post_commentaire.php');
 		post_commentaire();
@@ -28,6 +28,6 @@ function affichage_commentaires () {
 
 }
 
-function signalement_commentaire () {
+function signalement_commentaire() {
 	include_once('modele/signal_commentaire.php');
 }
