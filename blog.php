@@ -26,6 +26,8 @@ if (!isset($_GET['section']) OR $_GET['section'] == 'index') {
 } else if ($_GET['section'] == 'suppression_commentaire') {
     include_once('controleur/commentaires_back.php');
     commentaires_back_suppression_commentaire();
-} 
+} else if ($_GET['section'] == 'signalement_commentaire') {
+    include_once('controleur/commentaires_back.php');
+    commentaires_back_suppression_commentaire();
 
 
