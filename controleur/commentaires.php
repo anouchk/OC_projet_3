@@ -30,4 +30,5 @@ function affichage_commentaires() {
 
 function signalement_commentaire() {
 	include_once('modele/signal_commentaire.php');
+	signal_commentaire();
 }

@@ -39,7 +39,15 @@ var_dump($idBillet);
 		      <td><?php echo $commentaire['id']; ?></td>
 		      <td><?php echo $commentaire['auteur']; ?></td>
 		      <td><?php echo $commentaire['commentaire']; ?></td>
-		      <td>OUI ou NON (vert ou rouge)</td>
+		      <td>
+		      	<?php 
+			      	if ($commentaire['signalement'] == 1) {
+			      		echo "<span> OUI </span>";
+			      	} elseif ($commentaire['signalement'] == 0) {
+			      		echo "<span> NON </span>";
+			      	}
+		      	?>
+		      </td>
 		      <td> 
 		      	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#alert_suppr">			Modifier
        			</button>
