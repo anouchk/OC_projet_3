@@ -11,7 +11,6 @@ function login_traitement_formulaire($bdd)
 
     // etape 2 : comparer le pass du hash avec celui entré par le formulaire de connexion
     if (password_verify($_POST['pass'], $resultat['pass'])) {
-        session_start();
         $_SESSION['id'] = $resultat['id'];
         $_SESSION['pseudo'] = $pseudo;
         $_SESSION['pass'] = $resultat['pass'];

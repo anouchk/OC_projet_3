@@ -9,7 +9,7 @@ function affichage_commentaires() {
 		post_commentaire();
 	}
 	$idBillet=$_GET['billet'];
-	$billet = get_billet($_GET['billet']);
+	$billet = get_billet($idBillet);
 	$commentaires = get_commentaires(0, 10, $idBillet);
 	 
 	// On effectue du traitement sur les données (contrôleur) 
@@ -31,4 +31,6 @@ function affichage_commentaires() {
 function signalement_commentaire() {
 	include_once('modele/signal_commentaire.php');
 	signal_commentaire();
+	$idBillet=$_POST['idBillet'];
+	header('Location: blog.php?section=commentaires&billet='.$idBillet);
 }
