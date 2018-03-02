@@ -24,7 +24,6 @@ function get_commentaires($offset, $limit, $idBillet) {
     $commentaires = $PDO_statement->fetchAll(PDO::FETCH_ASSOC);
 
     return $commentaires;
-
 }
 
 

@@ -51,11 +51,11 @@
        			</button>
 		      	
        				<!-- Button trigger modal -->
-       				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#alert_suppr">	Supprimer
+       				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#alert_suppr<?php echo $commentaire['id']; ?>">	Supprimer
        				</button>
 
 						<!-- Modal -->
-						<div class="modal fade" id="alert_suppr" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+						<div class="modal fade" id="alert_suppr<?php echo $commentaire['id']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 						  <div class="modal-dialog" role="document">
 						    <div class="modal-content">
 						      <div class="modal-body">
