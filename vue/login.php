@@ -1,3 +1,8 @@
+<?php
+var_dump($_SESSION);
+die;
+?>
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -9,7 +14,9 @@
 		<?php
 		if(isset($_GET['error'])) {
 			echo "<div>Identifiants erronés. Veuillez à nouveau saisir votre pseudo et votre mot de passe :</div>";
-		}
+		} 
+		// comment ajouter le 2ème message d'erreur suivant pour toutes les pages back :
+		//echo "Vous n'êtes pas administrateur, vous ne pouvez accéder à cette page";
 		?>
 
 		<form action="blog.php?section=login_traitement_formulaire" method="post">

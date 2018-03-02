@@ -6,8 +6,7 @@ function login_completion_formulaire()
         header('Location: blog.php?section=billets_back');
     } else {
         include_once('vue/login.php');
-    }
-    
+    }    
 }
 
 function login_traitement_formulaire($bdd)
@@ -22,6 +21,7 @@ function login_traitement_formulaire($bdd)
 
     } else {
     	// si les identifiants sont les bons, on renvoie vers billets_back.php
+        $_SESSION['connected'] = "non";
         header('Location: blog.php?section=login&error=1');
     }
  }
