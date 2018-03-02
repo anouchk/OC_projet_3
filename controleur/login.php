@@ -2,9 +2,9 @@
 
 function login_completion_formulaire()
 {
-    if (isset($_SESSION['connected'])=="oui") {
+    if (isset($_SESSION) && $_SESSION['connected']=="oui") {
         header('Location: blog.php?section=billets_back');
-    } elseif (isset($_SESSION['connected'])=="non") {
+    } elseif (isset($_SESSION) && $_SESSION['connected']=="non") {
         include_once('vue/login.php');
     }    
 }
