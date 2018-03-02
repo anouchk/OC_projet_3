@@ -4,10 +4,7 @@ include_once('modele/get_commentaires.php');
 include_once('modele/get_billet.php');  
 
 function affichage_commentaires() {
-		if (!empty($_POST)) {
-		include_once('modele/post_commentaire.php');
-		post_commentaire();
-	}
+	post_commentaires();
 	$idBillet=$_GET['billet'];
 	$billet = get_billet($idBillet);
 	$commentaires = get_commentaires(0, 10, $idBillet);
@@ -28,9 +25,17 @@ function affichage_commentaires() {
 
 }
 
-function signalement_commentaire() {
-	include_once('modele/signal_commentaire.php');
-	signal_commentaire();
-	$idBillet=$_POST['idBillet'];
-	header('Location: blog.php?section=commentaires&billet='.$idBillet);
+function post_commentaires() {
+	if (!empty($_POST)) {
+		include_once('modele/post_commentaire.php');
+		post_commentaire();
+	}
 }
+
+function signalement_commentaire() {
+	if (!empty($_POST['idCommentaireSignaled'])) {
+		include_once('modele/signal_commentaire.php');
+		signal_commentaire();
+	}
+	affichage_commentaires();
+} 
