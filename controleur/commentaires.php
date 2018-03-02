@@ -38,5 +38,5 @@ function signalement_commentaire() {
 		signal_commentaire();
 	}
 	$idBillet=$_POST['id2_billet'];
-	include_once('vue/commentaires.php&billet=' .$idBillet); 
+	header('Location: blog.php?section=commentaires&billet='.$idBillet);
 } 
