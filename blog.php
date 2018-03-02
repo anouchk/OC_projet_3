@@ -18,6 +18,9 @@ if (!isset($_GET['section']) OR $_GET['section'] == 'index') {
 } else if($_GET['section'] == 'login_traitement_formulaire') {
 	include_once('controleur/login.php');
 	login_traitement_formulaire($bdd);
+} else if($_GET['section'] == 'logout') {
+    include_once('controleur/login.php');
+    logout();    
 } else if($_GET['section'] == 'billets_back') {
     include_once('controleur/billets_back.php');
 } else if ($_GET['section'] == 'billet_back') {

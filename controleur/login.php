@@ -25,3 +25,9 @@ function login_traitement_formulaire($bdd)
         header('Location: blog.php?section=login&error=1');
     }
  }
+
+ function logout()
+ {
+    session_destroy();
+    header('Location: blog.php');
+ }
