@@ -2,7 +2,12 @@
 
 function login_completion_formulaire()
 {
-    include_once('vue/login.php');
+    if (isset($_SESSION['connected'])="oui") {
+        header('Location: blog.php?section=billets_back');
+    } else {
+        include_once('vue/login.php');
+    }
+    
 }
 
 function login_traitement_formulaire($bdd)
@@ -11,9 +16,7 @@ function login_traitement_formulaire($bdd)
 
     // etape 2 : comparer le pass du hash avec celui entré par le formulaire de connexion
     if (password_verify($_POST['pass'], $resultat['pass'])) {
-        $_SESSION['id'] = $resultat['id'];
-        $_SESSION['pseudo'] = $pseudo;
-        $_SESSION['pass'] = $resultat['pass'];
+        $_SESSION['connected'] = "oui";
         // si l'id ou le pass n'est pas le bon, on renvoie vers la page de connexion avec un message d'erreur
         header('Location: blog.php?section=billets_back');
 

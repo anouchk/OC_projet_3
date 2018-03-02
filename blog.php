@@ -1,5 +1,8 @@
 <?php
 session_start();
+if(!isset($_SESSION['connected'])) {
+    $_SESSION['connected'] = "non";
+}
 
 // Routeur
 include_once('modele/connexion_sql.php');

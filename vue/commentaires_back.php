@@ -12,7 +12,7 @@
     </head>
 
     <body>
-
+    	<h3><a href="blog.php?section=logout">Deconnexion</a></h3>
     	<p><a href="blog.php?section=billets_back">Retour à la liste des billets</a></p>
 
     	<h2>Commentaires du billet : <?php echo $billet['titre']; ?></h2>
@@ -40,7 +40,7 @@
 		      <td>
 		      	<?php 
 			      	if ($commentaire['signalement'] == 1) {
-			      		echo "<span id='signal'> OUI </span>";
+			      		echo "<span id='signal'> OUI </span>"; 
 			      	} elseif ($commentaire['signalement'] == 0) {
 			      		echo "<span id='non_signal'> NON </span>";
 			      	}

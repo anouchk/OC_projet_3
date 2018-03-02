@@ -12,7 +12,7 @@
     </head>
 
     <body>
-
+    	<h3><a href="blog.php?section=logout">Deconnexion</a></h3>
     	<div>
     		<button><a href="blog.php?section=billet_back">Nouvel Article</a></button>
     	</div>
