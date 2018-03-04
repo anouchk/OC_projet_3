@@ -36,6 +36,6 @@ if (!isset($_GET['section']) OR $_GET['section'] == 'index') {
     signalement_commentaire();
 } else if ($_GET['section'] == 'modification_commentaire') {
     include_once('controleur/commentaire_back.php');
-    modification_commentaire();
+    affichage_commentaire_a_modifier();
 }
 
