@@ -47,12 +47,16 @@
 		      	?>
 		      </td>
 		      <td> 
-		      	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#alert_suppr">			Modifier
-       			</button>
+		      	<!-- Pour modifier : je veux afficher dans un form dans commentaire_back le contenu du commentaire dont l'id sera récupéré en POST-->
+		      	<form method="post" action="blog.php?section=modification_commentaire&billet=<?php echo $billet['id']; ?>">
+       				<input type="hidden" name="idCommentaireModified" value="<?php echo $commentaire['id']; ?>"/>
+       				<input type ="hidden" name="id2_billet" value="<?php echo $_GET['billet']?>">
+       				<p><input type="submit" class="btn btn-primary" value="Modifier"></p>
+    			</form>
 		      	
-       				<!-- Button trigger modal -->
-       				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#alert_suppr<?php echo $commentaire['id']; ?>">	Supprimer
-       				</button>
+       			<!-- Button trigger modal -->
+       			<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#alert_suppr<?php echo $commentaire['id']; ?>">		Supprimer
+       			</button>
 
 						<!-- Modal -->
 						<div class="modal fade" id="alert_suppr<?php echo $commentaire['id']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
