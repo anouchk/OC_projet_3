@@ -9,15 +9,10 @@
 
     <body>
 
-    	<!-- Pour modifier : je veux afficher dans un form dans commentaire_back le contenu du commentaire dont l'id sera récupéré en POST-->
-		      	<form method="post" action="blog.php?section=modification_commentaire&billet=<?php echo $billet['id']; ?>">
-       				<input type="hidden" name="idCommentaireModified" value="<?php echo $commentaire['id']; ?>"/>
-       				<input type ="hidden" name="id2_billet" value="<?php echo $_GET['billet']?>">
-       				<p><input type="submit" value="Signaler ce commentaire"></p>
-    			</form>
+    	
 
     	<form action="blog.php?section=commentaires_back&billet=<?php echo $billet['id']; ?>" method="post">
-				<p><label> Pseudo</label> : <input type="text" name="pseudo"></p>
+				<p><label> Pseudo</label> : <input type="text" name="pseudo" value=></p>
 				<p><label> Message</label> : <input type="text" name="message"></p>
 				<input type ="hidden" name="id2_billet" value="<?php echo $_GET['billet']?>">
 				<p><input type="submit" ></p>

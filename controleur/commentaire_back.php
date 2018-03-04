@@ -1,6 +1,13 @@
 <?php
-include_once('modele/get_commentaires.php'); 
+include_once('modele/get_commentaire.php'); 
 include_once('modele/get_billet.php');  
+
+function affichage_commentaire_a_modifier() {
+	if (!empty($_POST['idCommentaireModified'])) {
+		get_commentaire($_POST['idCommentaireModified'])
+		include_once('vue/commentaire_back.php');
+	}
+}
 
 function modification_commentaire() {
 	if (!empty($_POST['idCommentaireModified'])) {
