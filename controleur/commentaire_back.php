@@ -12,11 +12,9 @@ function affichage_commentaire_a_modifier() {
 		$commentaire['auteur'] = htmlspecialchars($commentaire['auteur']); 
 	    $commentaire['commentaire'] = nl2br(htmlspecialchars($commentaire['commentaire'])); 
 	    // var_dump($commentaire);
-	    // return $commentaire;
 
 	    $idBillet = $_POST['id2_billet'];
 	    $billet = get_billet($idBillet);
-	    // return $billet;
 
 		include_once('vue/commentaire_back.php');
 	}
