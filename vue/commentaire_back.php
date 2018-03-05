@@ -1,3 +1,4 @@
+<?php echo "ceci est la vue de commentaire_back"; ?>
 <!DOCTYPE html>
 
 <html>
@@ -8,9 +9,11 @@
     </head>
 
     <body>
-      	
+
+    	<h2>Commentaire du billet : <?php echo $billet['titre']; ?></h2>
+
     	<!-- il va falloir voir comment récupérer l'id du billet -->
-    	<!-- Pour signaler : je veux modifier le boléen sur le commentaire dont l'id sera récupéré en POST-->
+    	<!-- Pour modifier : je veux modifier le contenu du le commentaire dont l'id sera récupéré en POST-->
     	<form action="blog.php?section=enregistrer_modification_commentaire&billet=<?php echo $billet['id']; ?>" method="post">
 				<p><label> Pseudo</label> : <input type="text" name="pseudo" value= "<?php echo $commentaire['auteur'] ?>"</p>
 				<p>Le <?php echo $commentaire['date_commentaire_fr'] ; ?></p>
