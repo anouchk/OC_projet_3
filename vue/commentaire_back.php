@@ -21,6 +21,7 @@
                 <p>Posté le <?php echo $commentaire['date_commentaire_fr'] ; ?> par <?php echo $commentaire['auteur'] ?></p>
 			
 				<p><label> Message</label> : <input class="input_large" type="text" name="message" value= "<?php echo $commentaire['commentaire'] ?>"</p>
+                <input type="hidden" name="idCommentaireModified" value="<?php echo $commentaire['id']; ?>"/>
 				<input type ="hidden" name="id2_billet" value="<?php echo $_GET['billet']?>">
 				<p><input type="submit" value="Enregistrer la modification du commentaire" ></p>
 		</form>	
