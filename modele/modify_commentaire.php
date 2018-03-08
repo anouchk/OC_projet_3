@@ -13,5 +13,5 @@ function update_commentaire () {
 	') ;
 	$requete->bindParam(':commentaire', $_POST['message']);
 	$requete->bindParam(':id', $_POST['idCommentaireModified']);
-	$req->execute(array($_POST['idCommentaireModified']));
+	$req->execute();
 }
