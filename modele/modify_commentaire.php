@@ -9,9 +9,10 @@ function update_commentaire () {
 		UPDATE commentaires
 		SET auteur = :auteur, 
 		commentaire = :commentaire
-		WHERE id=?
-	')
+		WHERE id= :id
+	') ;
 	$requete->bindParam(':auteur', $_POST['pseudo']);
 	$requete->bindParam(':commentaire', $_POST['message']);
+	$requete->bindParam(':id', $_POST['idCommentaireModified']);
 	$req->execute(array($_POST['idCommentaireModified']));
 }
