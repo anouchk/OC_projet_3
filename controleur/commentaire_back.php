@@ -23,7 +23,7 @@ function affichage_commentaire_a_modifier() {
 function enregistrement_modification_commentaire() {
 	if (!empty($_POST['idCommentaireModified'])) {
 		include_once('modele/modify_commentaire.php');
-		modify_commentaire();
+		update_commentaire();
 	}
 	$idBillet=$_POST['id2_billet'];
 	header('Location: blog.php?section=commentaires_back&billet='.$idBillet);
