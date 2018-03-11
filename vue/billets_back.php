@@ -66,8 +66,7 @@
 						  </div>
 						</div>    			
 		      </td>
-		      <td> Modifier | Supprimer </td>
-		      <td> Nombre | <a href="blog.php?section=commentaires_back&billet=<?php echo $billet['id']; ?>">Modérer</a> <td>
+		      <td> Nombre | <a href="blog.php?section=commentaires_back&billet=<?php echo $billet['id']; ?>"><button class="btn btn-primary">Modérer</button></a> <td>
 		    </tr>
 		    <?php
 			endforeach;
