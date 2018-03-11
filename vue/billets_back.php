@@ -36,6 +36,36 @@
 		      <td><?php echo $billet['id']; ?></td>
 		      <td><?php echo $billet['titre']; ?></td>
 		      <td><a href="blog.php?section=commentaires&billet=<?php echo $billet['id']; ?>">#</a></td>
+		      <td> 
+		      	<!-- Pour modifier : je veux afficher dans un form dans billet_back le contenu du billet dont l'id sera récupéré en POST-->
+		      	<form method="post" action="blog.php?section=modification_billet">
+       				<input type="hidden" name="idBilletModified" value="<?php echo $billet['id']; ?>"/>
+       				<p><input type="submit" class="btn btn-primary" value="Modifier"></p>
+    			</form>
+		      	
+       			<!-- Button trigger modal -->
+       			<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#alert_suppr<?php echo $billet['id']; ?>">		Supprimer
+       			</button>
+
+						<!-- Modal -->
+						<div class="modal fade" id="alert_suppr<?php echo $billet['id']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+						  <div class="modal-dialog" role="document">
+						    <div class="modal-content">
+						      <div class="modal-body">
+						        Etes-vous sûr de vouloir supprimer le billet "<?php echo $billet['titre']; ?>" ?
+						      </div>
+						      <div class="modal-footer">
+						        <button type="button" class="btn btn-secondary" data-dismiss="modal">Oups, non</button>
+						        <!-- Pour supprimer : je veux lancer une requête DELETE sur le commentaire dont l'id sera récupéré en POST-->
+						      	<form method="post" action="blog.php?section=suppression_billet ?>">
+				       				<input type="hidden" name="idBillet" value="<?php echo $billet['id']; ?>"/>
+				       				<p><input type="submit" class="btn btn-secondary" value="Oui"></p>
+						        </form>
+						      </div>
+						    </div>
+						  </div>
+						</div>    			
+		      </td>
 		      <td> Modifier | Supprimer </td>
 		      <td> Nombre | <a href="blog.php?section=commentaires_back&billet=<?php echo $billet['id']; ?>">Modérer</a> <td>
 		    </tr>
