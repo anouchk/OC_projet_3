@@ -22,7 +22,7 @@
 		    <tr>
 		      <th>id</th>
 		      <th>Titre</th>
-		      <th>lien</th>
+		      <th>Lien</th>
 		      <th>Actions</th>
 		      <th>Commentaires</th>
 		    </tr>
@@ -35,7 +35,7 @@
 		    <tr>
 		      <td><?php echo $billet['id']; ?></td>
 		      <td><?php echo $billet['titre']; ?></td>
-		      <td><a href="blog.php?section=commentaires&billet=<?php echo $billet['id']; ?>">#</a></td>
+		      <td><a href="blog.php?section=commentaires&billet=<?php echo $billet['id']; ?>"><?php echo $billet['titre']; ?></a></td>
 		      <td> 
 		      	<!-- Pour modifier : je veux afficher dans un form dans billet_back le contenu du billet dont l'id sera récupéré en POST-->
 		      	<form method="post" action="blog.php?section=modification_billet">
