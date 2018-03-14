@@ -21,10 +21,9 @@ function affichage_billet_a_modifier() {
 }
 
 function enregistrement_modification_billet() {
-	if (!empty($_POST['idCommentaireModified'])) {
-		include_once('modele/modify_commentaire.php');
-		update_commentaire();
+	if (!empty($_POST['idBilletModified'])) {
+		include_once('modele/modify_billet.php');
+		update_billet();
 	}
-	$idBillet=$_POST['id2_billet'];
-	header('Location: blog.php?section=commentaires_back&billet='.$idBillet);
+	header('Location: blog.php?section=billets_back');
 } 
