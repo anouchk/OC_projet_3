@@ -50,4 +50,7 @@ if (!isset($_GET['section']) OR $_GET['section'] == 'index') {
 } else if ($_GET['section'] == 'enregistrer_nouveau_billet') {
     include_once('controleur/billet_back.php');
     enregistrement_nouveau_billet();
+} else if ($_GET['section'] == 'suppression_billet') {
+    include_once('controleur/billet_back.php');
+    suppression_billet();
 }

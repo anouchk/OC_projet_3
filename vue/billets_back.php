@@ -56,9 +56,9 @@
 						      </div>
 						      <div class="modal-footer">
 						        <button type="button" class="btn btn-secondary" data-dismiss="modal">Oups, non</button>
-						        <!-- Pour supprimer : je veux lancer une requête DELETE sur le commentaire dont l'id sera récupéré en POST-->
-						      	<form method="post" action="blog.php?section=suppression_billet ?>">
-				       				<input type="hidden" name="idBillet" value="<?php echo $billet['id']; ?>"/>
+						        <!-- Pour supprimer : je veux lancer une requête DELETE sur le billet dont l'id sera récupéré en POST-->
+						      	<form method="post" action="blog.php?section=suppression_billet">
+				       				<input type="hidden" name="idBilletASupprimer" value="<?php echo $billet['id']; ?>"/>
 				       				<p><input type="submit" class="btn btn-secondary" value="Oui"></p>
 						        </form>
 						      </div>

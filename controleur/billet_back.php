@@ -4,6 +4,7 @@
 // Puis afficher la vue du formulaire d'insertion ou de modification d'article.
 if (isset($_SESSION) && ($_SESSION['connected']=="oui")) {
 	include_once('modele/get_billet.php'); 
+	include_once('modele/delete_billet.php'); 
 } else {
     header('Location: blog.php?section=login&error=1');
 }
@@ -41,3 +42,13 @@ function enregistrement_nouveau_billet() {
 	}
 
 }
+
+function suppression_billet() {
+	// lancer la requête de suppression du billet
+	if (!empty($_POST['idBilletASupprimer'])) {
+		// delete_billet($_POST['idBilletASupprimer']);
+		echo "l'id du billet est stocké et la function delete_billet est intégrée";
+		var_dump($_POST['idBilletASupprimer']);
+	}
+}
+
