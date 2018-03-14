@@ -6,7 +6,7 @@ function delete_billet($id_billet) {
 	if (isset($_POST['idBilletASupprimer'])) {
 	 $id_billet = $_POST['idBilletASupprimer'];
 	 $sql = "DELETE FROM billets WHERE id = :id_billet";
-	 $q = array('id' => $id);
+	 $q = array('id' => $id_billet);
 	 $req = $bdd -> prepare($sql);
 	 $req -> execute($q);
 	 header('Location: blog.php?section=billets_back');
