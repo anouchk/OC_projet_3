@@ -14,7 +14,7 @@
     <body>
     	<h3><a href="blog.php?section=logout">Deconnexion</a></h3>
     	<div>
-    		<button><a href="blog.php?section=billet_back">Nouvel Article</a></button>
+    		<button><a href="blog.php?section=creation_billet">Nouvel Article</a></button>
     	</div>
 
     	<table class="table">

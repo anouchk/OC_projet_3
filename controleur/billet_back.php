@@ -8,8 +8,6 @@ if (isset($_SESSION) && ($_SESSION['connected']=="oui")) {
     header('Location: blog.php?section=login&error=1');
 }
 
-include_once('modele/get_billet.php');  
-
 function affichage_billet_a_modifier() {
 	if (!empty($_POST['idBilletModified'])) {
 		$idBillet = $_POST['idBilletModified'];
@@ -17,7 +15,11 @@ function affichage_billet_a_modifier() {
 		$billet = get_billet($idBillet);
 		// var_dump($billet);
 		include_once('vue/billet_back.php');
-	}
+}
+
+function affichage_billet_a_creer() {
+		echo "on a cliqué pour créer un article" ;
+		include_once('vue/new_billet_back.php');
 }
 
 function enregistrement_modification_billet() {
