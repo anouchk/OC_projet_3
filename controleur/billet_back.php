@@ -10,25 +10,16 @@ if (isset($_SESSION['connected']=="oui")) {
 
 include_once('modele/get_billet.php');  
 
-function affichage_commentaire_a_modifier() {
-	if (!empty($_POST['idCommentaireModified'])) {
-		$idCommentaire = $_POST['idCommentaireModified'];
-		// var_dump($idCommentaire);
-		$commentaire = get_commentaire($idCommentaire);
-		// var_dump($commentaire);
-		// sécurisons l'affichage : inutile puisque pas d'injection possible ?
-		$commentaire['auteur'] = htmlspecialchars($commentaire['auteur']); 
-	    $commentaire['commentaire'] = nl2br(htmlspecialchars($commentaire['commentaire'])); 
-	    // var_dump($commentaire);
-
-	    $idBillet = $_POST['id2_billet'];
-	    $billet = get_billet($idBillet);
-
-		include_once('vue/commentaire_back.php');
+function affichage_billet_a_modifier() {
+	if (!empty($_POST['idBilletModified'])) {
+		$idBillet = $_POST['idBilletModified'];
+		// var_dump($idBillet);
+		$billet = get_billet($idBillet);
+		include_once('vue/billet_back.php');
 	}
 }
 
-function enregistrement_modification_commentaire() {
+function enregistrement_modification_billet() {
 	if (!empty($_POST['idCommentaireModified'])) {
 		include_once('modele/modify_commentaire.php');
 		update_commentaire();

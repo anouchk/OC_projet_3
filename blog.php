@@ -23,8 +23,6 @@ if (!isset($_GET['section']) OR $_GET['section'] == 'index') {
     logout();    
 } else if($_GET['section'] == 'billets_back') {
     include_once('controleur/billets_back.php');
-} else if ($_GET['section'] == 'billet_back') {
-	include_once('controleur/billet_back.php');
 } else if ($_GET['section'] == 'commentaires_back') {
     include_once('controleur/commentaires_back.php');
     commentaires_back_affichage_commentaires();
@@ -40,5 +38,10 @@ if (!isset($_GET['section']) OR $_GET['section'] == 'index') {
 } else if ($_GET['section'] == 'enregistrer_modification_commentaire') {
     include_once('controleur/commentaire_back.php');
     enregistrement_modification_commentaire();
+} else if ($_GET['section'] == 'modification_billet') {
+    include_once('controleur/billet_back.php');
+    affichage_billet_a_modifier() ;
+} else if ($_GET['section'] == 'enregistrer_modification_billet') {
+    include_once('controleur/billet_back.php');
+    enregistrement_modification_billet();
 }
-
