@@ -31,6 +31,7 @@ function affichage_billet_a_creer() {
 	include_once('vue/new_billet_back.php');
 }
 
-function entregistrement_nouveau_billet() {
+function enregistrement_nouveau_billet() {
 	include_once('modele/add_billet.php');
+	add_billet();
 }

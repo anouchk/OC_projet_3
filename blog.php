@@ -49,5 +49,5 @@ if (!isset($_GET['section']) OR $_GET['section'] == 'index') {
     affichage_billet_a_creer() ;
 } else if ($_GET['section'] == 'enregistrer_nouveau_billet') {
     include_once('controleur/billet_back.php');
-    enregistrement_modification_billet();
+    enregistrement_nouveau_billet();
 }
