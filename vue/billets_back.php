@@ -22,7 +22,7 @@
 		    <tr>
 		      <th>id</th>
 		      <th>Titre</th>
-		      <th>Lien</th>
+		      <th>Lien vers l'article</th>
 		      <th>Actions</th>
 		      <th>Commentaires</th>
 		    </tr>
