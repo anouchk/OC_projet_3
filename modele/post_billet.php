@@ -1,5 +1,5 @@
 <?php
-function post_billet () {
+function add_billet () {
 	// Récupération de la base de données
     global $bdd;
 

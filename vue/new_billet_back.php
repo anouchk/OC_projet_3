@@ -25,9 +25,8 @@
         <a href="blog.php?section=billets_back">Retour à l'administration des billets</a>
 
 			<form action="blog.php?section=enregistrer_nouveau_billet" method="post">
-				<p><label> Titre :</label> <input class="input_large" type="text" name="titre_billet" value="<?php echo $billet['titre'] ?>" ></p>
-				<p><label>Contenu de l'épisode :</label> <textarea class="input_large" type="text" name="contenu_billet" rows="20" cols="90"><?php echo $billet['contenu'] ?></textarea></p>
-				<input type ="hidden" name="idNewBillet" value="<?php echo $billet['id'] ?>">
+				<p><label> Titre :</label> <input class="input_large" type="text" name="titre_billet" value="" ></p>
+				<p><label>Contenu de l'épisode :</label> <textarea class="input_large" type="text" name="contenu_billet" rows="20" cols="90"></textarea></p>
 				<p><input type="submit" value="Enregistrer l'épisode" ></p>
 			</form>
 

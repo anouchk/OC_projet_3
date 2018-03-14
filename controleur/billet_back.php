@@ -18,10 +18,6 @@ function affichage_billet_a_modifier() {
 	}
 }
 
-function affichage_billet_a_creer() {
-		include_once('vue/new_billet_back.php');
-}
-
 function enregistrement_modification_billet() {
 	if (!empty($_POST['idBilletModified'])) {
 		include_once('modele/modify_billet.php');
@@ -30,3 +26,11 @@ function enregistrement_modification_billet() {
 	}
 	header('Location: blog.php?section=billets_back');
 } 
+
+function affichage_billet_a_creer() {
+	include_once('vue/new_billet_back.php');
+}
+
+function entregistrement_nouveau_billet() {
+	include_once('modele/add_billet.php');
+}
