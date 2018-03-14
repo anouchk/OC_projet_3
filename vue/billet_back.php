@@ -5,7 +5,7 @@
 
         <title>Billet simple pour l'Alaska </title>
 
-    	<link href="vue/style.css" rel="stylesheet" /> 
+    	<link href="assets/css/style.css" rel="stylesheet" /> 
     	<!-- <script type="text/javascript" src="XXXXX/tiny_mce/tiny_mce.js"></script>
     	<script type="text/javascript">
 	        tinyMCE.init({
@@ -22,11 +22,11 @@
 
     <body>
 
-        <a href="blog.php?section=index">Retour à l'administration des billets</a>
+        <a href="blog.php?section=billets_back">Retour à l'administration des billets</a>
 
 			<form action="controleur/blog.php?section=enregistrer_modification_billet" method="post">
-				<p><label> Titre :</label> <input type="text" name="titre_billet" value="<?php echo $billet['titre'] ?>"></p>
-				<p><label>Contenu de l'épisode :</label> <textarea type="text" name="contenu_billet" value="<?php echo $billet['contenu'] ?>" rows="20" cols="90"></textarea></p>
+				<p><label> Titre :</label> <input class="input_large" type="text" name="titre_billet" value="<?php echo $billet['titre'] ?>"></p>
+				<p><label>Contenu de l'épisode :</label> <textarea class="input_large" type="text" name="contenu_billet" value="<?php echo $billet['contenu'] ?>" rows="20" cols="90"></textarea></p>
 				<input type ="hidden" name="idBilletModified" value="$billet['id']">
 				<p><input type="submit" value="Enregistrer l'épisode" ></p>
 			</form>
