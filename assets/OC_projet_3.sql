@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:8889
--- Généré le :  sam. 24 fév. 2018 à 19:27
+-- Généré le :  mer. 14 mars 2018 à 19:08
 -- Version du serveur :  5.6.35
 -- Version de PHP :  7.1.8
 
@@ -60,7 +60,10 @@ CREATE TABLE `billets` (
 
 INSERT INTO `billets` (`id`, `titre`, `contenu`, `date_creation`, `image`) VALUES
 (1, 'Épisode 1 - En avant ', 'Jason transpirait. Ses amis venaient de lui offrir, dans une enveloppe décorée au feutre bleu, un billet d\'avion pour une destination dépassant de loin ses points de repère habituels. Interrogateur, il souleva le rectangle de papier : \"Et le retour ?\"', '2018-02-13 05:32:46', ''),
-(2, 'Episode 2 - Dans l\'avion', 'Jason étira ses jambes, l\'air satisfait. Il venait de commander un jus de tomate et regardait le sel au céleri se mêler lentement à la masse rouge, reflétée dans le hublot à sa gauche. ', '2018-02-14 15:26:42', '');
+(2, 'Episode 2 - Dans l\'avion', 'Jason étira ses jambes, l\'air satisfait. Il venait de commander un jus de tomate et regardait le sel au céleri se mêler lentement à la masse rouge, reflétée dans le hublot à sa gauche. La moquette exhalait un parfum neuf dans l\'habitacle. ', '2018-02-14 15:26:42', ''),
+(3, 'Episode 3 - Atterrissage forcé ', 'La bicoque qui emmenait Jason depuis New York vers Anchorage hoquetait, dégringolant d\'un trou d\'air à l\'autre, laissant entrevoir entre chaque nuage un paysage d\'un bleu acier. Jason n\'en menait pas large, mais n\'en perdait pas une miette, l’œil rivé à la carlingue.', '2018-03-14 18:06:15', ''),
+(4, 'Episode 4 - Comité d\'accueil', 'Hellen souriait, le bras fatigué de soulever l\'écriteau \"Bievenue Jason\", dans la langue de Molière. Elle scrutait chaque passager, imaginant qu\'il s\'agissait de son Frenchie, avant que le crissement des roulettes de la valise s\'éloignant devant elle ne lui indiquent que ce n\'était pas encore le bon.', '2018-03-14 18:13:28', ''),
+(5, 'Episode 5 - Ceci est un épisode destiné à être effacé', 'Supprimez-moi', '2018-03-14 18:33:44', '');
 
 -- --------------------------------------------------------
 
@@ -90,7 +93,10 @@ INSERT INTO `commentaires` (`id`, `id_billet`, `auteur`, `commentaire`, `date_co
 (6, 2, 'Lecteur moins assidu', 'Moi aussi !', '2018-02-23 21:23:37', 0),
 (9, 2, 'Madame chaussure', 'En êtes-vous sûre ?', '2018-02-24 17:58:16', 0),
 (10, 2, 'Madame piment', 'Evidemment.', '2018-02-24 17:58:27', 0),
-(11, 2, 'Monsieur clairon', 'Quel fanfaron', '2018-02-24 17:58:38', 0);
+(12, 2, 'Monsieur clairon', 'Quel fan', '2018-03-01 16:06:13', 1),
+(14, 2, 'Dame clarinette', 'Quelle drôle de tête. Mazette. ', '2018-03-02 14:43:32', 0),
+(15, 5, 'pozurfpou', 'sgsfgsfh', '2018-03-14 18:57:23', 0),
+(16, 5, 'zrgzrgt', 'sfgsfg', '2018-03-14 18:57:26', 0);
 
 --
 -- Index pour les tables déchargées
@@ -127,12 +133,12 @@ ALTER TABLE `auteur`
 -- AUTO_INCREMENT pour la table `billets`
 --
 ALTER TABLE `billets`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT pour la table `commentaires`
 --
 ALTER TABLE `commentaires`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
