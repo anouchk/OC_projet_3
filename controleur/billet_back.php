@@ -13,9 +13,9 @@ include_once('modele/get_billet.php');
 function affichage_billet_a_modifier() {
 	if (!empty($_POST['idBilletModified'])) {
 		$idBillet = $_POST['idBilletModified'];
-		var_dump($idBillet);
+		// var_dump($idBillet);
 		$billet = get_billet($idBillet);
-		var_dump($billet);
+		// var_dump($billet);
 		include_once('vue/billet_back.php');
 	}
 }

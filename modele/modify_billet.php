@@ -14,6 +14,6 @@ function update_billet () {
 	') ;
 	$requete->bindParam(':contenu', $_POST['contenu_billet']);
 	$requete->bindParam(':titre', $_POST['titre_billet']);
-	$requete->bindParam(':id', $_POST['idCommentaireModified']);
+	$requete->bindParam(':id', $_POST['idBilletModified']);
 	$requete->execute();
 }
