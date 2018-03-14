@@ -32,6 +32,12 @@ function affichage_billet_a_creer() {
 }
 
 function enregistrement_nouveau_billet() {
-	include_once('modele/add_billet.php');
-	add_billet();
+	if (!empty($_POST)) {
+		include_once('modele/add_billet.php');
+		add_billet();
+		header('Location: blog.php?section=billets_back');
+	} else {
+		echo "Aucune donnée à enregistrer. Veuillez remplir le formulaire.";
+	}
+
 }
