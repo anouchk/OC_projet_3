@@ -15,10 +15,10 @@ function affichage_billet_a_modifier() {
 		$billet = get_billet($idBillet);
 		// var_dump($billet);
 		include_once('vue/billet_back.php');
+	}
 }
 
 function affichage_billet_a_creer() {
-		echo "on a cliqué pour créer un article" ;
 		include_once('vue/new_billet_back.php');
 }
 
