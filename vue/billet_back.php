@@ -24,9 +24,9 @@
 
         <a href="blog.php?section=billets_back">Retour à l'administration des billets</a>
 
-			<form action="controleur/blog.php?section=enregistrer_modification_billet" method="post">
-				<p><label> Titre :</label> <input class="input_large" type="text" name="titre_billet" value="<?php echo $billet['titre'] ?>"></p>
-				<p><label>Contenu de l'épisode :</label> <textarea class="input_large" type="text" name="contenu_billet" value="<?php echo $billet['contenu'] ?>" rows="20" cols="90"></textarea></p>
+			<form action="blog.php?section=enregistrer_modification_billet" method="post">
+				<p><label> Titre :</label> <input class="input_large" type="text" name="titre_billet" value="<?php echo $billet['titre'] ?>" ></p>
+				<p><label>Contenu de l'épisode :</label> <textarea class="input_large" type="text" name="contenu_billet" rows="20" cols="90"><?php echo $billet['contenu'] ?></textarea></p>
 				<input type ="hidden" name="idBilletModified" value="$billet['id']">
 				<p><input type="submit" value="Enregistrer l'épisode" ></p>
 			</form>
