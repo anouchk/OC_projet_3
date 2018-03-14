@@ -8,7 +8,7 @@ function update_billet () {
 	$requete = $bdd->prepare('
 		UPDATE billets
 		SET 
-		contenu = :contenu
+		contenu = :contenu,
 		titre = :titre
 		WHERE id= :id
 	') ;

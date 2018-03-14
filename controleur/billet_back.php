@@ -23,6 +23,7 @@ function affichage_billet_a_modifier() {
 function enregistrement_modification_billet() {
 	if (!empty($_POST['idBilletModified'])) {
 		include_once('modele/modify_billet.php');
+		// var_dump($_POST['idBilletModified']);
 		update_billet();
 	}
 	header('Location: blog.php?section=billets_back');
