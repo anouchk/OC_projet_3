@@ -46,9 +46,9 @@ function enregistrement_nouveau_billet() {
 function suppression_billet() {
 	// lancer la requête de suppression du billet
 	if (!empty($_POST['idBilletASupprimer'])) {
-		// delete_billet($_POST['idBilletASupprimer']);
-		echo "l'id du billet est stocké et la function delete_billet est intégrée";
-		var_dump($_POST['idBilletASupprimer']);
+		delete_billet($_POST['idBilletASupprimer']);
+		// echo "l'id du billet est stocké et la function delete_billet est intégrée";
+		// var_dump($_POST['idBilletASupprimer']);
 	}
 }
 
