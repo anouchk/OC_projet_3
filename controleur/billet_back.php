@@ -1,6 +1,8 @@
 <?php
 include_once('modele/get_billet.php'); 
 include_once('modele/delete_billet.php'); 
+include_once('modele/modify_billet.php');
+include_once('modele/add_billet.php');
 
 // S'il est connecté en tant qu'admin, faire des trucs (charger les données du billet récupérées par le modèle, si elles existent. Afficher la vue du formulaire d'insertion ou de modification d'article...
 // if (isset($_SESSION) && ($_SESSION['connected']=="oui")) {
@@ -20,8 +22,7 @@ function affichage_billet_a_modifier() {
 }
 
 function enregistrement_modification_billet() {
-	if (!empty($_POST['idBilletModified'])) {
-		include_once('modele/modify_billet.php');
+	if (!empty($_POST['idBilletModified'])) {		
 		// var_dump($_POST['idBilletModified']);
 		update_billet();
 	}
@@ -34,7 +35,6 @@ function affichage_billet_a_creer() {
 
 function enregistrement_nouveau_billet() {
 	if (!empty($_POST)) {
-		include_once('modele/add_billet.php');
 		add_billet();
 		header('Location: blog.php?section=billets_back');
 	} else {
