@@ -40,9 +40,9 @@
 		      <td>
 		      	<?php 
 			      	if ($commentaire['signalement'] == 1) {
-			      		echo "<span id='signal'> OUI </span>"; 
+			      		echo "<span class='signal'> OUI </span>"; 
 			      	} elseif ($commentaire['signalement'] == 0) {
-			      		echo "<span id='non_signal'> NON </span>";
+			      		echo "<span class='non_signal'> NON </span>";
 			      	}
 		      	?>
 		      </td>

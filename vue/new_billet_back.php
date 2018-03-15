@@ -24,7 +24,7 @@
 
         <a href="blog.php?section=billets_back">Retour à l'administration des billets</a>
 
-        <p>
+        <p class="signal">
             <?php if (ISSET($message)) {
                 echo $message;
             } ?>       

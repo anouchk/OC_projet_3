@@ -61,13 +61,13 @@ a
 
 }
 
-#signal
+.signal
 
 {
     color: red;
 }
 
-#non_signal
+.non_signal
 
 {
     color: green;

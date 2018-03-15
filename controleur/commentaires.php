@@ -25,7 +25,7 @@ function signalement_commentaire() {
 	if (!empty($_POST['idCommentaireSignaled'])) {
 		$idCommentaire = $_POST['idCommentaireSignaled'];
 		signal_commentaire($idCommentaire);
-		$signaled = "Commentaire signalé";
+		$signaled = "Ce commentaire a été signalé par un utilisateur. Il va être modéré.";
 	}
 	$idBillet=$_POST['id2_billet'];
 	header('Location: blog.php?section=commentaires&billet='.$idBillet);
