@@ -14,7 +14,13 @@
     </head>
 
     <body>
-    	<h3><a href="blog.php?section=login">Admin</a></h3>
+    	<?php if (isset($_SESSION) && ($_SESSION['connected']=="oui")) {
+            echo "<h3><a href='blog.php?section=logout'>Deconnexion</a></h3>";
+            echo "<h3><a href='blog.php?section=login'>Admin</a></h3>";
+        } elseif (isset($_SESSION) && ($_SESSION['connected']=="non")) {
+            echo "<h3><a href='blog.php?section=login'>Admin</a></h3>";
+        } ?>
+        
         <h1>Billet simple pour l'Alaska</h1>
         <a href="blog.php?section=index">Retour à la liste des billets</a>
 

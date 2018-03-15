@@ -16,7 +16,7 @@
     	<h3><a href="blog.php?section=index">Retour à la page d'accueil du blog</a></h3>
 
     	<div>
-    		<a href="blog.php?section=creation_billet"><button>Nouvel Article</button></a>
+    		<a href="blog.php?section=creation_billet"><button class="btn btn-info">Nouvel Article</button></a>
     	</div>
 
     	<table class="table">
@@ -40,7 +40,7 @@
 		      <td><a href="blog.php?section=commentaires&billet=<?php echo $billet['id']; ?>"><?php echo $billet['titre']; ?></a></td>
 		      <td> 
 		      	<!-- Pour modifier : je veux afficher dans un form dans billet_back le contenu du billet dont l'id sera récupéré en POST-->
-		      	<form method="post" action="blog.php?section=modification_billet">
+		      	<form class="coteacote" method="post" action="blog.php?section=modification_billet">
        				<input type="hidden" name="idBilletModified" value="<?php echo $billet['id']; ?>"/>
        				<p><input type="submit" class="btn btn-primary" value="Modifier"></p>
     			</form>
