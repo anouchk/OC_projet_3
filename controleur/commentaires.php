@@ -1,7 +1,9 @@
 <?php 
 // On demande les 10 derniers commentaires (modèle) 
 include_once('modele/get_commentaires.php'); 
-include_once('modele/get_billet.php');  
+include_once('modele/get_billet.php');
+include_once('modele/signal_commentaire.php');  
+include_once('modele/post_commentaire.php');
 
 function affichage_commentaires() {
 	nouveau_commentaire();
@@ -27,14 +29,12 @@ function affichage_commentaires() {
 
 function nouveau_commentaire() {
 	if (!empty($_POST)) {
-		include_once('modele/post_commentaire.php');
 		post_commentaire();
 	}
 }
 
 function signalement_commentaire() {
 	if (!empty($_POST['idCommentaireSignaled'])) {
-		include_once('modele/signal_commentaire.php');
 		signal_commentaire();
 	}
 	$idBillet=$_POST['id2_billet'];
