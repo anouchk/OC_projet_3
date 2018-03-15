@@ -84,3 +84,12 @@ a
 {
     display: inline-block;
 }
+
+.adroite
+
+{
+    float:right !important;
+    padding-right: 5%;
+    padding-bottom: 1%;
+    padding-top: 1%;
+}

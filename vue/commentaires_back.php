@@ -13,6 +13,7 @@
 
     <body>
     	<h3><a href="blog.php?section=logout">Deconnexion</a></h3>
+    	<h3><a href="blog.php?section=index">Retour à la page d'accueil du blog</a></h3>
     	<p><a href="blog.php?section=billets_back">Retour à la liste des billets</a></p>
 
     	<h2>Commentaires du billet : <?php echo $billet['titre']; ?></h2>
@@ -48,7 +49,7 @@
 		      </td>
 		      <td> 
 		      	<!-- Pour modifier : je veux afficher dans un form dans commentaire_back le contenu du commentaire dont l'id sera récupéré en POST-->
-		      	<form method="post" action="blog.php?section=modification_commentaire">
+		      	<form class="coteacote" method="post" action="blog.php?section=modification_commentaire">
        				<input type="hidden" name="idCommentaireModified" value="<?php echo $commentaire['id']; ?>"/>
        				<input type ="hidden" name="id2_billet" value="<?php echo $_GET['billet']?>">
        				<p><input type="submit" class="btn btn-primary" value="Modifier"></p>
