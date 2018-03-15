@@ -34,14 +34,13 @@ function affichage_billet_a_creer() {
 }
 
 function enregistrement_nouveau_billet() {
-	if (!empty($_POST)) {
+	if (!empty($_POST['titre_billet'])&& !empty($_POST['contenu_billet'])) {
 		add_billet();
 		header('Location: blog.php?section=billets_back');
 	} else {
-		$message = "Aucune donnée à enregistrer. Veuillez remplir le formulaire.";
+		$message = "Le contenu et/ou le titre sont vides. Veuillez remplir le formulaire.";
 		include_once('vue/new_billet_back.php');
 	}
-
 }
 
 function suppression_billet() {
