@@ -1,5 +1,4 @@
 <?php
-
 function update_billet () {
 	// Récupération de la base de données
     global $bdd;

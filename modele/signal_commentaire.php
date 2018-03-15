@@ -4,5 +4,5 @@ function signal_commentaire($id_commentaire) {
 
 	$sql = "UPDATE commentaires SET signalement = 1 WHERE id = :id_commentaire"; 
 	$req = $bdd -> prepare($sql);
-	$req -> execute(array('id_commentaire' => $id);
+	$req -> execute(array('id_commentaire' => $id_commentaire));
 }

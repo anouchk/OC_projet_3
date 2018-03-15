@@ -2,11 +2,11 @@
 include_once('modele/get_commentaires.php'); 
 include_once('modele/get_billet.php');
 include_once('modele/signal_commentaire.php');  
-include_once('modele/post_commentaire.php');
+include_once('modele/add_commentaire.php');
 
 function affichage_commentaires() {
 	if (!empty($_POST)) {
-		post_commentaire();
+		add_commentaire();
 	}
 	$idBillet=$_GET['billet'];
 	$billet = get_billet($idBillet);
@@ -25,6 +25,7 @@ function signalement_commentaire() {
 	if (!empty($_POST['idCommentaireSignaled'])) {
 		$idCommentaire = $_POST['idCommentaireSignaled'];
 		signal_commentaire($idCommentaire);
+		$signaled = "Commentaire signalé";
 	}
 	$idBillet=$_POST['id2_billet'];
 	header('Location: blog.php?section=commentaires&billet='.$idBillet);

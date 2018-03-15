@@ -47,6 +47,11 @@
 					Le <?php echo $commentaire['date_commentaire_fr'] ; ?>
 				</p>
 				<div><?php echo $commentaire['commentaire'] ; ?></div>
+				<p>
+					<?php if (isset($signaled)) {
+						echo $signaled ;
+					} ?>
+				</p>
 
 			
 			

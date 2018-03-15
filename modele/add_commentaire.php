@@ -1,5 +1,5 @@
 <?php
-function post_commentaire () {
+function add_commentaire () {
 	// Récupération de la base de données
     global $bdd;
 
