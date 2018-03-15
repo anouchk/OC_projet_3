@@ -1,13 +1,13 @@
 <?php
+include_once('modele/get_billet.php'); 
+include_once('modele/delete_billet.php'); 
 
-// S'il est connecté en tant qu'admin, charger les données du billet récupérées par le modèle, si elles existent.
-// Puis afficher la vue du formulaire d'insertion ou de modification d'article.
-if (isset($_SESSION) && ($_SESSION['connected']=="oui")) {
-	include_once('modele/get_billet.php'); 
-	include_once('modele/delete_billet.php'); 
-} else {
-    header('Location: blog.php?section=login&error=1');
-}
+// S'il est connecté en tant qu'admin, faire des trucs (charger les données du billet récupérées par le modèle, si elles existent. Afficher la vue du formulaire d'insertion ou de modification d'article...
+// if (isset($_SESSION) && ($_SESSION['connected']=="oui")) {
+// 	// faire des trucs
+// } else {
+//     header('Location: blog.php?section=login&error=1');
+// }
 
 function affichage_billet_a_modifier() {
 	if (!empty($_POST['idBilletModified'])) {
