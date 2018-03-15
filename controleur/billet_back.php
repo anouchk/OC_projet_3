@@ -38,7 +38,8 @@ function enregistrement_nouveau_billet() {
 		add_billet();
 		header('Location: blog.php?section=billets_back');
 	} else {
-		echo "Aucune donnée à enregistrer. Veuillez remplir le formulaire.";
+		$message = "Aucune donnée à enregistrer. Veuillez remplir le formulaire.";
+		include_once('vue/new_billet_back.php');
 	}
 
 }
@@ -49,6 +50,7 @@ function suppression_billet() {
 		delete_billet($_POST['idBilletASupprimer']);
 		// echo "l'id du billet est stocké et la function delete_billet est intégrée";
 		// var_dump($_POST['idBilletASupprimer']);
+		header('Location: blog.php?section=billets_back');
 	}
 }
 

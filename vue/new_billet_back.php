@@ -24,6 +24,12 @@
 
         <a href="blog.php?section=billets_back">Retour à l'administration des billets</a>
 
+        <p>
+            <?php if (ISSET($message)) {
+                echo $message;
+            } ?>       
+        </p>
+
 			<form action="blog.php?section=enregistrer_nouveau_billet" method="post">
 				<p><label> Titre :</label> <input class="input_large" type="text" name="titre_billet" value="" ></p>
 				<p><label>Contenu de l'épisode :</label> <textarea class="input_large" type="text" name="contenu_billet" rows="20" cols="90"></textarea></p>
