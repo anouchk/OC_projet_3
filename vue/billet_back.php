@@ -17,18 +17,19 @@
         <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+        <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/solid.js" integrity="sha384-+Ga2s7YBbhOD6nie0DzrZpJes+b2K1xkpKxTFFcx59QmVPaSA8c7pycsNaFwUK6l" crossorigin="anonymous"></script>
+        <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/fontawesome.js" integrity="sha384-7ox8Q2yzO/uWircfojVuCQOZl+ZZBg2D2J5nkpLqzH1HY0C1dHlTKIbpRz/LG23c" crossorigin="anonymous"></script>
 
     </head>
 
     <body>
-
-        <a href="blog.php?section=billets_back">Retour à l'administration des billets</a>
+        <a href="blog.php?section=billets_back" class="btn btn-info"><i class="fas fa-arrow-alt-circle-left"></i> Retour à l'administration des billets</a>
 
 			<form action="blog.php?section=enregistrer_modification_billet" method="post">
 				<p><label> Titre :</label> <input class="input_large" type="text" name="titre_billet" value="<?php echo $billet['titre'] ?>" ></p>
 				<p><label>Contenu de l'épisode :</label> <textarea class="input_large" type="text" name="contenu_billet" rows="20" cols="90"><?php echo $billet['contenu'] ?></textarea></p>
 				<input type ="hidden" name="idBilletModified" value="<?php echo $billet['id'] ?>">
-				<p><input type="submit" value="Enregistrer l'épisode" ></p>
+				<p><input type="submit" class="btn btn-primary" value="Enregistrer l'épisode" ></p>
 			</form>
 
     </body>
