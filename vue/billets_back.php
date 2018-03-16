@@ -68,7 +68,7 @@
 						  </div>
 						</div>    			
 		      </td>
-		      <td> <?php echo $billets[$cle]['nombre_commentaires']; ?> | <a href="index.php?section=commentaires_back&billet=<?php echo $billet['id']; ?>"><button class="btn btn-primary">Modérer</button></a> <td>
+		      <td> <a href="index.php?section=commentaires_back&billet=<?php echo $billet['id']; ?>"><button class="btn btn-primary"> (<?php echo $billet['nbcommentaires'][0]; ?>) Modérer</button></a> <td>
 		    </tr>
 		    <?php
 			endforeach;

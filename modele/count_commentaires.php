@@ -9,6 +9,6 @@ function count_commentaires($idBillet) {
     // Récupération du billet   
     $req = $bdd->prepare('SELECT count(*) FROM commentaires WHERE id_billet=?');
     $req->execute(array($id_Billet));
-    $nombre_commentaires = $req->fetch(PDO::FETCH_ASSOC);
+    $nombre_commentaires = $req->fetch(PDO::FETCH_NUM);
     return $nombre_commentaires ;
 }
