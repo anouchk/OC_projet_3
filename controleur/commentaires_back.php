@@ -6,22 +6,21 @@ include_once('modele/get_billet.php');
 function commentaires_back_affichage_commentaires()
 {
     $idBillet = $_GET['billet'];
-    $commentaires = affichage_securise($idBillet)[0];
-    $billet = affichage_securise($idBillet)[1];
+    $commentaires = recuperation_commentaires_du_billet($idBillet)[0];
+    $billet = recuperation_commentaires_du_billet($idBillet)[1];
     include_once('vue/commentaires_back.php');
 }
 
 function commentaires_back_suppression_commentaire()
 {
     $idBillet = $_POST['idBillet'];
-    $commentaires = affichage_securise($idBillet);
+    $commentaires = recuperation_commentaires_du_billet($idBillet);
     header('Location: index.php?section=commentaires_back&billet='.$idBillet);
 }
 
-function affichage_securise($idBillet) {
+function recuperation_commentaires_du_billet($idBillet) {
 	$commentaires = get_commentaires(0, 30, $idBillet);
-
-	// Ici, on doit surtout sécuriser l'affichage 
+	// on sécurise l'affichage des commentaires
 	foreach($commentaires as $cle => $commentaire) 
 	{ 
 	    $commentaire[$cle]['auteur'] = htmlspecialchars($commentaire['auteur']); 
