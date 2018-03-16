@@ -10,7 +10,7 @@ function affichage_commentaires() {
 	}
 	$idBillet=$_GET['billet'];
 	$billet = get_billet($idBillet);
-	$commentaires = get_commentaires(0, 10, $idBillet);
+	$commentaires = get_commentaires(0, 30, $idBillet);
 	
 	// Ici, on doit surtout sécuriser l'affichage 
 	foreach($commentaires as $cle => $commentaire) 

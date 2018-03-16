@@ -55,13 +55,12 @@
 					Le <?php echo $commentaire['date_commentaire_fr'] ; ?>
 				</p>
 				<div><?php echo $commentaire['commentaire'] ; ?></div>
-				<p>
-					<?php if (isset($signaled)) {
+				
+				<p class="signal">
+					<?php if (ISSET($signaled)) {
 						echo $signaled ;
 					} ?>
-				</p>
-
-			
+				</p>			
 			
 			<!-- Pour signaler : je veux modifier le boléen sur le commentaire dont l'id sera récupéré en POST-->
 		      	<form method="post" action="blog.php?section=signalement_commentaire&billet=<?php echo $billet['id']; ?>">
