@@ -9,7 +9,8 @@ include_once('modele/connexion_sql.php');
 
 if (!isset($_GET['section']) OR $_GET['section'] == 'index') {
     include_once('controleur/billets.php');
-    billets_front_affichage_billets();
+    $billetsControleur = new BilletsControleur;
+    $billetsControleur->billets_front_affichage_billets();
 } else if($_GET['section'] == 'commentaires') {
     include_once('controleur/commentaires.php');
     commentaires_front_affichage_commentaires();
