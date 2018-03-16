@@ -1,4 +1,5 @@
 <?php
+include_once('modele/login.php');
 
 function login_completion_formulaire()
 {
@@ -11,8 +12,6 @@ function login_completion_formulaire()
 
 function login_traitement_formulaire($bdd)
 {
-    include_once('modele/login.php');
-
     // etape 2 : comparer le pass du hash avec celui entré par le formulaire de connexion
     if (password_verify($_POST['pass'], $resultat['pass'])) {
         $_SESSION['connected'] = "oui";
