@@ -59,8 +59,9 @@
 				<p class="signal">
 					<?php 
 						// var_dump($signaled);
-						if (ISSET($signaled)) {
-						echo $signaled ;
+						if (ISSET($_SESSION['signaled'])) {
+						echo $_SESSION['signaled'] ;
+						unset($_SESSION['signaled']);
 					} ?>
 				</p>			
 			
