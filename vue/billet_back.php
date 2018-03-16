@@ -7,11 +7,9 @@
 
     	<link href="assets/css/style.css" rel="stylesheet" /> 
         <script src='https://cloud.tinymce.com/stable/tinymce.min.js'></script>
-    	<script type="text/javascript">
-	        tinyMCE.init({
-	            // mode : "textareas",
-	            // theme : "simple",
-                selector : "tinyMCEarea"
+    	<script >
+	        tinymce.init({
+                selector : "#tinyMCEarea"
 	        });
      	</script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
