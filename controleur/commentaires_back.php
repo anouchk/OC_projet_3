@@ -19,10 +19,8 @@ function commentaires_back_suppression_commentaire()
 }
 
 function affichage_securise($idBillet) {
-	// Exécuter la fonction get_commentaires(), avec les OFFSET et les LIMIT obligatoires en paramètres (à enlever d'ailleurs ?)
-	$commentaires = get_commentaires(0, 15, $idBillet);
+	$commentaires = get_commentaires(0, 30, $idBillet);
 
-	// On effectue du traitement sur les données (contrôleur) 
 	// Ici, on doit surtout sécuriser l'affichage 
 	foreach($commentaires as $cle => $commentaire) 
 	{ 
