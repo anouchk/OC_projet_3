@@ -9,7 +9,6 @@ function delete_commentaire($id, $id_billet) {
 	 $q = array('id' => $id);
 	 $req = $bdd -> prepare($sql);
 	 $req -> execute($q);
-	 header('Location: blog.php?section=commentaires_back&billet='.$id_billet);
 	}
 }
 	
