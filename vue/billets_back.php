@@ -61,7 +61,7 @@
 						        <!-- Pour supprimer : je veux lancer une requête DELETE sur le billet dont l'id sera récupéré en POST-->
 						      	<form method="post" action="blog.php?section=suppression_billet">
 				       				<input type="hidden" name="idBilletASupprimer" value="<?php echo $billet['id']; ?>"/>
-				       				<p><input type="submit" class="btn btn-secondary" value="Oui"></p>
+				       				<p><input type="submit" class="btn btn-secondary btn-secondary-slightly-descendu" value="Oui"></p>
 						        </form>
 						      </div>
 						    </div>

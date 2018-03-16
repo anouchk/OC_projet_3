@@ -72,7 +72,7 @@
 						      	<form method="post" action="blog.php?section=suppression_commentaire&billet=<?php echo $idBillet; ?>">
 				       				<input type="hidden" name="idCommentaire" value="<?php echo $commentaire['id']; ?>"/>
 				       				<input type="hidden" name="idBillet" value="<?php echo $idBillet; ?>"/>
-				       				<p><input type="submit" class="btn btn-secondary" value="Oui"></p>
+				       				<p><input type="submit" class="btn btn-secondary btn-secondary-descendu" value="Oui"></p>
 						        </form>
 						      </div>
 						    </div>
