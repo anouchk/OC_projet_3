@@ -2,6 +2,7 @@
 include_once('modele/get_commentaire.php'); 
 include_once('modele/get_billet.php');  
 include_once('modele/signal_commentaire.php');  
+include_once('modele/modify_commentaire.php');
 
 function affichage_commentaire_a_modifier() {
 	if (!empty($_POST['idCommentaireModified'])) {
@@ -22,7 +23,7 @@ function affichage_commentaire_a_modifier() {
 
 function enregistrement_modification_commentaire() {
 	if (!empty($_POST['idCommentaireModified'])) {
-		include_once('modele/modify_commentaire.php');
+	
 		update_commentaire();
 		unsignal_commentaire($_POST['idCommentaireModified']);
 	}
