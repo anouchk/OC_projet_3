@@ -35,11 +35,11 @@ foreach($billets as $billet) {
         <em>le <?php echo $billet['date_creation_fr']; ?></em>
     </h3>
 
-    <p>
+    <div>
         <?php echo $billet['contenu']; ?>
         <br />
         <em><a href="index.php?section=commentaires&billet=<?php echo $billet['id']; ?>">Commentaires</a></em>
-    </p>
+    </div>
 </div>
 
 <?php

@@ -28,13 +28,16 @@ h3
 
 }
 
-.news p
+.news div
 
 {
 
     background-color:#d8dae6;
 
-    margin-top:0px;
+    margin-top:-0.8%;
+    padding-top:0.5%;
+    margin-bottom: 1%;
+    padding-bottom:0.5%;
 
 }
 
@@ -48,7 +51,12 @@ h3
 
 }
 
+.news div p
 
+{
+    margin:0%;
+    margin-bottom:-2%;
+}
 
 
 a
