@@ -25,7 +25,6 @@ function commentaires_front_signalement_commentaire() {
 	if (!empty($_POST['idCommentaireSignaled'])) {
 		$idCommentaire = $_POST['idCommentaireSignaled'];
 		signal_commentaire($idCommentaire);
-		$_SESSION['signaled'] = "Ce commentaire a été signalé par un utilisateur. Il va être modéré.";
 		$idBillet=$_POST['id2_billet'];
 		header('Location: index.php?section=commentaires&billet='.$idBillet);
 	}

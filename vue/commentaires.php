@@ -50,28 +50,30 @@
 		     <?php
 				foreach ($commentaires as $commentaire)	{
 			?>
-				<p>
+				
 					<strong><?php echo $commentaire['auteur'] ; ?></strong>
 					Le <?php echo $commentaire['date_commentaire_fr'] ; ?>
-				</p>
+				
 				<div><?php echo $commentaire['commentaire'] ; ?></div>
 				
-				<p class="signal">
-					<?php 
-						// var_dump($signaled);
-						if (ISSET($_SESSION['signaled'])) {
-						echo $_SESSION['signaled'] ;
-						unset($_SESSION['signaled']);
-					} ?>
-				</p>			
-			
-			<!-- Pour signaler : je veux modifier le boléen sur le commentaire dont l'id sera récupéré en POST-->
-		      	<form method="post" action="index.php?section=signalement_commentaire&billet=<?php echo $billet['id']; ?>">
-       				<input type="hidden" name="idCommentaireSignaled" value="<?php echo $commentaire['id']; ?>"/>
-       				<input type ="hidden" name="id2_billet" value="<?php echo $_GET['billet']?>">
-       				<p><input type="submit" class="btn btn-secondary" value="Signaler ce commentaire"></p>
-    			</form>
-			<?php	
+
+					<?php // bouton de signalement
+						if ($commentaire['signalement'] == 1) {
+							$signaled='<button id="<?php echo $commentaire[\'id\'] ; ?>"
+							 class="btn btn-danger">Commentaire signalé</button><br><br>';
+							echo $signaled ;
+						} else {
+					?>
+		
+							<!-- Pour signaler : je veux modifier le boléen sur le commentaire dont l'id sera récupéré en POST-->
+					      	<form method="post" action="index.php?section=signalement_commentaire&billet=<?php echo $billet['id']; ?>">
+			       				<input type="hidden" name="idCommentaireSignaled" value="<?php echo $commentaire['id']; ?>"/>
+			       				<input type ="hidden" name="id2_billet" value="<?php echo $_GET['billet']?>">
+			       				<p><input type="submit" class="btn btn-secondary" value="Signaler ce commentaire">
+			    			</form>
+			    			
+					<?php	
+						}		
 			} // fin de la boucle des commentaires 
 			?>
 			
