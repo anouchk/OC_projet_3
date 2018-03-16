@@ -8,7 +8,7 @@ include_once('modele/add_billet.php');
 // if (isset($_SESSION) && ($_SESSION['connected']=="oui")) {
 // 	// faire des trucs
 // } else {
-//     header('Location: blog.php?section=login&error=1');
+//     header('Location: index.php?section=login&error=1');
 // }
 
 function affichage_billet_a_modifier() {
@@ -26,7 +26,7 @@ function enregistrement_modification_billet() {
 		// var_dump($_POST['idBilletModified']);
 		update_billet();
 	}
-	header('Location: blog.php?section=billets_back');
+	header('Location: index.php?section=billets_back');
 } 
 
 function affichage_billet_a_creer() {
@@ -36,7 +36,7 @@ function affichage_billet_a_creer() {
 function enregistrement_nouveau_billet() {
 	if (!empty($_POST['titre_billet'])&& !empty($_POST['contenu_billet'])) {
 		add_billet();
-		header('Location: blog.php?section=billets_back');
+		header('Location: index.php?section=billets_back');
 	} else {
 		$message = "Le contenu et/ou le titre sont vides. Veuillez remplir le formulaire.";
 		include_once('vue/new_billet_back.php');
@@ -49,7 +49,7 @@ function suppression_billet() {
 		delete_billet($_POST['idBilletASupprimer']);
 		// echo "l'id du billet est stocké et la function delete_billet est intégrée";
 		// var_dump($_POST['idBilletASupprimer']);
-		header('Location: blog.php?section=billets_back');
+		header('Location: index.php?section=billets_back');
 	}
 }
 

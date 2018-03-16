@@ -24,7 +24,7 @@
 
     <body>
 
-        <a href="blog.php?section=billets_back" class="btn btn-info"><i class="fas fa-arrow-alt-circle-left"></i> Retour à l'administration des billets</a>
+        <a href="index.php?section=billets_back" class="btn btn-info"><i class="fas fa-arrow-alt-circle-left"></i> Retour à l'administration des billets</a>
 
         <p class="signal">
             <?php if (ISSET($message)) {
@@ -32,7 +32,7 @@
             } ?>       
         </p>
 
-			<form action="blog.php?section=enregistrer_nouveau_billet" method="post">
+			<form action="index.php?section=enregistrer_nouveau_billet" method="post">
 				<p><label> Titre :</label> <input class="input_large" type="text" name="titre_billet" value="" ></p>
 				<p><label>Contenu de l'épisode :</label> <textarea class="input_large" type="text" name="contenu_billet" rows="20" cols="90"></textarea></p>
 				<p><input type="submit" class="btn btn-primary" value="Enregistrer l'épisode" ></p>

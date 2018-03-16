@@ -15,7 +15,7 @@ function commentaires_back_suppression_commentaire()
 {
     $idBillet = $_POST['idBillet'];
     $commentaires = affichage_securise($idBillet);
-    header('Location: blog.php?section=commentaires_back&billet='.$idBillet);
+    header('Location: index.php?section=commentaires_back&billet='.$idBillet);
 }
 
 function affichage_securise($idBillet) {
@@ -35,7 +35,7 @@ function affichage_securise($idBillet) {
 	// lancer la requête de suppression du commentaire
 	if (!empty($_POST['idCommentaire'])) {
 		delete_commentaire($_POST['idCommentaire'], $idBillet);
-		header('Location: blog.php?section=commentaires_back&billet='.$idBillet);
+		header('Location: index.php?section=commentaires_back&billet='.$idBillet);
 	}
 
 	return [$commentaires, $billet];

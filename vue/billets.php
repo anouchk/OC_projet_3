@@ -14,10 +14,10 @@
     <body>
         
         <?php if (isset($_SESSION) && ($_SESSION['connected']=="oui")) {
-            echo "<h3><a href='blog.php?section=logout'>Deconnexion</a></h3>";
-            echo "<h3><a href='blog.php?section=login'>Admin</a></h3>";
+            echo "<h3><a href='index.php?section=logout'>Deconnexion</a></h3>";
+            echo "<h3><a href='index.php?section=login'>Admin</a></h3>";
         } elseif (isset($_SESSION) && ($_SESSION['connected']=="non")) {
-            echo "<h3><a href='blog.php?section=login'>Admin</a></h3>";
+            echo "<h3><a href='index.php?section=login'>Admin</a></h3>";
         } ?>
         
         <h1>Billet simple pour l'Alaska</h1>
@@ -38,7 +38,7 @@ foreach($billets as $billet) {
     <p>
         <?php echo $billet['contenu']; ?>
         <br />
-        <em><a href="blog.php?section=commentaires&billet=<?php echo $billet['id']; ?>">Commentaires</a></em>
+        <em><a href="index.php?section=commentaires&billet=<?php echo $billet['id']; ?>">Commentaires</a></em>
     </p>
 </div>
 

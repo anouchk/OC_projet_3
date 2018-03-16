@@ -28,5 +28,5 @@ function enregistrement_modification_commentaire() {
 		unsignal_commentaire($_POST['idCommentaireModified']);
 	}
 	$idBillet=$_POST['id2_billet'];
-	header('Location: blog.php?section=commentaires_back&billet='.$idBillet);
+	header('Location: index.php?section=commentaires_back&billet='.$idBillet);
 } 

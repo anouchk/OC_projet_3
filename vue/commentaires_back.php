@@ -14,10 +14,10 @@
     </head>
 
     <body>
-    	<h3><a href="blog.php?section=logout">Deconnexion</a></h3>
-    	<h3><a href="blog.php?section=index">Retour à la page d'accueil du blog</a></h3>
+    	<h3><a href="index.php?section=logout">Deconnexion</a></h3>
+    	<h3><a href="index.php?section=index">Retour à la page d'accueil du blog</a></h3>
 
-    	<a href="blog.php?section=billets_back" class="btn btn-info"><i class="fas fa-arrow-alt-circle-left"></i> Retour à l'administration des billets</a>
+    	<a href="index.php?section=billets_back" class="btn btn-info"><i class="fas fa-arrow-alt-circle-left"></i> Retour à l'administration des billets</a>
 
     	<h2>Commentaires du billet : <?php echo $billet['titre']; ?></h2>
 
@@ -52,7 +52,7 @@
 		      </td>
 		      <td> 
 		      	<!-- Pour modifier : je veux afficher dans un form dans commentaire_back le contenu du commentaire dont l'id sera récupéré en POST-->
-		      	<form class="coteacote" method="post" action="blog.php?section=modification_commentaire">
+		      	<form class="coteacote" method="post" action="index.php?section=modification_commentaire">
        				<input type="hidden" name="idCommentaireModified" value="<?php echo $commentaire['id']; ?>"/>
        				<input type ="hidden" name="id2_billet" value="<?php echo $_GET['billet']?>">
        				<p><input type="submit" class="btn btn-primary" value="Modifier"></p>
@@ -72,7 +72,7 @@
 						      <div class="modal-footer">
 						        <button type="button" class="btn btn-secondary" data-dismiss="modal">Oups, non</button>
 						        <!-- Pour supprimer : je veux lancer une requête DELETE sur le commentaire dont l'id sera récupéré en POST-->
-						      	<form method="post" action="blog.php?section=suppression_commentaire&billet=<?php echo $idBillet; ?>">
+						      	<form method="post" action="index.php?section=suppression_commentaire&billet=<?php echo $idBillet; ?>">
 				       				<input type="hidden" name="idCommentaire" value="<?php echo $commentaire['id']; ?>"/>
 				       				<input type="hidden" name="idBillet" value="<?php echo $idBillet; ?>"/>
 				       				<p><input type="submit" class="btn btn-secondary btn-secondary-descendu" value="Oui"></p>

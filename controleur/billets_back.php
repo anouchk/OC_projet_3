@@ -1,7 +1,7 @@
 <?php
 function billets_back_affichage_billets() {
 	include_once('modele/get_billets.php'); 
-	$billets = get_billets(0,5);
+	$billets = get_billets(0,30);
 
 	// Ici, on doit surtout sécuriser l'affichage 
 	foreach($billets as $cle => $billet) 

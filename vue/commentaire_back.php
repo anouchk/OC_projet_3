@@ -17,7 +17,7 @@
 
     	<!-- il va falloir voir comment récupérer l'id du billet -->
     	<!-- Pour modifier : je veux modifier le contenu du le commentaire dont l'id sera récupéré en POST-->
-    	<form action="blog.php?section=enregistrer_modification_commentaire&billet=<?php echo $billet['id']; ?>" method="post">
+    	<form action="index.php?section=enregistrer_modification_commentaire&billet=<?php echo $billet['id']; ?>" method="post">
                 <p>Posté le <?php echo $commentaire['date_commentaire_fr'] ; ?> par <?php echo $commentaire['auteur'] ?></p>
 			
 				<p><label> Message</label> : <input class="input_large" type="text" name="message" value= "<?php echo $commentaire['commentaire'] ?>"</p>

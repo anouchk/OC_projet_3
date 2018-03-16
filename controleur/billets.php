@@ -9,5 +9,5 @@ function billets_front_affichage_billets() {
 	    $billets[$cle]['titre'] = htmlspecialchars($billet['titre']); 
 	    $billets[$cle]['contenu'] = nl2br(htmlspecialchars($billet['contenu'])); 
 	} 
-	include_once('vue/index.php'); 
+	include_once('vue/billets.php'); 
 }

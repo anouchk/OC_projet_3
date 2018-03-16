@@ -17,14 +17,14 @@
 
     <body>
     	<?php if (isset($_SESSION) && ($_SESSION['connected']=="oui")) {
-            echo "<h3><a href='blog.php?section=logout'>Deconnexion</a></h3>";
-            echo "<h3><a href='blog.php?section=login'>Admin</a></h3>";
+            echo "<h3><a href='index.php?section=logout'>Deconnexion</a></h3>";
+            echo "<h3><a href='index.php?section=login'>Admin</a></h3>";
         } elseif (isset($_SESSION) && ($_SESSION['connected']=="non")) {
-            echo "<h3><a href='blog.php?section=login'>Admin</a></h3>";
+            echo "<h3><a href='index.php?section=login'>Admin</a></h3>";
         } ?>
 
         <h1>Billet simple pour l'Alaska</h1>
-        <a href="blog.php?section=index" class="btn btn-secondary"><i class="fas fa-arrow-alt-circle-left"></i> Retour à la liste des billets</a>
+        <a href="index.php?section=index" class="btn btn-secondary"><i class="fas fa-arrow-alt-circle-left"></i> Retour à la liste des billets</a>
 
 			<div class="news">		
 				<h3> 
@@ -39,7 +39,7 @@
 
 			<h2> Commentaires </h2>
 
-			<form action="blog.php?section=commentaires&billet=<?php echo $billet['id']; ?>" method="post">
+			<form action="index.php?section=commentaires&billet=<?php echo $billet['id']; ?>" method="post">
 				<p><label> Pseudo</label> : <input type="text" name="pseudo"></p>
 				<p><label> Message</label> : <input type="text" name="message"></p>
 				<input type ="hidden" name="id2_billet" value="<?php echo $_GET['billet']?>">
@@ -65,7 +65,7 @@
 				</p>			
 			
 			<!-- Pour signaler : je veux modifier le boléen sur le commentaire dont l'id sera récupéré en POST-->
-		      	<form method="post" action="blog.php?section=signalement_commentaire&billet=<?php echo $billet['id']; ?>">
+		      	<form method="post" action="index.php?section=signalement_commentaire&billet=<?php echo $billet['id']; ?>">
        				<input type="hidden" name="idCommentaireSignaled" value="<?php echo $commentaire['id']; ?>"/>
        				<input type ="hidden" name="id2_billet" value="<?php echo $_GET['billet']?>">
        				<p><input type="submit" class="btn btn-secondary" value="Signaler ce commentaire"></p>
