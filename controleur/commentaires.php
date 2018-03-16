@@ -4,7 +4,7 @@ include_once('modele/get_billet.php');
 include_once('modele/signal_commentaire.php');  
 include_once('modele/add_commentaire.php');
 
-function affichage_commentaires() {
+function commentaires_front_affichage_commentaires() {
 	if (!empty($_POST)) {
 		add_commentaire();
 	}
@@ -21,7 +21,7 @@ function affichage_commentaires() {
 	include_once('vue/commentaires.php'); 
 }
 
-function signalement_commentaire() {
+function commentaires_front_signalement_commentaire() {
 	if (!empty($_POST['idCommentaireSignaled'])) {
 		$idCommentaire = $_POST['idCommentaireSignaled'];
 		signal_commentaire($idCommentaire);

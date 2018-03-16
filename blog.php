@@ -9,9 +9,10 @@ include_once('modele/connexion_sql.php');
 
 if (!isset($_GET['section']) OR $_GET['section'] == 'index') {
     include_once('controleur/index.php');
+    billets_front_affichage_billets();
 } else if($_GET['section'] == 'commentaires') {
     include_once('controleur/commentaires.php');
-    affichage_commentaires();
+    commentaires_front_affichage_commentaires();
 } else if($_GET['section'] == 'login') {
     include_once('controleur/login.php');
     login_completion_formulaire();
@@ -32,7 +33,7 @@ if (!isset($_GET['section']) OR $_GET['section'] == 'index') {
     commentaires_back_suppression_commentaire();
 } else if ($_GET['section'] == 'signalement_commentaire') {
     include_once('controleur/commentaires.php');
-    signalement_commentaire();
+    commentaires_front_signalement_commentaire();
 } else if ($_GET['section'] == 'modification_commentaire') {
     include_once('controleur/commentaire_back.php');
     affichage_commentaire_a_modifier();

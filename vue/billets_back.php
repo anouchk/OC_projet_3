@@ -16,7 +16,7 @@
     	<h3><a href="blog.php?section=index">Retour à la page d'accueil du blog</a></h3>
 
     	<div class="adroite">
-    	<a href="blog.php?section=creation_billet"><button class="btn btn-info">Nouvel Article</button></a>
+    	<a href="blog.php?section=creation_billet"><button class="btn btn-lg btn-info">Nouvel Article</button></a>
     	</div>
 
     	<table class="table">
