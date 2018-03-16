@@ -13,7 +13,6 @@ function billets_back_affichage_billets() {
 	    $billets[$cle]['titre'] = htmlspecialchars($billet['titre']); 
 	    $billets[$cle]['contenu'] = nl2br(htmlspecialchars($billet['contenu'])); 
 	    $billets[$cle]['nbcommentaires'] = count_commentaires($billet['id']);
-	    // var_dump($billets[$cle]['nbcommentaires']);
 	} 
 
 	include_once('vue/billets_back.php'); 

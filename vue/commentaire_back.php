@@ -14,7 +14,7 @@
     </head>
 
     <body>
-        <a href="index.php?section=commentaires_back" class="btn btn-info"><i class="fas fa-arrow-alt-circle-left"></i> Retour à la modération des commentaires</a>
+        <a href="index.php?section=commentaires_back&billet=<?php echo $billet['id']; ?>" class="btn btn-info"><i class="fas fa-arrow-alt-circle-left"></i> Retour à la modération des commentaires</a>
     	<h2>Commentaire du billet : <?php echo $billet['titre']; ?></h2>
 
     	<!-- il va falloir voir comment récupérer l'id du billet -->
