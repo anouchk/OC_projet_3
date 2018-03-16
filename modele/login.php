@@ -1,5 +1,6 @@
 <?php
 function Recuperation_ligne_correspondant_au_pseudo() {
+	global $bdd;
 	// Etape 1 : recupérer dans la bdd la ligne qui correspond au pseudo
 	// Préparer la requête (:pseudo ça correspondra à $pseudo)
 	$req = $bdd->prepare('SELECT id, pass, pseudo FROM auteur WHERE pseudo = :pseudo');
@@ -11,4 +12,5 @@ function Recuperation_ligne_correspondant_au_pseudo() {
 	// Fetch permet de récupérer le résultat de la requête et de le renvoyer sous une certaine forme (tableau par exemple)
 	$resultat = $req->fetch(PDO::FETCH_ASSOC);
 	// var_dump($resultat); die;
+	return $resultat;
 }

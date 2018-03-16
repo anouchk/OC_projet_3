@@ -13,7 +13,7 @@ function login_completion_formulaire()
 function login_traitement_formulaire($bdd)
 {
     // Etape 1 : recupérer dans la bdd la ligne qui correspond au pseudo
-    Recuperation_ligne_correspondant_au_pseudo();
+    $resultat = Recuperation_ligne_correspondant_au_pseudo();
     // etape 2 : comparer le pass du hash avec celui entré par le formulaire de connexion
     if (password_verify($_POST['pass'], $resultat['pass'])) {
         $_SESSION['connected'] = "oui";
