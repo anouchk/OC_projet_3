@@ -1,17 +1,17 @@
 <?php
 include_once('modele/get_commentaire.php'); 
 include_once('modele/get_billet.php');  
+include_once('modele/signal_commentaire.php');  
 
 function affichage_commentaire_a_modifier() {
 	if (!empty($_POST['idCommentaireModified'])) {
 		$idCommentaire = $_POST['idCommentaireModified'];
-		// var_dump($idCommentaire);
+
 		$commentaire = get_commentaire($idCommentaire);
-		// var_dump($commentaire);
-		// sécurisons l'affichage : inutile puisque pas d'injection possible ?
+
+		// sécurisons l'affichage 
 		$commentaire['auteur'] = htmlspecialchars($commentaire['auteur']); 
 	    $commentaire['commentaire'] = nl2br(htmlspecialchars($commentaire['commentaire'])); 
-	    // var_dump($commentaire);
 
 	    $idBillet = $_POST['id2_billet'];
 	    $billet = get_billet($idBillet);
@@ -24,6 +24,7 @@ function enregistrement_modification_commentaire() {
 	if (!empty($_POST['idCommentaireModified'])) {
 		include_once('modele/modify_commentaire.php');
 		update_commentaire();
+		unsignal_commentaire($_POST['idCommentaireModified']);
 	}
 	$idBillet=$_POST['id2_billet'];
 	header('Location: blog.php?section=commentaires_back&billet='.$idBillet);

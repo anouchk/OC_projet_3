@@ -57,7 +57,9 @@
 				<div><?php echo $commentaire['commentaire'] ; ?></div>
 				
 				<p class="signal">
-					<?php if (ISSET($signaled)) {
+					<?php 
+						// var_dump($signaled);
+						if (ISSET($signaled)) {
 						echo $signaled ;
 					} ?>
 				</p>			
