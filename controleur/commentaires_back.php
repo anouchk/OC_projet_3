@@ -5,7 +5,7 @@ include_once('modele/get_billet.php');
 
 class CommmentairesBackControleur {
 
-	function commentaires_back_affichage_commentaires()
+	public function commentaires_back_affichage_commentaires()
 	{
 		if (!empty($_GET['billet'])) {
 			$idBillet = $_GET['billet'];
@@ -22,7 +22,7 @@ class CommmentairesBackControleur {
 		}   
 	}
 
-	function commentaires_back_suppression_commentaire()
+	public function commentaires_back_suppression_commentaire()
 	{	if (!empty($_POST['idCommentaire'])) {
 			$idBillet = $_POST['idBillet'];
 			$idCommentaire = $_POST['idCommentaire'];

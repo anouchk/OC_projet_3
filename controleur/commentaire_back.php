@@ -6,7 +6,7 @@ include_once('modele/modify_commentaire.php');
 
 class CommentaireBackControleur {
 
-	function affichage_commentaire_a_modifier() {
+	public function affichage_commentaire_a_modifier() {
 		if (!empty($_POST['idCommentaireModified'])) {
 			$idCommentaire = $_POST['idCommentaireModified'];
 			$commentaire = get_commentaire($idCommentaire);
@@ -20,7 +20,7 @@ class CommentaireBackControleur {
 		}
 	}
 
-	function enregistrement_modification_commentaire() {
+	public function enregistrement_modification_commentaire() {
 		if (!empty($_POST['idCommentaireModified'])) {	
 			update_commentaire();
 			unsignal_commentaire($_POST['idCommentaireModified']);

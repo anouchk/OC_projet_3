@@ -1,4 +1,6 @@
 <?php
+namespace Controleur;
+
 include_once('modele/get_billet.php'); 
 include_once('modele/delete_billet.php'); 
 include_once('modele/modify_billet.php');
