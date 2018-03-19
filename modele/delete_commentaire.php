@@ -1,14 +1,11 @@
 <?php
 
-function delete_commentaire($id, $id_billet) {
+function delete_commentaire($idCommentaire) {
 	global $bdd;
 
-	if (isset($_POST['idCommentaire'])) {
-	 $id_commentaire = $_POST['idCommentaire'];
-	 $sql = "DELETE FROM commentaires WHERE id = :id";
-	 $q = array('id' => $id);
-	 $req = $bdd -> prepare($sql);
-	 $req -> execute($q);
-	}
+	$sql = "DELETE FROM commentaires WHERE id = :id";
+	$q = array('id' => $idCommentaire);
+	$req = $bdd -> prepare($sql);
+	$req -> execute($q);
 }
 	

@@ -28,12 +28,11 @@ function recuperation_commentaires_du_billet($idBillet) {
 	} 
 
 	// lancer la requête de récupération des données du billet pour pouvoir afficher le titre du billet en haut de la liste des commentaires
-	// get_billet($idBillet);
 	$billet = get_billet($idBillet);
 	
 	// lancer la requête de suppression du commentaire
 	if (!empty($_POST['idCommentaire'])) {
-		delete_commentaire($_POST['idCommentaire'], $idBillet);
+		delete_commentaire($_POST['idCommentaire']);
 		header('Location: index.php?section=commentaires_back&billet='.$idBillet);
 	}
 
