@@ -14,7 +14,7 @@ function commentaires_back_affichage_commentaires()
 function commentaires_back_suppression_commentaire()
 {
     $idBillet = $_POST['idBillet'];
-    $commentaires = recuperation_commentaires_du_billet($idBillet);
+    $commentaires = recuperation_commentaires_du_billet($idBillet)[0];
     header('Location: index.php?section=commentaires_back&billet='.$idBillet);
 }
 
@@ -28,7 +28,7 @@ function recuperation_commentaires_du_billet($idBillet) {
 	} 
 
 	// lancer la requête de récupération des données du billet pour pouvoir afficher le titre du billet en haut de la liste des commentaires
-	get_billet($idBillet);
+	// get_billet($idBillet);
 	$billet = get_billet($idBillet);
 	
 	// lancer la requête de suppression du commentaire
