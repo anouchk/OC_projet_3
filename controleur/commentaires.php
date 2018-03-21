@@ -1,18 +1,22 @@
 <?php 
-include_once('modele/get_commentaires.php'); 
-include_once('modele/get_billet.php');
-include_once('modele/signal_commentaire.php');  
-include_once('modele/add_commentaire.php');
+include_once('modele/Service/BilletManager.php'); 
+include_once('modele/Service/CommentaireManager.php'); 
 
 class CommentairesControleur {
+
+	
 
 	public function commentaires_front_affichage_commentaires() {
 		if (!empty($_POST)) {
 			add_commentaire();
 		}
 		$idBillet=$_GET['billet'];
-		$billet = get_billet($idBillet);
-		$commentaires = get_commentaires(0, 30, $idBillet);
+		$billetManager = new BilletManager;
+	
+		$billet = $billetManager->get_billet($idBillet);
+		
+		$commentaireManager =  new CommentaireManager;
+		$commentaires = $commentaireManager->get_commentaires(0, 30, $idBillet);
 		
 		// Ici, on doit surtout sécuriser l'affichage 
 		foreach($commentaires as $cle => $commentaire) 
@@ -26,7 +30,8 @@ class CommentairesControleur {
 	public function commentaires_front_signalement_commentaire() {
 		if (!empty($_POST['idCommentaireSignaled'])) {
 			$idCommentaire = $_POST['idCommentaireSignaled'];
-			signal_commentaire($idCommentaire);
+			$commentaireManager =  new CommentaireManager;
+			$commentaireManager->signal_commentaire($idCommentaire);
 			$idBillet=$_POST['id2_billet'];
 			header('Location: index.php?section=commentaires&billet='.$idBillet);
 		}
