@@ -1,5 +1,5 @@
 <?php
-include_once('modele/login.php');
+include_once('modele/Service/LoginManager.php'); 
 
 class LoginControleur {
 
@@ -15,7 +15,8 @@ class LoginControleur {
     public function login_traitement_formulaire($bdd)
     {
         // Etape 1 : recupérer dans la bdd la ligne qui correspond au pseudo
-        $resultat = Recuperation_ligne_correspondant_au_pseudo();
+        $loginManager = new LoginManager;
+        $resultat = $loginManager->Recuperation_ligne_correspondant_au_pseudo();
         // etape 2 : comparer le pass du hash avec celui entré par le formulaire de connexion
         if (password_verify($_POST['pass'], $resultat['pass'])) {
             $_SESSION['connected'] = "oui";
