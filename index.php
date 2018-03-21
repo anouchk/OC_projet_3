@@ -13,7 +13,7 @@ if (!isset($_GET['section']) OR $_GET['section'] == 'index') {
     $billetsControleur->billets_front_affichage_billets();
 } else if($_GET['section'] == 'commentaires') {
     include_once('controleur/commentaires.php');
-    $commentairesControleur = new commentairesControleur;
+    $commentairesControleur = new CommentairesControleur;
     $commentairesControleur->commentaires_front_affichage_commentaires();
 } else if($_GET['section'] == 'login') {
     include_once('controleur/login.php');
@@ -33,11 +33,11 @@ if (!isset($_GET['section']) OR $_GET['section'] == 'index') {
     $billetsBackControleur->billets_back_affichage_billets();  
 } else if ($_GET['section'] == 'commentaires_back') {
     include_once('controleur/commentaires_back.php');
-    $commentairesBackControleur = new CommentairesBackControleur;
+    $commentairesBackControleur = new CommmentairesBackControleur;
     $commentairesBackControleur->commentaires_back_affichage_commentaires();
 } else if ($_GET['section'] == 'suppression_commentaire') {
     include_once('controleur/commentaires_back.php');
-    $commentairesBackControleur = new CommentairesBackControleur;
+    $commentairesBackControleur = new CommmentairesBackControleur;
     $commentairesBackControleur->commentaires_back_suppression_commentaire();
 } else if ($_GET['section'] == 'signalement_commentaire') {
     include_once('controleur/commentaires.php');
