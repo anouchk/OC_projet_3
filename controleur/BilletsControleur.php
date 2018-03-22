@@ -1,5 +1,5 @@
 <?php 
-namespace Controleur;
+namespace controleur;
 use modele\Service\BilletManager;
 
 class BilletsControleur {
