@@ -1,5 +1,6 @@
 <?php
-include_once('modele/Service/BilletManager.php'); 
+namespace Controleur;
+use modele\Service\BilletManager;
 
 class BilletBackControleur {
 
@@ -13,7 +14,7 @@ class BilletBackControleur {
 	public function affichage_billet_a_modifier() {
 		if (!empty($_POST['idBilletModified'])) {
 			$idBillet = $_POST['idBilletModified'];
-			$billetManager = new BilletManager;
+			$billetManager = new BilletManager();
 			$billet = $billetManager->get_billet($idBillet);
 			include_once('vue/billet_back.php');
 		}
@@ -21,7 +22,7 @@ class BilletBackControleur {
 
 	public function enregistrement_modification_billet() {
 		if (!empty($_POST['idBilletModified'])) {
-			$billetManager = new BilletManager;		
+			$billetManager = new BilletManager();		
 			$billetManager->update_billet();
 		}
 		header('Location: index.php?section=billets_back');
@@ -33,7 +34,7 @@ class BilletBackControleur {
 
 	public function enregistrement_nouveau_billet() {
 		if (!empty($_POST['titre_billet'])&& !empty($_POST['contenu_billet'])) {
-			$billetManager = new BilletManager;	
+			$billetManager = new BilletManager();	
 			$billetManager->add_billet();
 			header('Location: index.php?section=billets_back');
 		} else {
@@ -44,7 +45,7 @@ class BilletBackControleur {
 
 	public function suppression_billet() {
 		if (!empty($_POST['idBilletASupprimer'])) {
-			$billetManager = new BilletManager;	
+			$billetManager = new BilletManager();	
 			$billetManager->delete_billet($_POST['idBilletASupprimer']);
 			header('Location: index.php?section=billets_back');
 		}

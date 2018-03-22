@@ -1,6 +1,7 @@
 <?php 
-include_once('modele/Service/BilletManager.php'); 
-include_once('modele/Service/CommentaireManager.php'); 
+namespace Controleur;
+use modele\Service\BilletManager;
+use modele\Service\CommentaireManager;
 
 class CommentairesControleur {
 
@@ -11,11 +12,11 @@ class CommentairesControleur {
 			add_commentaire();
 		}
 		$idBillet=$_GET['billet'];
-		$billetManager = new BilletManager;
+		$billetManager = new BilletManager();
 	
 		$billet = $billetManager->get_billet($idBillet);
 		
-		$commentaireManager =  new CommentaireManager;
+		$commentaireManager =  new CommentaireManager();
 		$commentaires = $commentaireManager->get_commentaires(0, 30, $idBillet);
 		
 		// Ici, on doit surtout sécuriser l'affichage 
@@ -30,7 +31,7 @@ class CommentairesControleur {
 	public function commentaires_front_signalement_commentaire() {
 		if (!empty($_POST['idCommentaireSignaled'])) {
 			$idCommentaire = $_POST['idCommentaireSignaled'];
-			$commentaireManager =  new CommentaireManager;
+			$commentaireManager =  new CommentaireManager();
 			$commentaireManager->signal_commentaire($idCommentaire);
 			$idBillet=$_POST['id2_billet'];
 			header('Location: index.php?section=commentaires&billet='.$idBillet);
