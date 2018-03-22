@@ -6,7 +6,7 @@ if(!isset($_SESSION['connected'])) {
 
 // Autoloader
 require_once "modele/Service/Autoloader.php";
-\modele\Service\Autoloader::load();
+\modele\Service\Autoloader::register();
 
 // Routeur
 include_once('modele/connexion_sql.php');
