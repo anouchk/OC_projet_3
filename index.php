@@ -5,8 +5,9 @@ if(!isset($_SESSION['connected'])) {
 }
 
 // Autoloader
-spl_autoload_register(function($class_name)) {
-    $path = str_replace('\\', '/', $class_name)
+spl_autoload_register(function($class_name) {
+    $path = str_replace('\\', '/', $class_name);
+    require_once $path . ".php";
 });
 
 // Routeur
