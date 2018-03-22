@@ -5,7 +5,8 @@ class BilletManager extends DatabaseManager{
 
 	public function add_billet() {
 
-	    global $bdd;
+	    $bdd = $this->getBdd();
+	    $bdd = parent::getBdd();
 
 		// Effectuer ici la requête qui insère le billet rédigé avec $_POST dans la base de données 
 		$requete = $bdd->prepare('INSERT INTO billets(titre,contenu, date_creation) VALUES(:titre, :contenu, :date_creation)'); 
