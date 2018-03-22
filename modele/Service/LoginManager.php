@@ -1,4 +1,5 @@
 <?php
+namespace modele\Service;
 
 class LoginManager {
 
@@ -13,7 +14,7 @@ class LoginManager {
 	// Exécuter la requête : ça exécute et ça nous retourne le nombre de lignes affectées
 	$req->execute(array('pseudo' => $pseudo));
 	// Fetch permet de récupérer le résultat de la requête et de le renvoyer sous une certaine forme (tableau par exemple)
-	$resultat = $req->fetch(PDO::FETCH_ASSOC);
+	$resultat = $req->fetch(\PDO::FETCH_ASSOC);
 	// var_dump($resultat); die;
 	return $resultat;
 	}

@@ -1,4 +1,5 @@
 <?php
+namespace modele\Service;
 
 class BilletManager{
 
@@ -22,7 +23,7 @@ class BilletManager{
     $id_Billet=$idBillet;
     $req = $bdd->prepare('SELECT id, titre, contenu, DATE_FORMAT(date_creation, \'%d/%m/%Y à %Hh%imin%ss\') AS date_creation_fr FROM billets WHERE id=?');
     $req->execute(array($id_Billet));
-    $billet = $req->fetch(PDO::FETCH_ASSOC);
+    $billet = $req->fetch(\PDO::FETCH_ASSOC);
     return $billet ;
 	}
 
@@ -59,10 +60,10 @@ class BilletManager{
     $limit = (int) $limit;
        
     $req = $bdd->prepare('SELECT id, titre, contenu, DATE_FORMAT(date_creation, \'%d/%m/%Y à %Hh%imin%ss\') AS date_creation_fr FROM billets ORDER BY date_creation DESC LIMIT :offset, :limit');
-    $req->bindParam(':offset', $offset, PDO::PARAM_INT);
-    $req->bindParam(':limit', $limit, PDO::PARAM_INT);
+    $req->bindParam(':offset', $offset, \PDO::PARAM_INT);
+    $req->bindParam(':limit', $limit, \PDO::PARAM_INT);
     $req->execute();
-    $billets = $req->fetchAll(PDO::FETCH_ASSOC);
+    $billets = $req->fetchAll(\PDO::FETCH_ASSOC);
 
     return $billets;
 

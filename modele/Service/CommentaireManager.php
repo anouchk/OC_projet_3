@@ -1,4 +1,6 @@
 <?php
+namespace modele\Service;
+
 class CommentaireManager {
 
 	public function add_commentaire () {
@@ -25,7 +27,7 @@ class CommentaireManager {
     // Récupération du billet   
     $req = $bdd->prepare('SELECT id, auteur, commentaire, DATE_FORMAT(date_commentaire, \'%d/%m/%Y à %Hh%imin%ss\') AS date_commentaire_fr FROM commentaires WHERE id=?');
     $req->execute(array($id_Commentaire));
-    $commentaire = $req->fetch(PDO::FETCH_ASSOC);
+    $commentaire = $req->fetch(\PDO::FETCH_ASSOC);
     return $commentaire ;
  	}
 
@@ -79,7 +81,7 @@ class CommentaireManager {
    
     $req = $bdd->prepare('SELECT count(*) FROM commentaires WHERE id_billet=?');
     $req->execute(array($id_Billet));
-    $nombre_commentaires = $req->fetch(PDO::FETCH_NUM);
+    $nombre_commentaires = $req->fetch(\PDO::FETCH_NUM);
     return $nombre_commentaires ;
 	}
 
@@ -100,11 +102,11 @@ class CommentaireManager {
 
 	// Récupération des commentaires
 	$PDO_statement = $bdd->prepare('SELECT id, auteur, commentaire, DATE_FORMAT(date_commentaire, \'%d/%m/%Y à %Hh%imin%ss\') AS date_commentaire_fr, signalement FROM commentaires WHERE id_billet=:id ORDER BY date_commentaire DESC LIMIT :offset, :limit');
-    $PDO_statement->bindParam(':offset', $offset, PDO::PARAM_INT);
-    $PDO_statement->bindParam(':limit', $limit, PDO::PARAM_INT);
-    $PDO_statement->bindParam(':id', $idBillet, PDO::PARAM_INT);
+    $PDO_statement->bindParam(':offset', $offset, \PDO::PARAM_INT);
+    $PDO_statement->bindParam(':limit', $limit, \PDO::PARAM_INT);
+    $PDO_statement->bindParam(':id', $idBillet, \PDO::PARAM_INT);
     $PDO_statement->execute();
-    $commentaires = $PDO_statement->fetchAll(PDO::FETCH_ASSOC);
+    $commentaires = $PDO_statement->fetchAll(\PDO::FETCH_ASSOC);
 
     return $commentaires;
 	}
