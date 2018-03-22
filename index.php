@@ -4,6 +4,11 @@ if(!isset($_SESSION['connected'])) {
     $_SESSION['connected'] = "non";
 }
 
+// Autoloader
+spl_autoload_register(function($class_name)) {
+    $path = str_replace('\\', '/', $class_name)
+});
+
 // Routeur
 include_once('modele/connexion_sql.php');
 
