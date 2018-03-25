@@ -5,7 +5,7 @@ class CommentaireManager extends DatabaseManager {
 
 	public function add_commentaire () {
 
-	    global $bdd;
+	    $bdd = $this->getBdd();
 
 		// Effectuer ici la requête qui insère le message reçu avec $_POST dans la base de données 
 		$requete = $bdd->prepare('INSERT INTO commentaires(id_billet,auteur,commentaire, date_commentaire) VALUES(:id_billet, :auteur, :commentaire, :date_commentaire)'); 
@@ -19,7 +19,7 @@ class CommentaireManager extends DatabaseManager {
 
 	public function get_commentaire($idCommentaire) {
 	
-	    global $bdd;
+	    $bdd = $this->getBdd();
 
 	    // on récupère l'id du billet dont on veut afficher les commentaires
 	    $id_Commentaire=$idCommentaire;
@@ -33,7 +33,7 @@ class CommentaireManager extends DatabaseManager {
 
  	public function update_commentaire () {
 
-	    global $bdd;
+	    $bdd = $this->getBdd();
 
 	    //Effectuer ici la requête qui met à jour le commentaire avec $_POST dans la base de données 
 		$requete = $bdd->prepare('
@@ -49,7 +49,7 @@ class CommentaireManager extends DatabaseManager {
 
 	public function delete_commentaire($idCommentaire) {
 	
-		global $bdd;
+		$bdd = $this->getBdd();
 
 		$sql = "DELETE FROM commentaires WHERE id = :id";
 		$q = array('id' => $idCommentaire);
@@ -58,7 +58,7 @@ class CommentaireManager extends DatabaseManager {
 	}
 
 	public function signal_commentaire($id_commentaire) {
-		global $bdd;
+		$bdd = $this->getBdd();
 
 		$sql = "UPDATE commentaires SET signalement = 1 WHERE id = :id_commentaire"; 
 		$req = $bdd -> prepare($sql);
@@ -66,7 +66,7 @@ class CommentaireManager extends DatabaseManager {
 	}
 
 	public function unsignal_commentaire($id_commentaire) {
-		global $bdd;
+		$bdd = $this->getBdd();
 
 		$sql = "UPDATE commentaires SET signalement = 0 WHERE id = :id_commentaire"; 
 		$req = $bdd -> prepare($sql);
@@ -75,7 +75,7 @@ class CommentaireManager extends DatabaseManager {
 
 	public function count_commentaires($idBillet) {
 	
-	    global $bdd;
+	    $bdd = $this->getBdd();
 
 	    $id_Billet=$idBillet;
 	   
@@ -87,7 +87,7 @@ class CommentaireManager extends DatabaseManager {
 
 	function get_commentaires($offset, $limit, $idBillet) {
    
-	    global $bdd;
+	    $bdd = $this->getBdd();
 
 	    // on récupère l'id du billet dont on veut afficher les commentaires
 	    if (isset($_GET['billet'])) {

@@ -6,7 +6,7 @@ class BilletManager extends DatabaseManager{
 	public function add_billet() {
 
 	    $bdd = $this->getBdd();
-	    $bdd = parent::getBdd();
+	    // $bdd = parent::getBdd(); ça marche aussi
 
 		// Effectuer ici la requête qui insère le billet rédigé avec $_POST dans la base de données 
 		$requete = $bdd->prepare('INSERT INTO billets(titre,contenu, date_creation) VALUES(:titre, :contenu, :date_creation)'); 
@@ -19,7 +19,7 @@ class BilletManager extends DatabaseManager{
 
 	public function get_billet($idBillet) {
 
-	    global $bdd;
+	    $bdd = $this->getBdd();
 
 	    $id_Billet=$idBillet;
 	    $req = $bdd->prepare('SELECT id, titre, contenu, DATE_FORMAT(date_creation, \'%d/%m/%Y à %Hh%imin%ss\') AS date_creation_fr FROM billets WHERE id=?');
@@ -30,7 +30,7 @@ class BilletManager extends DatabaseManager{
 
 	public function update_billet () {
 
-	    global $bdd;
+	    $bdd = $this->getBdd();
 
 		$requete = $bdd->prepare('
 			UPDATE billets
@@ -47,7 +47,7 @@ class BilletManager extends DatabaseManager{
 
 	public function delete_billet($id_billet) {
 
-		global $bdd;
+		$bdd = $this->getBdd();
 
 		$sql = "DELETE FROM billets WHERE id = :id_billet";
 		$req = $bdd -> prepare($sql);
@@ -56,7 +56,7 @@ class BilletManager extends DatabaseManager{
 
 	public function get_billets($offset, $limit) {
     
-	    global $bdd;
+	    $bdd = $this->getBdd();
 	    $offset = (int) $offset;
 	    $limit = (int) $limit;
 	       
