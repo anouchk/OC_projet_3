@@ -36,11 +36,11 @@ if (!isset($_GET['section']) OR $_GET['section'] == 'index') {
     $billetsBackControleur->billets_back_affichage_billets();  
 } else if ($_GET['section'] == 'commentaires_back') {
     #include_once('controleur/commentaires_back.php');
-    $commentairesBackControleur = new \controleur\CommmentairesBackControleur();
+    $commentairesBackControleur = new \controleur\CommentairesBackControleur();
     $commentairesBackControleur->commentaires_back_affichage_commentaires();
 } else if ($_GET['section'] == 'suppression_commentaire') {
     #include_once('controleur/commentaires_back.php');
-    $commentairesBackControleur = new \controleur\CommmentairesBackControleur();
+    $commentairesBackControleur = new \controleur\CommentairesBackControleur();
     $commentairesBackControleur->commentaires_back_suppression_commentaire();
 } else if ($_GET['section'] == 'signalement_commentaire') {
     #include_once('controleur/commentaires.php');
