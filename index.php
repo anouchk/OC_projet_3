@@ -24,6 +24,7 @@ if (!isset($_GET['section']) OR $_GET['section'] == 'index') {
 } else if($_GET['section'] == 'login_traitement_formulaire') {
     #include_once('controleur/login.php');
     $loginControleur = new \controleur\LoginControleur();
+    $bdd = $loginControleur->getBdd();
     $loginControleur->login_traitement_formulaire($bdd);
 } else if($_GET['section'] == 'logout') {
     #include_once('controleur/login.php');

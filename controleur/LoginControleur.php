@@ -1,8 +1,9 @@
 <?php
 namespace controleur;
 use modele\Service\LoginManager;
+use modele\Service\DatabaseManager;
 
-class LoginControleur {
+class LoginControleur extends DatabaseManager {
 
     public function login_completion_formulaire()
     {
