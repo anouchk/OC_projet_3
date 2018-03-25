@@ -7,6 +7,4 @@ class Container {
 
 	$commentaireManager =  new CommentaireManager();
 
-	return [$billetManager, $commentaireManager];
-
 }
