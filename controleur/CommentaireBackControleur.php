@@ -3,7 +3,7 @@ namespace controleur;
 use modele\Service\BilletManager;
 use modele\Service\CommentaireManager;
 
-class CommentaireBackControleur {
+class CommentaireBackControleur extends Controller {
 
 	public function affichage_commentaire_a_modifier() {
 		if (!empty($_POST['idCommentaireModified'])) {
@@ -16,8 +16,13 @@ class CommentaireBackControleur {
 
 		    $idBillet = $_POST['id2_billet'];
 		    $billetManager = new BilletManager();	
-		    $billet = $billetManager->get_billet($idBillet);
-			include_once('vue/commentaire_back.php');
+
+		    $tableau = [
+		    	'billet' => $billetManager->get_billet($idBillet)
+		    ];
+		    $this->render('vue/commentaire_back.php', $tableau);
+		 	//    $billet = $billetManager->get_billet($idBillet);
+			// include_once('vue/commentaire_back.php');
 		}
 	}
 
@@ -27,7 +32,7 @@ class CommentaireBackControleur {
 			$commentaireManager->update_commentaire();
 			$commentaireManager->unsignal_commentaire($_POST['idCommentaireModified']);
 			$idBillet=$_POST['id2_billet'];
-			header('Location: index.php?section=commentaires_back&billet='.$idBillet);
+			$this->redirect('index.php?section=commentaires_back&billet='.$idBillet);
 		}
 	} 
 }
