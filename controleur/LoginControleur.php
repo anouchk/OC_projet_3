@@ -3,6 +3,7 @@ namespace controleur;
 use modele\Service\LoginManager;
 use modele\Service\DatabaseManager;
 
+// commment extends Controller ?
 class LoginControleur extends DatabaseManager {
 
     public function login_completion_formulaire()

@@ -3,7 +3,7 @@ namespace controleur;
 use modele\Service\BilletManager;
 use modele\Service\CommentaireManager;
 
-class CommentairesBackControleur {
+class CommentairesBackControleur extends Controller {
 
 	public function commentaires_back_affichage_commentaires()
 	{

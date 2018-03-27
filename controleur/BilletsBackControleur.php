@@ -3,7 +3,7 @@ namespace controleur;
 use modele\Service\BilletManager;
 use modele\Service\CommentaireManager;
 
-class BilletsBackControleur {
+class BilletsBackControleur extends Controller {
 
 	public function billets_back_affichage_billets() {	
 		$billetManager = new BilletManager();

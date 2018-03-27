@@ -2,7 +2,7 @@
 namespace controleur;
 use modele\Service\BilletManager;
 
-class BilletsControleur {
+class BilletsControleur extends Controller {
 
 	public function billets_front_affichage_billets() {	
 
