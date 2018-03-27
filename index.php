@@ -4,9 +4,13 @@ if(!isset($_SESSION['connected'])) {
     $_SESSION['connected'] = "non";
 }
 
+require __DIR__.'/configuration/configuration.php';
+
 // Autoloader
 require_once "modele/Service/Autoloader.php";
 \modele\Service\Autoloader::register();
+
+$container = new \modele\Service\Container($configuration);
 
 // Routeur
 if (!isset($_GET['section']) OR $_GET['section'] == 'index') {
