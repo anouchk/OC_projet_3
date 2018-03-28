@@ -3,7 +3,7 @@ namespace controleur;
 use modele\Service\BilletManager;
 use modele\Service\CommentaireManager;
 
-class CommentairesControleur {
+class CommentairesControleur extends Controller {
 
 	
 

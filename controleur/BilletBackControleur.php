@@ -2,7 +2,7 @@
 namespace controleur;
 use modele\Service\BilletManager;
 
-class BilletBackControleur {
+class BilletBackControleur extends Controller {
 
 	// S'il est connecté en tant qu'admin, faire des trucs (charger les données du billet récupérées par le modèle, si elles existent. Afficher la vue du formulaire d'insertion ou de modification d'article...
 	// if (isset($_SESSION) && ($_SESSION['connected']=="oui")) {
