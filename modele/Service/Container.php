@@ -23,7 +23,5 @@ class Container {
 		}
 		return $this->billetManager;
 	}
-		
-	$commentaireManager =  new CommentaireManager();
 
 }

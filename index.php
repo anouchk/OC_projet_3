@@ -15,7 +15,7 @@ $container = new \modele\Service\Container();
 // Routeur
 if (!isset($_GET['section']) OR $_GET['section'] == 'index') {
     #include_once('controleur/billets.php');
-    $billetsControleur = new \controleur\BilletsControleur(new \modele\Service\BilletManager());
+    $billetsControleur = new \controleur\BilletsControleur($container->getBilletManager());
     $billetsControleur->billets_front_affichage_billets();
 } else if($_GET['section'] == 'commentaires') {
     #include_once('controleur/commentaires.php');
