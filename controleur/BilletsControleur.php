@@ -14,9 +14,11 @@ class BilletsControleur extends Controller {
 	$billetManager = $this->billetManager;
 
 	$view_params = [
-		'billets' => $billetManager->get_billets(0, 30);
-	]		
+		'billets' => $billetManager->get_billets(0, 30)
+	];		
     
-    $this->render('vue/billets.php', $viewparams); 
+    $this->render('vue/billets.php', $view_params); 
+
+	}
 
 }
