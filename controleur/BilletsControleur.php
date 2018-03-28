@@ -1,8 +1,7 @@
 <?php 
 namespace controleur;
-use modele\Service\BilletManager;
 
-class BilletsControleur extends Controller {
+class BilletsControleur {
 
 	private $billetManager;
 
@@ -12,13 +11,10 @@ class BilletsControleur extends Controller {
 
 	public function billets_front_affichage_billets() {	
 
+	$billetManager = $this->billetManager;	
+		
     $billets = $billetManager->get_billets(0, 30);
 
-    $tableau = [
-    	'billets' => $billets,
-    ];
-
-	$this->render('vue/billets.php', $tableau); 
-	}
+    include_once('vue/billets.php'); 
 
 }
