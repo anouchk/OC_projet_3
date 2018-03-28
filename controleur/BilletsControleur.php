@@ -1,7 +1,7 @@
 <?php 
 namespace controleur;
 
-class BilletsControleur {
+class BilletsControleur extends Controller {
 
 	private $billetManager;
 
@@ -11,10 +11,12 @@ class BilletsControleur {
 
 	public function billets_front_affichage_billets() {	
 
-	$billetManager = $this->billetManager;	
-		
-    $billets = $billetManager->get_billets(0, 30);
+	$billetManager = $this->billetManager;
 
-    include_once('vue/billets.php'); 
+	$view_params = [
+		'billets' => $billetManager->get_billets(0, 30);
+	]		
+    
+    $this->render('vue/billets.php', $viewparams); 
 
 }
