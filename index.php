@@ -10,7 +10,7 @@ require __DIR__.'/configuration/configuration.php';
 require_once "modele/Service/Autoloader.php";
 \modele\Service\Autoloader::register();
 
-$container = new \modele\Service\Container($configuration);
+$container = new \modele\Service\Container();
 
 // Routeur
 if (!isset($_GET['section']) OR $_GET['section'] == 'index') {
