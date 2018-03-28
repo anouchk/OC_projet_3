@@ -4,6 +4,12 @@ namespace modele\Service;
 class Container {
 
 	private $pdo;
+	private $billetManager;
+	private $configuration 
+
+	public function __construct(array $configuration) {
+		$this->configuration = $configuration;
+	}
  
 	public function getPDO()
 	{
@@ -14,8 +20,6 @@ class Container {
 
 		return $this->pdo;
 	}
-
-	private $billetManager;
 
 	public function getBilletManager() {
 		if ($this->billetManager === null) {
