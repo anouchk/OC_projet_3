@@ -19,7 +19,7 @@ class Container {
 
 	public function getBilletManager() {
 		if ($this->billetManager === null) {
-			$this->billetManager = new BilletManager();
+			$this->billetManager = new BilletManager($this->getPDO());
 		}
 		return $this->billetManager;
 	}
