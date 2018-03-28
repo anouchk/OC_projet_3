@@ -2,6 +2,7 @@
 
 namespace controleur;
 
+// Notre super Controller pour systématiser les include et les redirections
 abstract class Controller {
 
 	public function render($file, array $view_params)
