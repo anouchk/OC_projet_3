@@ -31,9 +31,9 @@ class Container {
 
 	public function getCommentaireManager() {
 		if ($this->commentaireManager === null) {
-			$this->commentaireManager = new CommentairetManager($this->getPDO());
+			$this->commentaireManager = new CommentaireManager($this->getPDO());
 		}
-		return $this->commentairetManager;
+		return $this->commentaireManager;
 	}
 
 }

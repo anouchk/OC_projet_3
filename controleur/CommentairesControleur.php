@@ -14,11 +14,13 @@ class CommentairesControleur extends Controller {
 		}
 		$idBillet=$_GET['billet'];
 		$billetManager = $this->billetManager;
-	
-		$billet = $billetManager->get_billet($idBillet);
-		
 		$commentaireManager =  $this->commentaireManager;
-		$commentaires = $commentaireManager->get_commentaires(0, 30, $idBillet);
+
+		$view_params = [
+    		'billet' => $billetManager->get_billet($idBillet),
+    		'commentaires' => $commentaireManager->get_commentaires(0, 30, $idBillet)
+    	];
+ 
 		
 		// Ici, on doit surtout sécuriser l'affichage 
 		foreach($commentaires as $cle => $commentaire) 
@@ -26,7 +28,7 @@ class CommentairesControleur extends Controller {
 		    $commentaire[$cle]['auteur'] = htmlspecialchars($commentaire['auteur']); 
 		    $commentaire[$cle]['commentaire'] = nl2br(htmlspecialchars($commentaire['commentaire'])); 
 		} 
-		include_once('vue/commentaires.php'); 
+		$this->render('vue/commentaires.php', $view_params);
 	}
 
 	public function commentaires_front_signalement_commentaire() {
