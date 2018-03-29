@@ -5,18 +5,19 @@ use modele\Service\CommentaireManager;
 
 class CommentairesControleur extends Controller {
 
-	
+	private $commentaireManager;
+	private $billetManager;	
 
 	public function commentaires_front_affichage_commentaires() {
 		if (!empty($_POST)) {
 			add_commentaire();
 		}
 		$idBillet=$_GET['billet'];
-		$billetManager = new BilletManager();
+		$billetManager = $this->billetManager;
 	
 		$billet = $billetManager->get_billet($idBillet);
 		
-		$commentaireManager =  new CommentaireManager();
+		$commentaireManager =  $this->commentaireManager;
 		$commentaires = $commentaireManager->get_commentaires(0, 30, $idBillet);
 		
 		// Ici, on doit surtout sécuriser l'affichage 
