@@ -1,7 +1,5 @@
 <?php
 namespace controleur;
-use modele\Service\LoginManager;
-use modele\Service\DatabaseManager;
 
 class LoginControleur extends Controller {
 
