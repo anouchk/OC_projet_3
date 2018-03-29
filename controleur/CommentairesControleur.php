@@ -17,7 +17,7 @@ class CommentairesControleur extends Controller {
 		}
 		$idBillet=$_GET['billet'];
 		$billetManager = $this->billetManager;
-		$commentaireManager =  $this->commentaireManager;
+		$commentaireManager = $this->commentaireManager;
 
 		$billet = $billetManager->get_billet($idBillet);
 		$commentaires = $commentaireManager->get_commentaires(0, 30, $idBillet);
