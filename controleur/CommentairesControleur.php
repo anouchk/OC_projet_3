@@ -8,6 +8,11 @@ class CommentairesControleur extends Controller {
 	private $commentaireManager;
 	private $billetManager;	
 
+	public function __construct($billetManager, $commentaireManager) {
+		$this->billetManager = $billetManager;
+		$this->commentaireManager = $commentaireManager;
+	}
+
 	public function commentaires_front_affichage_commentaires() {
 		if (!empty($_POST)) {
 			add_commentaire();

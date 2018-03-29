@@ -21,7 +21,7 @@ if (!isset($_GET['section']) OR $_GET['section'] == 'index') {
     $billetsControleur->billets_front_affichage_billets();
 } else if($_GET['section'] == 'commentaires') {
     #include_once('controleur/commentaires.php');
-    $commentairesControleur = new \controleur\CommentairesControleur($container->getCommentaireManager());
+    $commentairesControleur = new \controleur\CommentairesControleur($container->getBilletManager(), $container->getCommentaireManager());
     $commentairesControleur->commentaires_front_affichage_commentaires();
 } else if($_GET['section'] == 'login') {
     #include_once('controleur/login.php');
