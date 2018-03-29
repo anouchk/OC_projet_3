@@ -6,6 +6,7 @@ class Container {
 	private $pdo;
 	private $billetManager;
 	private $commentaireManager;
+	private $loginManager;
 	private $configuration;
 
 	public function __construct(array $configuration) {
