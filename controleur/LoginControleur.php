@@ -3,8 +3,7 @@ namespace controleur;
 use modele\Service\LoginManager;
 use modele\Service\DatabaseManager;
 
-// commment extends Controller ?
-class LoginControleur  {
+class LoginControleur extends Controller {
 
     private $loginManager;
 
