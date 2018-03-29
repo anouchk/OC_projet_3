@@ -38,7 +38,7 @@ if (!isset($_GET['section']) OR $_GET['section'] == 'index') {
     $loginControleur->logout();    
 } else if($_GET['section'] == 'billets_back') {
     #include_once('controleur/billets_back.php');
-    $billetsBackControleur = new \controleur\BilletsBackControleur();
+    $billetsBackControleur = new \controleur\BilletsBackControleur($container->getBilletManager(), $container->getCommentaireManager());
     $billetsBackControleur->billets_back_affichage_billets();  
 } else if ($_GET['section'] == 'commentaires_back') {
     #include_once('controleur/commentaires_back.php');

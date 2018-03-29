@@ -5,8 +5,16 @@ use modele\Service\CommentaireManager;
 
 class BilletsBackControleur extends Controller {
 
+	private $commentaireManager;
+	private $billetManager;	
+
+	public function __construct($billetManager, $commentaireManager) {
+		$this->billetManager = $billetManager;
+		$this->commentaireManager = $commentaireManager;
+	}
+
 	public function billets_back_affichage_billets() {	
-		$billetManager = new BilletManager();
+		$billetManager = $this->billetManager();
 		$billets = $billetManager->get_billets(0,30);
 
 		// Ici, on doit surtout sécuriser l'affichage. Doit-on vraiment ?
