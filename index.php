@@ -50,7 +50,7 @@ if (!isset($_GET['section']) OR $_GET['section'] == 'index') {
     $commentairesBackControleur->commentaires_back_suppression_commentaire();
 } else if ($_GET['section'] == 'signalement_commentaire') {
     #include_once('controleur/commentaires.php');
-    $commentairesControleur = new \controleur\CommentairesControleur();
+    $commentairesControleur = new \controleur\CommentairesControleur($container->getBilletManager(), $container->getCommentaireManager());
     $commentairesControleur->commentaires_front_signalement_commentaire();
 } else if ($_GET['section'] == 'modification_commentaire') {
     #include_once('controleur/commentaire_back.php');

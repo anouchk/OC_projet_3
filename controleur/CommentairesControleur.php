@@ -45,7 +45,7 @@ class CommentairesControleur extends Controller {
 			$commentaireManager =  new CommentaireManager();
 			$commentaireManager->signal_commentaire($idCommentaire);
 			$idBillet=$_POST['id2_billet'];
-			header('Location: index.php?section=commentaires&billet='.$idBillet);
+			redirect('index.php?section=commentaires&billet='.$idBillet);
 		}
 	} 
 }
