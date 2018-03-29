@@ -25,7 +25,7 @@ if (!isset($_GET['section']) OR $_GET['section'] == 'index') {
     $commentairesControleur->commentaires_front_affichage_commentaires();
 } else if($_GET['section'] == 'login') {
     #include_once('controleur/login.php');
-    $loginControleur = new \controleur\LoginControleur();
+    $loginControleur = new \controleur\LoginControleur($container->getLoginManager());
     $loginControleur->login_completion_formulaire();
 } else if($_GET['section'] == 'login_traitement_formulaire') {
     #include_once('controleur/login.php');

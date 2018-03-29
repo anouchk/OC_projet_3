@@ -4,7 +4,7 @@ use modele\Service\LoginManager;
 use modele\Service\DatabaseManager;
 
 // commment extends Controller ?
-class LoginControleur extends DatabaseManager {
+class LoginControleur  {
 
     private $loginManager;
 
