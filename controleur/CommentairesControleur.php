@@ -42,10 +42,10 @@ class CommentairesControleur extends Controller {
 	public function commentaires_front_signalement_commentaire() {
 		if (!empty($_POST['idCommentaireSignaled'])) {
 			$idCommentaire = $_POST['idCommentaireSignaled'];
-			$commentaireManager =  new CommentaireManager();
+			$commentaireManager =  $this->commentaireManager;
 			$commentaireManager->signal_commentaire($idCommentaire);
 			$idBillet=$_POST['id2_billet'];
-			redirect('index.php?section=commentaires&billet='.$idBillet);
+			$this->redirect('index.php?section=commentaires&billet='.$idBillet);
 		}
 	} 
 }
