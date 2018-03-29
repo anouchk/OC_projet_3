@@ -5,6 +5,7 @@ class Container {
 
 	private $pdo;
 	private $billetManager;
+	private $commentaireManager;
 	private $configuration;
 
 	public function __construct(array $configuration) {
@@ -26,6 +27,13 @@ class Container {
 			$this->billetManager = new BilletManager($this->getPDO());
 		}
 		return $this->billetManager;
+	}
+
+	public function getCommentaireManager() {
+		if ($this->commentaireManager === null) {
+			$this->commentaireManager = new CommentairetManager($this->getPDO());
+		}
+		return $this->commentairetManager;
 	}
 
 }
