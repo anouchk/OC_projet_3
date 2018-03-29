@@ -6,6 +6,12 @@ use modele\Service\DatabaseManager;
 // commment extends Controller ?
 class LoginControleur extends DatabaseManager {
 
+    private $loginManager;
+
+    public function __construct($loginManager) {
+        $this->logintManager = $loginManager;
+    }
+
     public function login_completion_formulaire()
     {
         if (isset($_SESSION) && $_SESSION['connected']=="oui") {
@@ -18,7 +24,7 @@ class LoginControleur extends DatabaseManager {
     public function login_traitement_formulaire($bdd)
     {
         // Etape 1 : recupérer dans la bdd la ligne qui correspond au pseudo
-        $loginManager = new LoginManager();
+        $loginManager = $this->logintManager;
         $resultat = $loginManager->Recuperation_ligne_correspondant_au_pseudo();
         // etape 2 : comparer le pass du hash avec celui entré par le formulaire de connexion
         if (password_verify($_POST['pass'], $resultat['pass'])) {
