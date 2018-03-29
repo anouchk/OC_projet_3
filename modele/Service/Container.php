@@ -36,4 +36,11 @@ class Container {
 		return $this->commentaireManager;
 	}
 
+	public function getLoginManager() {
+		if ($this->loginManager === null) {
+			$this->loginManager = new LoginManager($this->getPDO());
+		}
+		return $this->loginManager;
+	}
+
 }
