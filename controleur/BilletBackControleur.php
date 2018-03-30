@@ -4,17 +4,16 @@ use modele\Service\BilletManager;
 
 class BilletBackControleur extends Controller {
 
-	// S'il est connecté en tant qu'admin, faire des trucs (charger les données du billet récupérées par le modèle, si elles existent. Afficher la vue du formulaire d'insertion ou de modification d'article...
-	// if (isset($_SESSION) && ($_SESSION['connected']=="oui")) {
-	// 	// faire des trucs
-	// } else {
-	//     header('Location: index.php?section=login&error=1');
-	// }
+	private $BilletManager;
+
+	public function __construct($billetManager) {
+		$this->billetManager = $billetManager;
+	}
 
 	public function affichage_billet_a_modifier() {
 		if (!empty($_POST['idBilletModified'])) {
 			$idBillet = $_POST['idBilletModified'];
-			$billetManager = new BilletManager();
+			$billetManager = $this->billetManager;
 			$billet = $billetManager->get_billet($idBillet);
 			include_once('vue/billet_back.php');
 		}
@@ -22,7 +21,7 @@ class BilletBackControleur extends Controller {
 
 	public function enregistrement_modification_billet() {
 		if (!empty($_POST['idBilletModified'])) {
-			$billetManager = new BilletManager();		
+			$billetManager = $this->billetManager;		
 			$billetManager->update_billet();
 		}
 		header('Location: index.php?section=billets_back');
@@ -34,7 +33,7 @@ class BilletBackControleur extends Controller {
 
 	public function enregistrement_nouveau_billet() {
 		if (!empty($_POST['titre_billet'])&& !empty($_POST['contenu_billet'])) {
-			$billetManager = new BilletManager();	
+			$billetManager = $this->billetManager;	
 			$billetManager->add_billet();
 			header('Location: index.php?section=billets_back');
 		} else {
@@ -45,7 +44,7 @@ class BilletBackControleur extends Controller {
 
 	public function suppression_billet() {
 		if (!empty($_POST['idBilletASupprimer'])) {
-			$billetManager = new BilletManager();	
+			$billetManager = $this->billetManager;	
 			$billetManager->delete_billet($_POST['idBilletASupprimer']);
 			header('Location: index.php?section=billets_back');
 		}

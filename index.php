@@ -62,22 +62,22 @@ if (!isset($_GET['section']) OR $_GET['section'] == 'index') {
     $commentaireBackControleur->enregistrement_modification_commentaire();
 } else if ($_GET['section'] == 'modification_billet') {
     #include_once('controleur/billet_back.php');
-    $billetBackControleur = new \controleur\BilletBackControleur();
+    $billetBackControleur = new \controleur\BilletBackControleur($container->getBilletManager());
     $billetBackControleur->affichage_billet_a_modifier() ;
 } else if ($_GET['section'] == 'enregistrer_modification_billet') {
     #include_once('controleur/billet_back.php');
-    $billetBackControleur = new \controleur\BilletBackControleur();
+    $billetBackControleur = new \controleur\BilletBackControleur($container->getBilletManager());
     $billetBackControleur->enregistrement_modification_billet();
 } else if ($_GET['section'] == 'creation_billet') {
     #include_once('controleur/billet_back.php');
-    $billetBackControleur = new \controleur\BilletBackControleur();
+    $billetBackControleur = new \controleur\BilletBackControleur($container->getBilletManager());
     $billetBackControleur->affichage_billet_a_creer() ;
 } else if ($_GET['section'] == 'enregistrer_nouveau_billet') {
     #include_once('controleur/billet_back.php');
-    $billetBackControleur = new \controleur\BilletBackControleur();
+    $billetBackControleur = new \controleur\BilletBackControleur($container->getBilletManager());
     $billetBackControleur->enregistrement_nouveau_billet();
 } else if ($_GET['section'] == 'suppression_billet') {
     #include_once('controleur/billet_back.php');
-    $billetBackControleur = new \controleur\BilletBackControleur();
+    $billetBackControleur = new \controleur\BilletBackControleur($container->getBilletManager());
     $billetBackControleur->suppression_billet();
 }
