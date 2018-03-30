@@ -25,7 +25,11 @@ class BilletsBackControleur extends Controller {
 		    $billets[$cle]['nbcommentaires'] = $commentaireManager->count_commentaires($billet['id']);
 		} 
 
-		include_once('vue/billets_back.php'); 
+		$view_params = [
+    		'billets' => $billets,
+    	];
+
+    	 $this->render('vue/billets_back.php', $view_params); 
 	}
 }
 
