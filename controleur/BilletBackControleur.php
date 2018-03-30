@@ -14,7 +14,10 @@ class BilletBackControleur extends Controller {
 			$idBillet = $_POST['idBilletModified'];
 			$billetManager = $this->billetManager;
 			$billet = $billetManager->get_billet($idBillet);
-			include_once('vue/billet_back.php');
+			$view_params = [
+				'billet' => $billet,
+			];
+			$this->render('vue/billet_back.php', $view_params); 
 		}
 	}
 
@@ -23,11 +26,12 @@ class BilletBackControleur extends Controller {
 			$billetManager = $this->billetManager;		
 			$billetManager->update_billet();
 		}
-		header('Location: index.php?section=billets_back');
+		$this->redirect('index.php?section=billets_back');
 	} 
 
 	public function affichage_billet_a_creer() {
-		include_once('vue/new_billet_back.php');
+		$view_params = [];
+		$this->render('vue/new_billet_back.php', $view_params); 
 	}
 
 	public function enregistrement_nouveau_billet() {
@@ -37,7 +41,10 @@ class BilletBackControleur extends Controller {
 			header('Location: index.php?section=billets_back');
 		} else {
 			$message = "Le contenu et/ou le titre sont vides. Veuillez remplir le formulaire.";
-			include_once('vue/new_billet_back.php');
+			$view_params = [
+				$billet = $billetManager->get_billet($idBillet)
+			];
+			$this->render('vue/new_billet_back.php', $view_params); 
 		}
 	}
 
@@ -45,10 +52,9 @@ class BilletBackControleur extends Controller {
 		if (!empty($_POST['idBilletASupprimer'])) {
 			$billetManager = $this->billetManager;	
 			$billetManager->delete_billet($_POST['idBilletASupprimer']);
-			header('Location: index.php?section=billets_back');
+			$this->redirect('index.php?section=billets_back');
 		}
 	}
-
 }
 
 
