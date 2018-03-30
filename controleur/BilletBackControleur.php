@@ -1,6 +1,5 @@
 <?php
 namespace controleur;
-use modele\Service\BilletManager;
 
 class BilletBackControleur extends Controller {
 
