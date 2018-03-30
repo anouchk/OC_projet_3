@@ -29,7 +29,7 @@ if (!isset($_GET['section']) OR $_GET['section'] == 'index') {
     $loginControleur->login_completion_formulaire();
 } else if($_GET['section'] == 'login_traitement_formulaire') {
     #include_once('controleur/login.php');
-    $loginControleur = new \controleur\LoginControleur();
+    $loginControleur = new \controleur\LoginControleur($container->getLoginManager());
     $bdd = $loginControleur->getBdd();
     $loginControleur->login_traitement_formulaire($bdd);
 } else if($_GET['section'] == 'logout') {
