@@ -1,7 +1,5 @@
 <?php
 namespace controleur;
-use modele\Service\BilletManager;
-use modele\Service\CommentaireManager;
 
 class CommentairesBackControleur extends Controller {
 
