@@ -54,11 +54,11 @@ if (!isset($_GET['section']) OR $_GET['section'] == 'index') {
     $commentairesControleur->commentaires_front_signalement_commentaire();
 } else if ($_GET['section'] == 'modification_commentaire') {
     #include_once('controleur/commentaire_back.php');
-    $commentaireBackControleur = new \controleur\CommentaireBackControleur();
+    $commentaireBackControleur = new \controleur\CommentaireBackControleur($container->getBilletManager(), $container->getCommentaireManager());
     $commentaireBackControleur->affichage_commentaire_a_modifier();
 } else if ($_GET['section'] == 'enregistrer_modification_commentaire') {
     #include_once('controleur/commentaire_back.php');
-    $commentaireBackControleur = new \controleur\CommentaireBackControleur();
+    $commentaireBackControleur = new \controleur\CommentaireBackControleur($container->getBilletManager(), $container->getCommentaireManager());
     $commentaireBackControleur->enregistrement_modification_commentaire();
 } else if ($_GET['section'] == 'modification_billet') {
     #include_once('controleur/billet_back.php');
