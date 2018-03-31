@@ -26,7 +26,12 @@ class CommentairesBackControleur extends Controller {
 			// lancer la requête de récupération des données du billet pour pouvoir afficher le titre du billet en haut de la liste des commentaires
 			$billetManager = $this->billetManager;
 			$billet = $billetManager->get_billet($idBillet);
-		    include_once('vue/commentaires_back.php');
+			$view_params = [
+    			'billet' => $billet,
+    			'commentaires' => $commentaires
+    		];
+
+    	 	$this->render('vue/commentaires_back.php', $view_params); 
 		}   
 	}
 
@@ -36,7 +41,7 @@ class CommentairesBackControleur extends Controller {
 			$idCommentaire = $_POST['idCommentaire'];
 			$commentaireManager =  $this->commentaireManager;
 			$commentaireManager->delete_commentaire($idCommentaire);
-			header('Location: index.php?section=commentaires_back&billet='.$idBillet);
+			$this->redirect('index.php?section=commentaires_back&billet='.$idBillet);
 		}    
 	}
 
