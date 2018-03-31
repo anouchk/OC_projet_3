@@ -5,11 +5,19 @@ use modele\Service\CommentaireManager;
 
 class CommentairesBackControleur extends Controller {
 
+	private $commentaireManager;
+	private $billetManager;	
+
+	public function __construct($billetManager, $commentaireManager) {
+		$this->billetManager = $billetManager;
+		$this->commentaireManager = $commentaireManager;
+	}
+
 	public function commentaires_back_affichage_commentaires()
 	{
 		if (!empty($_GET['billet'])) {
 			$idBillet = $_GET['billet'];
-			$commentaireManager =  new CommentaireManager();
+			$commentaireManager =  $this->commentaireManager;
 		    $commentaires = $commentaireManager->get_commentaires(0, 30, $idBillet);
 			// on sécurise l'affichage des commentaires
 			foreach($commentaires as $cle => $commentaire) 
@@ -18,7 +26,7 @@ class CommentairesBackControleur extends Controller {
 			    $commentaire[$cle]['commentaire'] = nl2br(htmlspecialchars($commentaire['commentaire'])); 
 			} 
 			// lancer la requête de récupération des données du billet pour pouvoir afficher le titre du billet en haut de la liste des commentaires
-			$billetManager = new BilletManager();
+			$billetManager = $this->billetManager;
 			$billet = $billetManager->get_billet($idBillet);
 		    include_once('vue/commentaires_back.php');
 		}   
@@ -28,7 +36,7 @@ class CommentairesBackControleur extends Controller {
 	{	if (!empty($_POST['idCommentaire'])) {
 			$idBillet = $_POST['idBillet'];
 			$idCommentaire = $_POST['idCommentaire'];
-			$commentaireManager =  new CommentaireManager();
+			$commentaireManager =  $this->commentaireManager;
 			$commentaireManager->delete_commentaire($idCommentaire);
 			header('Location: index.php?section=commentaires_back&billet='.$idBillet);
 		}    
