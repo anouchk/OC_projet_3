@@ -12,13 +12,12 @@ class CommentairesControleur extends Controller {
 	}
 
 	public function commentaires_front_affichage_commentaires() {
-		if (!empty($_POST)) {
-			add_commentaire();
-		}
-		$idBillet=$_GET['billet'];
 		$billetManager = $this->billetManager;
 		$commentaireManager = $this->commentaireManager;
-
+		if (!empty($_POST)) {
+			$commentaireManager->add_commentaire();
+		}
+		$idBillet=$_GET['billet'];
 		$billet = $billetManager->get_billet($idBillet);
 		$commentaires = $commentaireManager->get_commentaires(0, 30, $idBillet);
 
