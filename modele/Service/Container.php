@@ -12,9 +12,15 @@ class Container implements ContainerInterface {
 	private $commentaireManager;
 	private $loginManager;
 	private $configuration;
+	private $services = [];
 
 	public function __construct(array $configuration) {
 		$this->configuration = $configuration;
+
+		$this->services = [
+			'billetManager' => $this->getBilletManager(),
+			'commentaireManager' => $this->getCommentaireManager(),
+		];
 	}
  
 	public function getPDO()
@@ -49,6 +55,7 @@ class Container implements ContainerInterface {
 	}
 
 	public function get($id) {
+		return $this->services[$id];
 	}
 
 	public function has($id) {
