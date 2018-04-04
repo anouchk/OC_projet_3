@@ -15,6 +15,9 @@ $configuration = [];
 require __DIR__.'/config/configuration.php';
 $container = new \modele\Service\Container($configuration);
 
+$billetManager = $container->get('billetManager');
+var_dump($billetManager);
+
 // Routeur
 if (!isset($_GET['section']) OR $_GET['section'] == 'index') {
     #include_once('controleur/billets.php');
