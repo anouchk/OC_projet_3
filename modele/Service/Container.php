@@ -55,10 +55,15 @@ class Container implements ContainerInterface {
 	}
 
 	public function get($id) {
-		return $this->services[$id];
+		if ($this->has($id)) {
+			return $this->services[$id];
+		} else {
+			return false;
+		}
 	}
 
 	public function has($id) {
+		return array_key_exists($id, $this->services);
 	}
 
 }
