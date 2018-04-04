@@ -9,6 +9,7 @@ if(!isset($_SESSION['connected'])) {
 // Autoloader
 require_once "modele/Service/Autoloader.php";
 \modele\Service\Autoloader::register();
+require_once "vendor/autoload.php";
 
 $configuration = [];
 require __DIR__.'/config/configuration.php';
