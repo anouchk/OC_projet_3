@@ -1,7 +1,11 @@
 <?php
 namespace modele\Service;
 
-class Container {
+use Psr\Container\ContainerExceptionInterface;
+use Psr\Container\ContainerInterface;
+use Psr\Container\NotFoundExceptionInterface;
+
+class Container implements ContainerInterface {
 
 	private $pdo;
 	private $billetManager;
@@ -42,6 +46,12 @@ class Container {
 			$this->loginManager = new LoginManager($this->getPDO());
 		}
 		return $this->loginManager;
+	}
+
+	public function get($id) {
+	}
+
+	public function has($id) {
 	}
 
 }
