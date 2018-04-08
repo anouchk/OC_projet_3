@@ -11,7 +11,12 @@ require_once "vendor/autoload.php";
 
 $configuration = [];
 require __DIR__.'/config/configuration.php';
+// var_dump($configuration);
 $container = new \modele\Service\Container($configuration);
+// var_dump($configuration);
+// extract($configuration);
+// var_dump($db_dsn, $db_user, $db_pass);
+// var_dump($container->$configuration);
 
 // Routeur
 if (!isset($_GET['section']) OR $_GET['section'] == 'index') {
