@@ -20,6 +20,7 @@ class Container implements ContainerInterface {
 		$this->services = [
 			'billetManager' => $this->getBilletManager(),
 			'commentaireManager' => $this->getCommentaireManager(),
+			'loginManager' => $this->getLoginManager(),
 		];
 	}
  
