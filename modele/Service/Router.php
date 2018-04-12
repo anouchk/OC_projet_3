@@ -7,7 +7,7 @@ class Router {
 	private $request_uri;
 	private $match = [
 		'login' => [
-			'controller' => 'LoginControleur',
+			'controller' => '\controleur\LoginControleur',
 			'action' => 'login_completion_formulaire',
 		],
 		'commentaires' => [
@@ -38,7 +38,10 @@ class Router {
 			$controller = $this->match[$this->request_uri]['controller'];
 			$action = $this->match[$this->request_uri]['action'];
 
-			var_dump($controller, $action);
+			return [
+				'controller' => $controller,
+				'action' => $action,
+			];
 		}
 
 	}

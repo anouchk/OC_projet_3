@@ -14,9 +14,15 @@ require __DIR__.'/config/configuration.php';
 $container = new \modele\Service\Container($configuration);
 
 $router = new \modele\Service\Router($_SERVER['REQUEST_URI']);
-$router->resolve();
+$resolve = $router->resolve();
 
-// var_dump($router);
+$controller = $resolve['controller'];
+$action = $resolve['action'];
+
+$controller = new $controller($container->getLoginManager());
+$controller->$action();
+
+die;
 
 
 // Routeur
