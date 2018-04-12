@@ -33,6 +33,13 @@ class Router {
 	// Le rôle de la fonction resolve, c'est de trouver le controleur et l'action par rapport à la route
 	public function resolve()
 	{
+		if (isset($this->match[$this->request_uri])) {
+ 
+			$controller = $this->match[$this->request_uri]['controller'];
+			$action = $this->match[$this->request_uri]['action'];
+
+			var_dump($controller, $action);
+		}
 
 	}
 } 
