@@ -13,14 +13,14 @@ $configuration = [];
 require __DIR__.'/config/configuration.php';
 $container = new \modele\Service\Container($configuration);
 
-// $router = new \modele\Service\Router($_SERVER['REQUEST_URI']);
-// $resolve = $router->resolve();
+$router = new \modele\Service\Router($_SERVER['REQUEST_URI']);
+$resolve = $router->resolve();
 
-// $controllerCaller = $resolve['controllerCaller'];
-// $action = $resolve['action'];
+$controllerCaller = $resolve['controllerCaller'];
+$action = $resolve['action'];
 
-// $controller = $container->$controllerCaller();
-// $controller->$action();
+$controller = $container->$controllerCaller();
+$controller->$action();
 
 // die;
 
