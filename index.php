@@ -13,20 +13,20 @@ $configuration = [];
 require __DIR__.'/config/configuration.php';
 $container = new \modele\Service\Container($configuration);
 
-$router = new \modele\Service\Router($_SERVER['REQUEST_URI']);
-$resolve = $router->resolve();
+// $router = new \modele\Service\Router($_SERVER['REQUEST_URI']);
+// $resolve = $router->resolve();
 
-$action = $resolve['action'];
-$controller = new $resolve['controller']($container->getLoginManager());
-$controller->$action();
+// $action = $resolve['action'];
+// $controller = new $resolve['controller']($container->getLoginManager());
+// $controller->$action();
 
-die;
+// die;
 
 
 // Routeur
 if (!isset($_GET['section']) OR $_GET['section'] == 'index') {
     #include_once('controleur/billets.php');
-    $billetsControleur = new \controleur\BilletsControleur($container->get('billetManager'));
+    $billetsControleur = $container->getBilletsController();
     $billetsControleur->billets_front_affichage_billets();
 } else if($_GET['section'] == 'commentaires') {
     #include_once('controleur/commentaires.php');
@@ -38,7 +38,7 @@ if (!isset($_GET['section']) OR $_GET['section'] == 'index') {
     $loginControleur->login_completion_formulaire();
 } else if($_GET['section'] == 'login_traitement_formulaire') {
     #include_once('controleur/login.php');
-    $loginControleur = new \controleur\LoginControleur($container->get('loginManager'));
+    $loginControleur = $container->getLoginController();
     $bdd = $container->getLoginManager()->getBdd();
     $loginControleur->login_traitement_formulaire($bdd);
 } else if($_GET['section'] == 'logout') {

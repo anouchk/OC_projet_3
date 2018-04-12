@@ -1,6 +1,8 @@
 <?php
 namespace modele\Service;
 
+use controleur\BilletsControleur;
+use controleur\LoginControleur;
 use Psr\Container\ContainerExceptionInterface;
 use Psr\Container\ContainerInterface;
 use Psr\Container\NotFoundExceptionInterface;
@@ -13,6 +15,8 @@ class Container implements ContainerInterface {
 	private $loginManager;
 	private $configuration;
 	private $services = [];
+	private $billetsController;
+	private $loginController;
 
 	public function __construct(array $configuration) {
 		$this->configuration = $configuration;
@@ -66,6 +70,22 @@ class Container implements ContainerInterface {
 
 	public function has($id) {
 		return array_key_exists($id, $this->services);
+	}
+
+	public function getBilletsController()
+	{
+		if ($this->billetsController === null) {
+			$this->billetsController = new BilletsControleur($this->getBilletManager());
+		}
+		return $this->billetsController;
+	}
+
+	public function getLoginController()
+	{
+		if ($this->loginController === null) {
+			$this->loginController = new LoginControleur($this->getLoginManager());
+		}
+		return $this->loginController;
 	}
 
 }
