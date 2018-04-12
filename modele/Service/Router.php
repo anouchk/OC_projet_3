@@ -6,6 +6,10 @@ class Router {
 
 	private $request_uri;
 	private $match = [
+		'index.php' => [
+			'controllerCaller' => 'getBilletsController',
+			'action' => 'billets_front_affichage_billets',
+		],
 		'login' => [
 			'controllerCaller' => 'getLoginController',
 			'action' => 'login_completion_formulaire',

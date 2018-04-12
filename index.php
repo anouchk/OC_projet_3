@@ -22,7 +22,7 @@ $action = $resolve['action'];
 $controller = $container->$controllerCaller();
 $controller->$action();
 
-// die;
+die;
 
 
 // Routeur
