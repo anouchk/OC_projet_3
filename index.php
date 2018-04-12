@@ -16,7 +16,7 @@ $container = new \modele\Service\Container($configuration);
 $router = new \modele\Service\Router($_SERVER['REQUEST_URI']);
 $router->resolve();
 
-var_dump($router);
+// var_dump($router);
 
 
 // Routeur
