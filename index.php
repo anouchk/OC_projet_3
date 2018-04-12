@@ -16,10 +16,8 @@ $container = new \modele\Service\Container($configuration);
 $router = new \modele\Service\Router($_SERVER['REQUEST_URI']);
 $resolve = $router->resolve();
 
-$controller = $resolve['controller'];
 $action = $resolve['action'];
-
-$controller = new $controller($container->getLoginManager());
+$controller = new $resolve['controller']($container->getLoginManager());
 $controller->$action();
 
 die;
