@@ -10,6 +10,10 @@ class Router {
 			'controllerCaller' => 'getBilletsController',
 			'action' => 'billets_front_affichage_billets',
 		],
+		'index' => [
+			'controllerCaller' => 'getBilletsController',
+			'action' => 'billets_front_affichage_billets',
+		],
 		'login' => [
 			'controllerCaller' => 'getLoginController',
 			'action' => 'login_completion_formulaire',
