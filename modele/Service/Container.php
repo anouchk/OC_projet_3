@@ -20,7 +20,7 @@ class Container implements ContainerInterface {
 	private $loginManager;
 	private $configuration;
 	private $services = [];
-	
+
 	private $billetsController;
 	private $loginController;
 	private $commentairesController;
@@ -95,6 +95,46 @@ class Container implements ContainerInterface {
 	{
 		if ($this->loginController === null) {
 			$this->loginController = new LoginControleur($this->getLoginManager());
+		}
+		return $this->loginController;
+	}
+
+	public function getCommentairesController()
+	{
+		if ($this->loginController === null) {
+			$this->loginController = new CommentairesControleur($this->getCommentairesnManager());
+		}
+		return $this->loginController;
+	}
+
+	public function getBilletsBackController()
+	{
+		if ($this->loginController === null) {
+			$this->loginController = new BilletsBackControleur($this->getBilletsBacknManager());
+		}
+		return $this->loginController;
+	}
+
+	public function getCommentairesBackController()
+	{
+		if ($this->loginController === null) {
+			$this->loginController = new CommentairesBackControleur($this->getCommentairesBacknManager());
+		}
+		return $this->loginController;
+	}
+
+	public function getBilletBackController()
+	{
+		if ($this->loginController === null) {
+			$this->loginController = new BilletBackControleur($this->getBilletBackManager());
+		}
+		return $this->loginController;
+	}
+
+	public function getCommentaireBackController()
+	{
+		if ($this->loginController === null) {
+			$this->loginController = new CommentaireBackControleur($this->getCommentaireBackManager());
 		}
 		return $this->loginController;
 	}
