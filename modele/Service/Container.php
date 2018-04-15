@@ -20,8 +20,14 @@ class Container implements ContainerInterface {
 	private $loginManager;
 	private $configuration;
 	private $services = [];
+	
 	private $billetsController;
 	private $loginController;
+	private $commentairesController;
+	private $billetsBackController;
+	private $commentairesBackController;
+	private $billetBackControllet;
+	private $commentaireBackController;
 
 	public function __construct(array $configuration) {
 		$this->configuration = $configuration;
