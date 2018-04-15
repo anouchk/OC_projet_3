@@ -12,6 +12,7 @@ require_once "vendor/autoload.php";
 $configuration = [];
 require __DIR__.'/config/configuration.php';
 $container = new \modele\Service\Container($configuration);
+$bdd = $container->getLoginManager()->getBdd();
 
 $router = new \modele\Service\Router($_SERVER['REQUEST_URI']);
 $resolve = $router->resolve();
@@ -46,7 +47,7 @@ if (!isset($_GET['section']) OR $_GET['section'] == 'index') {
     $loginControleur->login_traitement_formulaire($bdd);
 } else if($_GET['section'] == 'logout') {
     #include_once('controleur/login.php');
-    $loginControleur = new \controleur\LoginControleur($container->get('loginManager'));
+    $loginControleur = $container->getLoginController();
     $loginControleur->logout();    
 } else if($_GET['section'] == 'billets_back') {
     #include_once('controleur/billets_back.php');
