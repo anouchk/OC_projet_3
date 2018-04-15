@@ -3,6 +3,11 @@ namespace modele\Service;
 
 use controleur\BilletsControleur;
 use controleur\LoginControleur;
+use controleur\CommentairesControleur;
+use controleur\BilletsBackControleur;
+use controleur\CommentairesBackControleur;
+use controleur\BilletBackControleur;
+use controleur\CommentaireBackControleur;
 use Psr\Container\ContainerExceptionInterface;
 use Psr\Container\ContainerInterface;
 use Psr\Container\NotFoundExceptionInterface;

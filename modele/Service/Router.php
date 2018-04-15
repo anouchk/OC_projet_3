@@ -6,10 +6,14 @@ class Router {
 
 	private $request_uri;
 	private $match = [
-		'index.php' => [
+		'' => [
 			'controllerCaller' => 'getBilletsController',
 			'action' => 'billets_front_affichage_billets',
 		],
+		// 'index.php' => [
+		// 	'controllerCaller' => 'getBilletsController',
+		// 	'action' => 'billets_front_affichage_billets',
+		// ],
 		'index' => [
 			'controllerCaller' => 'getBilletsController',
 			'action' => 'billets_front_affichage_billets',
