@@ -45,15 +45,21 @@ class Router {
 	// Le rôle de la fonction resolve, c'est de trouver le controleur et l'action par rapport à la route
 	public function resolve()
 	{
-		if (isset($this->match[$this->request_uri])) {
- 
-			$controller = $this->match[$this->request_uri]['controllerCaller'];
-			$action = $this->match[$this->request_uri]['action'];
+		foreach(preg_match($pattern, $this->request_uri, $matches)) {
+			if (preg_match($pattern, $this->request_uri, $matches)) {
+				$params = [];
+				for ($i=1; $i<+count(matches); $i++) {
+					if (isset ($matches[$i])) {
+						$params[] = $matches[$i];
+					}
+				}
 
-			return [
-				'controllerCaller' => $controller,
-				'action' => $action,
-			];
+				return [
+					'controllerCaller' => $this->match[$pattern]['controllarCaller'],
+					'action' => $this->match[$pattern]['action'],
+					'params'=>$params
+				];
+			}
 		}
 
 	}
