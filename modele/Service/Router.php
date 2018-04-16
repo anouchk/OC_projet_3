@@ -22,8 +22,8 @@ class Router {
 			'controllerCaller' => 'getLoginController',
 			'action' => 'login_traitement_formulaire($bdd)',
 		],
-		'commentaires' => [
-			'controller' => 'CommentairesControleur',
+		'commentaires&billet=([0-9]+)' => [
+			'controllerCaller' => 'getCommentairesControleur',
 			'action' => 'commentaires_front_affichage_commentaires',
 		],
 		// 'login_traitement_formulaire' => [
