@@ -49,16 +49,16 @@ class Router {
 		foreach($this->match as $pattern => $controllerAction) {
 			if (preg_match($pattern, $this->request_uri, $matches)) {
 				$params = [];
-				for ($i=1; $i<+count(matches); $i++) {
+				for ($i=1; $i <= count(matches); $i++) {
 					if (isset ($matches[$i])) {
 						$params[] = $matches[$i];
 					}
 				}
 
 				return [
-					'controllerCaller' => $this->match[$pattern]['controllarCaller'],
+					'controllerCaller' => $this->match[$pattern]['controllerCaller'],
 					'action' => $this->match[$pattern]['action'],
-					'params'=>$params
+					'params'=>$params,
 				];
 			}
 		}
