@@ -22,8 +22,8 @@ class Router {
 			'controllerCaller' => 'getLoginController',
 			'action' => 'login_traitement_formulaire($bdd)',
 		],
-		'commentaires&billet=([0-9]+)' => [
-			'controllerCaller' => 'getCommentairesControleur',
+		'#commentaires&billet=([0-9]+)#' => [
+			'controllerCaller' => 'getCommentairesController',
 			'action' => 'commentaires_front_affichage_commentaires',
 		],
 		// 'login_traitement_formulaire' => [
@@ -49,7 +49,7 @@ class Router {
 		foreach($this->match as $pattern => $controllerAction) {
 			if (preg_match($pattern, $this->request_uri, $matches)) {
 				$params = [];
-				for ($i=1; $i <= count(matches); $i++) {
+				for ($i=1; $i <= count($matches); $i++) {
 					if (isset ($matches[$i])) {
 						$params[] = $matches[$i];
 					}

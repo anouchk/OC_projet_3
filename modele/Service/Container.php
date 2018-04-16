@@ -101,42 +101,42 @@ class Container implements ContainerInterface {
 
 	public function getCommentairesController()
 	{
-		if ($this->loginController === null) {
-			$this->loginController = new CommentairesControleur($this->getCommentairesnManager());
+		if ($this->commentairesController === null) {
+			$this->commentairesController = new CommentairesControleur($this->getBilletManager(), $this->getCommentaireManager());
 		}
-		return $this->loginController;
+		return $this->commentairesController;
 	}
 
 	public function getBilletsBackController()
 	{
-		if ($this->loginController === null) {
-			$this->loginController = new BilletsBackControleur($this->getBilletsBacknManager());
+		if ($this->billetsBackController === null) {
+			$this->billetsBack = new BilletsBackControleur($this->getBilletsBacknManager());
 		}
-		return $this->loginController;
+		return $this->billetsBack;
 	}
 
 	public function getCommentairesBackController()
 	{
-		if ($this->loginController === null) {
-			$this->loginController = new CommentairesBackControleur($this->getCommentairesBacknManager());
+		if ($this->commentairesBackController === null) {
+			$this->commentairesBackController = new CommentairesBackControleur($this->getCommentairesBacknManager());
 		}
-		return $this->loginController;
+		return $this->commentairesBackController;
 	}
 
 	public function getBilletBackController()
 	{
-		if ($this->loginController === null) {
-			$this->loginController = new BilletBackControleur($this->getBilletBackManager());
+		if ($this->billetBackController === null) {
+			$this->billetBackController = new BilletBackControleur($this->getBilletBackManager());
 		}
-		return $this->loginController;
+		return $this->billetBackontroller;
 	}
 
 	public function getCommentaireBackController()
 	{
-		if ($this->loginController === null) {
-			$this->loginController = new CommentaireBackControleur($this->getCommentaireBackManager());
+		if ($this->commentaireBackController === null) {
+			$this->commentaireBackController = new CommentaireBackControleur($this->getCommentaireBackManager());
 		}
-		return $this->loginController;
+		return $this->commentaireBackController;
 	}
 
 }

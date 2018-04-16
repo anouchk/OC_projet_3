@@ -22,7 +22,7 @@ $action = $resolve['action'];
 
 var_dump($controllerCaller);
 $controller = $container->$controllerCaller();
-$controller->$action();
+call_user_func_array([$controller, $action], $resolve['params']);
 
 die;
 
