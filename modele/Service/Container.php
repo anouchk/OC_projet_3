@@ -110,7 +110,7 @@ class Container implements ContainerInterface {
 	public function getBilletsBackController()
 	{
 		if ($this->billetsBackController === null) {
-			$this->billetsBack = new BilletsBackControleur($this->getBilletsBacknManager());
+			$this->billetsBack = new BilletsBackControleur($this->getBilletManager(), $this->getCommentaireManager());
 		}
 		return $this->billetsBack;
 	}
