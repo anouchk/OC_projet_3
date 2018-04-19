@@ -18,6 +18,10 @@ class Router {
 			'controllerCaller' => 'getBilletsController',
 			'action' => 'billets_front_affichage_billets',
 		],
+		'#commentaires&billet=([0-9]+)#' => [
+			'controllerCaller' => 'getCommentairesController',
+			'action' => 'commentaires_front_affichage_commentaires',
+		],
 		'#login#' => [
 			'controllerCaller' => 'getLoginController',
 			'action' => 'login_completion_formulaire',
@@ -26,9 +30,13 @@ class Router {
 			'controllerCaller' => 'getLoginController',
 			'action' => 'login_traitement_formulaire',
 		],
-		'#commentaires&billet=([0-9]+)#' => [
-			'controllerCaller' => 'getCommentairesController',
-			'action' => 'commentaires_front_affichage_commentaires',
+		'#logout#' => [
+			'controllerCaller' => 'getLoginController',
+			'action' => 'login_traitement_formulaire',
+		],
+		'#billets_back#' => [
+			'controllerCaller' => 'getBilletsBackController',
+			'action' => 'billets_back_affichage_billets',
 		],
 
 		
