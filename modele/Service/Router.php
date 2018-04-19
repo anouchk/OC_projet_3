@@ -58,14 +58,33 @@ class Router {
 			'controllerCaller' => 'getCommentaireBackController',
 			'action' => 'enregistrement_modification_commentaire',
 		],
-		
+		'#modification_billet#' => [
+			'controllerCaller' => 'getBilletBackController',
+			'action' => 'affichage_billet_a_modifier',
+		],
+		'#enregistrer_modification_billet#' => [
+			'controllerCaller' => 'getBilletBackController',
+			'action' => 'enregistrement_modification_billet',
+		],
+		'#creation_billet#' => [
+			'controllerCaller' => 'getBilletBackController',
+			'action' => 'affichage_billet_a_creer',
+		],
+		'#enregistrer_nouveau_billet#' => [
+			'controllerCaller' => 'getBilletBackController',
+			'action' => 'enregistrement_nouveau_billet',
+		],
+		'#suppression_billet#' => [
+			'controllerCaller' => 'getBilletBackController',
+			'action' => 'suppression_billet',
+		],
 	];
 
 	//ici request_uri ça va être toutes les string de type "index.php?section=billets_back" etc.
 	public function __construct($request_uri) {
 
 		$this->request_uri = substr($request_uri, strpos($request_uri, "=") + 1);
-		var_dump($this->request_uri);
+		// var_dump($this->request_uri);
 	}
 
 	/**
