@@ -10,10 +10,10 @@ class Router {
 			'controllerCaller' => 'getBilletsController',
 			'action' => 'billets_front_affichage_billets',
 		],
-		'##' => [
-			'controllerCaller' => 'getBilletsController',
-			'action' => 'billets_front_affichage_billets',
-		],
+		// '##' => [
+		// 	'controllerCaller' => 'getBilletsController',
+		// 	'action' => 'billets_front_affichage_billets',
+		// ],
 		'#index#' => [
 			'controllerCaller' => 'getBilletsController',
 			'action' => 'billets_front_affichage_billets',
@@ -24,16 +24,13 @@ class Router {
 		],
 		'#login_traitement_formulaire#' => [
 			'controllerCaller' => 'getLoginController',
-			'action' => 'login_traitement_formulaire($bdd)',
+			'action' => 'login_traitement_formulaire',
 		],
 		'#commentaires&billet=([0-9]+)#' => [
 			'controllerCaller' => 'getCommentairesController',
 			'action' => 'commentaires_front_affichage_commentaires',
 		],
-		'#login_traitement_formulaire#' => [
-			'controller' => 'LoginControleur',
-			'action' => 'login_traitement_formulaire($bdd)',
-		],
+
 		
 	];
 

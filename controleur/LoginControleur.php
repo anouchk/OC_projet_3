@@ -19,7 +19,7 @@ class LoginControleur extends Controller {
         }    
     }
 
-    public function login_traitement_formulaire($bdd)
+    public function login_traitement_formulaire()
     {
         // Etape 1 : recupérer dans la bdd la ligne qui correspond au pseudo
         $loginManager = $this->logintManager;
