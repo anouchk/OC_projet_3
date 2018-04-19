@@ -118,7 +118,7 @@ class Container implements ContainerInterface {
 	public function getCommentairesBackController()
 	{
 		if ($this->commentairesBackController === null) {
-			$this->commentairesBackController = new CommentairesBackControleur($this->getCommentairesBacknManager());
+			$this->commentairesBackController = new CommentairesBackControleur($this->getBilletManager(), $this->getCommentaireManager());
 		}
 		return $this->commentairesBackController;
 	}
@@ -126,7 +126,7 @@ class Container implements ContainerInterface {
 	public function getBilletBackController()
 	{
 		if ($this->billetBackController === null) {
-			$this->billetBackController = new BilletBackControleur($this->getBilletBackManager());
+			$this->billetBackController = new BilletBackControleur($this->getBilletManager());
 		}
 		return $this->billetBackontroller;
 	}
@@ -134,7 +134,7 @@ class Container implements ContainerInterface {
 	public function getCommentaireBackController()
 	{
 		if ($this->commentaireBackController === null) {
-			$this->commentaireBackController = new CommentaireBackControleur($this->getCommentaireBackManager());
+			$this->commentaireBackController = new CommentaireBackControleur($this->getBilletManager(), $this->getCommentaireManager());
 		}
 		return $this->commentaireBackController;
 	}

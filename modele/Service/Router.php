@@ -42,7 +42,18 @@ class Router {
 			'controllerCaller' => 'getBilletsBackController',
 			'action' => 'billets_back_affichage_billets',
 		],
-
+		'#commentaires_back#' => [
+			'controllerCaller' => 'getCommentairesBackController',
+			'action' => 'commentaires_back_affichage_commentaires',
+		],
+		'#suppression_commentaire#' => [
+			'controllerCaller' => 'getCommentairesBackController',
+			'action' => 'commentaires_back_suppression_commentaire',
+		],
+		'#modification_commentaire#' => [
+			'controllerCaller' => 'getCommentaireBackController',
+			'action' => 'affichage_commentaire_a_modifier',
+		],
 		
 	];
 
