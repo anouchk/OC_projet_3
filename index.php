@@ -19,7 +19,7 @@ $resolve = $router->resolve();
 $controllerCaller = $resolve['controllerCaller'];
 $action = $resolve['action'];
 
-// var_dump($controllerCaller);
+var_dump($controllerCaller);
 $controller = $container->$controllerCaller();
 call_user_func_array([$controller, $action], $resolve['params']);
 
