@@ -6,19 +6,23 @@ class Router {
 
 	private $request_uri;
 	private $match = [
-		// 'index.php' => [
-		// 	'controllerCaller' => 'getBilletsController',
-		// 	'action' => 'billets_front_affichage_billets',
-		// ],
-		'index' => [
+		'#index.php#' => [
 			'controllerCaller' => 'getBilletsController',
 			'action' => 'billets_front_affichage_billets',
 		],
-		'login' => [
+		'##' => [
+			'controllerCaller' => 'getBilletsController',
+			'action' => 'billets_front_affichage_billets',
+		],
+		'#index#' => [
+			'controllerCaller' => 'getBilletsController',
+			'action' => 'billets_front_affichage_billets',
+		],
+		'#login#' => [
 			'controllerCaller' => 'getLoginController',
 			'action' => 'login_completion_formulaire',
 		],
-		'login_traitement_formulaire' => [
+		'#login_traitement_formulaire#' => [
 			'controllerCaller' => 'getLoginController',
 			'action' => 'login_traitement_formulaire($bdd)',
 		],
@@ -26,10 +30,10 @@ class Router {
 			'controllerCaller' => 'getCommentairesController',
 			'action' => 'commentaires_front_affichage_commentaires',
 		],
-		// 'login_traitement_formulaire' => [
-		// 	'controller' => 'LoginControleur',
-		// 	'action' => 'login_traitement_formulaire($bdd)',
-		// ],
+		'#login_traitement_formulaire#' => [
+			'controller' => 'LoginControleur',
+			'action' => 'login_traitement_formulaire($bdd)',
+		],
 		
 	];
 
