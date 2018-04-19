@@ -12,7 +12,6 @@ require_once "vendor/autoload.php";
 $configuration = [];
 require __DIR__.'/config/configuration.php';
 $container = new \modele\Service\Container($configuration);
-$bdd = $container->getLoginManager()->getBdd();
 
 $router = new \modele\Service\Router($_SERVER['REQUEST_URI']);
 $resolve = $router->resolve();
@@ -20,7 +19,7 @@ $resolve = $router->resolve();
 $controllerCaller = $resolve['controllerCaller'];
 $action = $resolve['action'];
 
-var_dump($controllerCaller);
+// var_dump($controllerCaller);
 $controller = $container->$controllerCaller();
 call_user_func_array([$controller, $action], $resolve['params']);
 
