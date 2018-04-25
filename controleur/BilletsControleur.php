@@ -12,20 +12,20 @@ class BilletsControleur extends Controller {
 
 	public function billets_front_affichage_billets() {	
 
-	$billetManager = $this->billetManager;
+		$billetManager = $this->billetManager;
 
-	if (isset($_SESSION) && ($_SESSION['connected']=="oui")) {
-		$connected = "oui";
- 	} elseif (isset($_SESSION) && ($_SESSION['connected']=="non")) {
-    	$connected = "non";
-    } 
+		if (isset($_SESSION) && ($_SESSION['connected']=="oui")) {
+			$connected = "oui";
+	 	} elseif (isset($_SESSION) && ($_SESSION['connected']=="non")) {
+	    	$connected = "non";
+	    } 
 
-	$view_params = [
-		'billets' => $billetManager->get_billets(0, 30),
-		'connected' => $connected
-	];		
-    
-    $this->render('vue/billets.php', $view_params); 
+		$view_params = [
+			'billets' => $billetManager->get_billets(0, 30),
+			'connected' => $connected
+		];		
+	    
+	    $this->render('vue/billets.php', $view_params); 
 
 	}
 

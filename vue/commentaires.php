@@ -16,10 +16,10 @@
     </head>
 
     <body>
-    	<?php if (isset($_SESSION) && ($_SESSION['connected']=="oui")) {
+    	<?php if ($connected=="oui")  {
             echo "<h3><a href='index.php?section=logout'>Deconnexion</a></h3>";
             echo "<h3><a href='index.php?section=login'>Admin</a></h3>";
-        } elseif (isset($_SESSION) && ($_SESSION['connected']=="non")) {
+        } elseif ($connected=="non")  {
             echo "<h3><a href='index.php?section=login'>Admin</a></h3>";
         } ?>
 

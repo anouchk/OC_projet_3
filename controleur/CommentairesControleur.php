@@ -21,9 +21,16 @@ class CommentairesControleur extends Controller {
 		$billet = $billetManager->get_billet($idBillet);
 		$commentaires = $commentaireManager->get_commentaires(0, 30, $idBillet);
 
+		if (isset($_SESSION) && ($_SESSION['connected']=="oui")) {
+			$connected = "oui";
+	 	} elseif (isset($_SESSION) && ($_SESSION['connected']=="non")) {
+	    	$connected = "non";
+	    } 
+
 		$view_params = [
     		'billet' => $billet,
-    		'commentaires' => $commentaires
+    		'commentaires' => $commentaires,
+    		'connected' => $connected
     	];
  
 		
