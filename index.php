@@ -13,12 +13,12 @@ $configuration = [];
 require __DIR__.'/config/configuration.php';
 $container = new \modele\Service\Container($configuration);
 
-$router = new \modele\Service\Router($_SERVER['REQUEST_URI']);
+$router = new \modele\Service\Router($_SERVER['REQUEST_URI'],$match);
 $resolve = $router->resolve();
 
 $controllerCaller = $resolve['controllerCaller'];
 $action = $resolve['action'];
 
-var_dump($controllerCaller);
+// var_dump($controllerCaller);
 $controller = $container->$controllerCaller();
 call_user_func_array([$controller, $action], $resolve['params']);
