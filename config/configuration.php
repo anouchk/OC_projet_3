@@ -38,7 +38,7 @@ $match = [
 		],
 		'#^logout$#' => [
 			'controllerCaller' => 'getLoginController',
-			'action' => 'login_traitement_formulaire',
+			'action' => 'logout',
 		],
 		'#^billets_back$#' => [
 			'controllerCaller' => 'getBilletsBackController',
