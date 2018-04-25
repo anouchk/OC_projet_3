@@ -7,7 +7,6 @@
 	<body>
 
 		<?php
-		var_dump($error);
 		if($error) {
 			echo "<div>Identifiants erronés. Veuillez à nouveau saisir votre pseudo et votre mot de passe :</div>";
 		}

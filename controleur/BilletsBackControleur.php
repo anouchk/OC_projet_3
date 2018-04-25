@@ -15,21 +15,29 @@ class BilletsBackControleur extends Controller {
 		$billetManager = $this->billetManager;
 		$billets = $billetManager->get_billets(0,30);
 
-		// Ici, on doit surtout sécuriser l'affichage. Doit-on vraiment ?
-		foreach($billets as $cle => $billet) 
-		{ 
-			$commentaireManager =  $this->commentaireManager;
-			$commentaires = $commentaireManager->get_commentaires(0,30, $billet['id']);
-		    $billets[$cle]['titre'] = htmlspecialchars($billet['titre']); 
-		    $billets[$cle]['contenu'] = nl2br(htmlspecialchars($billet['contenu'])); 
-		    $billets[$cle]['nbcommentaires'] = $commentaireManager->count_commentaires($billet['id']);
-		} 
+		if (isset($_SESSION) && ($_SESSION['connected']=="oui")) {
 
-		$view_params = [
-    		'billets' => $billets,
-    	];
+			// Ici, on doit surtout sécuriser l'affichage. Doit-on vraiment ?
+			foreach($billets as $cle => $billet) 
+			{ 
+				$commentaireManager =  $this->commentaireManager;
+				$commentaires = $commentaireManager->get_commentaires(0,30, $billet['id']);
+			    $billets[$cle]['titre'] = htmlspecialchars($billet['titre']); 
+			    $billets[$cle]['contenu'] = nl2br(htmlspecialchars($billet['contenu'])); 
+			    $billets[$cle]['nbcommentaires'] = $commentaireManager->count_commentaires($billet['id']);
+			} 
 
-    	 $this->render('vue/billets_back.php', $view_params); 
+			$view_params = [
+	    		'billets' => $billets,
+	    	];
+
+	    	$this->render('vue/billets_back.php', $view_params); 
+
+		} elseif (isset($_SESSION) && ($_SESSION['connected']=="non")) {
+
+			$this->redirect('index.php?section=login');
+		}
+		
 	}
 }
 
