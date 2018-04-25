@@ -4,6 +4,7 @@ namespace controleur;
 class LoginControleur extends Controller {
 
     private $loginManager;
+    private $error;
 
     public function __construct($loginManager) {
         $this->logintManager = $loginManager;
@@ -14,7 +15,10 @@ class LoginControleur extends Controller {
         if (isset($_SESSION) && $_SESSION['connected']=="oui") {
             $this->redirect('index.php?section=billets_back');
         } elseif (isset($_SESSION) && $_SESSION['connected']=="non") {
-            $view_params = [];
+            $error = isset($_GET['error']);
+            $view_params = [
+                'error' => $error
+            ];
             $this->render('vue/login.php', $view_params);
         }    
     }
