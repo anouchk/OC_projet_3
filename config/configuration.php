@@ -8,14 +8,14 @@ $configuration = [
 ]; 
 
 $match = [
+		'#^$#' => [
+			'controllerCaller' => 'getBilletsController',
+			'action' => 'billets_front_affichage_billets',
+		],
 		'#index.php$#' => [
 			'controllerCaller' => 'getBilletsController',
 			'action' => 'billets_front_affichage_billets',
 		],
-		// '##' => [
-		// 	'controllerCaller' => 'getBilletsController',
-		// 	'action' => 'billets_front_affichage_billets',
-		// ],
 		'#^index$#' => [
 			'controllerCaller' => 'getBilletsController',
 			'action' => 'billets_front_affichage_billets',
