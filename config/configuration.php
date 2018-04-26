@@ -8,6 +8,10 @@ $configuration = [
 ]; 
 
 $match = [
+		'#^projet_3/$#' => [
+			'controllerCaller' => 'getBilletsController',
+			'action' => 'billets_front_affichage_billets',
+		],
 		'#^$#' => [
 			'controllerCaller' => 'getBilletsController',
 			'action' => 'billets_front_affichage_billets',
