@@ -40,6 +40,10 @@ $match = [
 			'controllerCaller' => 'getLoginController',
 			'action' => 'login_traitement_formulaire',
 		],
+		'#^login&error=1$#' => [
+			'controllerCaller' => 'getLoginController',
+			'action' => 'login_completion_formulaire',
+		],
 		'#^logout$#' => [
 			'controllerCaller' => 'getLoginController',
 			'action' => 'logout',
