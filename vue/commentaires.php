@@ -28,18 +28,18 @@
 
 			<div class="news">		
 				<h3> 
-					<?php echo $billet['titre'] ; ?>
-					<em><?php echo $billet['date_creation_fr'] ; ?></em>
+					<?php echo $billet->getTitre() ; ?>
+					<em><?php echo $billet->getDateCreation() ; ?></em>
 				</h3>
 
 				<p> 
-					<?php echo $billet['contenu'] ; ?> 
+					<?php echo $billet->getContenu() ; ?> 
 				</p>
 			 </div>
 
 			<h2> Commentaires </h2>
 
-			<form action="index.php?section=commentaires&billet=<?php echo $billet['id']; ?>" method="post">
+			<form action="index.php?section=commentaires&billet=<?php echo $billet->getId(); ?>" method="post">
 				<p><label> Pseudo</label> : <input type="text" name="pseudo"></p>
 				<p><label> Message</label> : <input type="text" name="message"></p>
 				<input type ="hidden" name="id2_billet" value="<?php echo $_GET['billet']?>">
@@ -66,7 +66,7 @@
 					?>
 		
 							<!-- Pour signaler : je veux modifier le boléen sur le commentaire dont l'id sera récupéré en POST-->
-					      	<form method="post" action="index.php?section=signalement_commentaire&billet=<?php echo $billet['id']; ?>">
+					      	<form method="post" action="index.php?section=signalement_commentaire&billet=<?php echo $billet->getId(); ?>">
 			       				<input type="hidden" name="idCommentaireSignaled" value="<?php echo $commentaire['id']; ?>"/>
 			       				<input type ="hidden" name="id2_billet" value="<?php echo $_GET['billet']?>">
 			       				<p><input type="submit" class="btn btn-secondary" value="Signaler ce commentaire">
