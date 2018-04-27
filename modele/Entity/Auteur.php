@@ -6,6 +6,7 @@ class Auteur
     private $pseudo;
     private $pass;
     private $date_inscription;
+    
     /**
      * @return mixed
      */
