@@ -5,6 +5,11 @@ $configuration = [
 	'db_dsn'  => 'mysql:host=localhost;dbname=OC_projet_3',
 	'db_user' => 'root',
 	'db_pass' => 'root',
+
+	// 'db_dsn'  => 'mysql:host=srv02.aef.info;dbname=projet3ana',
+	// 'db_user' => 'projet3ana',
+	// 'db_pass' => 'eqdQiCezDt3MxR22',
+
 ]; 
 
 $match = [

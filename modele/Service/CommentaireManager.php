@@ -112,20 +112,20 @@ class CommentaireManager extends DatabaseManager {
 	    $PDO_statement->bindParam(':limit', $limit, \PDO::PARAM_INT);
 	    $PDO_statement->bindParam(':id', $idBillet, \PDO::PARAM_INT);
 	    $PDO_statement->execute();
-	    $commentaires = $PDO_statement->fetchAll(\PDO::FETCH_ASSOC);
+	    // $commentaires = $PDO_statement->fetchAll(\PDO::FETCH_ASSOC);
 
-	    // Retourons un tableau d'instances de l'objet Commentaire
-	 //    $data = $PDO_statement->fetchAll(\PDO::FETCH_ASSOC);
-	 //    $commentaires = [];
-		// for ($i=0; $i <= $data.length; $i++) {
-		// 	$commentaire[$i] = new Commentaire();
-		//     $commentaire[$i]->setId($data[$i]['id']);
-		//     $commentaire[$i]->setAuteur($data[$i]['auteur']);
-		//     $commentaire[$i]->setCommentaire($data[[$i]'commentaire']);
-		//     $commentaire[$i]->setDateCommentaire($data[$i]['date_commentaire_fr']);
-		// 	$commentaires[] = $commentaire[$i];
-		// }
-	 //    return $commentaires ;
+	    // Retournons un tableau d'instances de l'objet Commentaire
+	    $data = $PDO_statement->fetchAll(\PDO::FETCH_ASSOC);
+	    $commentaires = [];
+		for ($i=0; $i <= count($data); $i++) {
+			$commentaire[$i] = new Commentaire();
+		    $commentaire[$i]->setId($data[$i]['id']);
+		    $commentaire[$i]->setAuteur($data[$i]['auteur']);
+		    $commentaire[$i]->setCommentaire($data[$i]['commentaire']);
+		    $commentaire[$i]->setDateCommentaire($data[$i]['date_commentaire_fr']);
+			$commentaires[] = $commentaire[$i];
+		}
+
 
 	    return $commentaires;
 	}

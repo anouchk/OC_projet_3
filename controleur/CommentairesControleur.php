@@ -38,8 +38,8 @@ class CommentairesControleur extends Controller {
 		// Ici, on doit surtout sécuriser l'affichage 
 		foreach($commentaires as $cle => $commentaire) 
 		{ 
-		    $commentaire[$cle]['auteur'] = htmlspecialchars($commentaire['auteur']); 
-		    $commentaire[$cle]['commentaire'] = nl2br(htmlspecialchars($commentaire['commentaire'])); 
+		    $commentaire[$cle]->getAuteur() = htmlspecialchars($commentaire->getAuteur()); 
+		    $commentaire[$cle]->getCommentaire() = nl2br(htmlspecialchars($commentaire->getCommentaire())); 
 		} 
 		$this->render('vue/commentaires.php', $view_params);
 	}
