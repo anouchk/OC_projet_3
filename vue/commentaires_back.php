@@ -54,7 +54,7 @@
 		      	<!-- Pour modifier : je veux afficher dans un form dans commentaire_back le contenu du commentaire dont l'id sera récupéré en POST-->
 		      	<form class="coteacote" method="post" action="index.php?section=modification_commentaire">
        				<input type="hidden" name="idCommentaireModified" value="<?php echo $commentaire['id']; ?>"/>
-       				<input type ="hidden" name="id2_billet" value="<?php echo $_GET['billet']?>">
+       				<input type ="hidden" name="id2_billet" value="<?php echo $idBillet ?>">
        				<p><input type="submit" class="btn btn-primary" value="Modifier"></p>
     			</form>
 		      	

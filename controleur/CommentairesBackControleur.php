@@ -28,7 +28,8 @@ class CommentairesBackControleur extends Controller {
 			$billet = $billetManager->get_billet($idBillet);
 			$view_params = [
     			'billet' => $billet,
-    			'commentaires' => $commentaires
+    			'commentaires' => $commentaires,
+    			'idBillet' => $idBillet
     		];
 
     	 	$this->render('vue/commentaires_back.php', $view_params); 
