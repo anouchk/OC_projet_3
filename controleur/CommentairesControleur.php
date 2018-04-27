@@ -30,7 +30,8 @@ class CommentairesControleur extends Controller {
 		$view_params = [
     		'billet' => $billet,
     		'commentaires' => $commentaires,
-    		'connected' => $connected
+    		'connected' => $connected,
+    		'idBillet' => $idBillet
     	];
  
 		
