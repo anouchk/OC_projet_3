@@ -1,5 +1,6 @@
 <?php
 namespace modele\Service;
+use modele\Entity\Commentaire;
 
 class CommentaireManager extends DatabaseManager {
 
@@ -21,13 +22,18 @@ class CommentaireManager extends DatabaseManager {
 	
 	    $bdd = $this->getBdd();
 
-	    // on récupère l'id du billet dont on veut afficher les commentaires
+	    // on récupère l'id du commentaire 
 	    $id_Commentaire=$idCommentaire;
 	    
-	    // Récupération du billet   
+	    // Récupération du commentaire 
 	    $req = $bdd->prepare('SELECT id, auteur, commentaire, DATE_FORMAT(date_commentaire, \'%d/%m/%Y à %Hh%imin%ss\') AS date_commentaire_fr FROM commentaires WHERE id=?');
 	    $req->execute(array($id_Commentaire));
-	    $commentaire = $req->fetch(\PDO::FETCH_ASSOC);
+	    $data = $req->fetch(\PDO::FETCH_ASSOC);
+	    $commentaire = new Commentaire();
+	    $commentaire->setId($data['id']);
+	    $commentaire->setAuteur($data['auteur']);
+	    $commentaire->setCommentaire($data['commentaire']);
+	    $commentaire->setDateCommentaire($data['date_commentaire_fr']);
 	    return $commentaire ;
  	}
 
@@ -107,6 +113,19 @@ class CommentaireManager extends DatabaseManager {
 	    $PDO_statement->bindParam(':id', $idBillet, \PDO::PARAM_INT);
 	    $PDO_statement->execute();
 	    $commentaires = $PDO_statement->fetchAll(\PDO::FETCH_ASSOC);
+
+	    // Retourons un tableau d'instances de l'objet Commentaire
+	 //    $data = $PDO_statement->fetchAll(\PDO::FETCH_ASSOC);
+	 //    $commentaires = [];
+		// for ($i=0; $i <= $data.length; $i++) {
+		// 	$commentaire[$i] = new Commentaire();
+		//     $commentaire[$i]->setId($data[$i]['id']);
+		//     $commentaire[$i]->setAuteur($data[$i]['auteur']);
+		//     $commentaire[$i]->setCommentaire($data[[$i]'commentaire']);
+		//     $commentaire[$i]->setDateCommentaire($data[$i]['date_commentaire_fr']);
+		// 	$commentaires[] = $commentaire[$i];
+		// }
+	 //    return $commentaires ;
 
 	    return $commentaires;
 	}
