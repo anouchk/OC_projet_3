@@ -8,6 +8,7 @@ class Commentaire
     private $commentaire;
     private $date_commentaire;
     private $signalement;
+    
     /**
      * @return mixed
      */

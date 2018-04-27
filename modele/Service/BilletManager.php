@@ -1,5 +1,6 @@
 <?php
 namespace modele\Service;
+use modele\Entity\Billet;
 
 class BilletManager extends DatabaseManager{
 
@@ -24,7 +25,13 @@ class BilletManager extends DatabaseManager{
 	    $id_Billet=$idBillet;
 	    $req = $bdd->prepare('SELECT id, titre, contenu, DATE_FORMAT(date_creation, \'%d/%m/%Y à %Hh%imin%ss\') AS date_creation_fr FROM billets WHERE id=?');
 	    $req->execute(array($id_Billet));
-	    $billet = $req->fetch(\PDO::FETCH_ASSOC);
+	    $data = $req->fetch(\PDO::FETCH_ASSOC);
+
+	    $billet = new Billet();
+	    $billet->setId($data['id']);
+	    $billet->setTitre($data['titre']);
+	    $billet->setContenu($data['contenu']);
+	    $billet->setDateCreation($data['date_creation_fr']);
 	    return $billet ;
 	}
 
