@@ -51,14 +51,14 @@
 				foreach ($commentaires as $commentaire)	{
 			?>
 				
-					<strong><?php echo $commentaire['auteur'] ; ?></strong>
-					Le <?php echo $commentaire['date_commentaire_fr'] ; ?>
+					<strong><?php echo $commentaire->getAuteur() ; ?></strong>
+					Le <?php echo $commentaire->getDateCommentaire() ; ?>
 				
-				<div><?php echo $commentaire['commentaire'] ; ?></div>
+				<div><?php echo $commentaire->getCommentaire() ; ?></div>
 				
 
 					<?php // bouton de signalement
-						if ($commentaire['signalement'] == 1) {
+						if ($commentaire->getSignalement() == 1) {
 							$signaled='<button id="<?php echo $commentaire->getId() ; ?>"
 							 class="btn btn-danger">Commentaire signalé</button><br><br>';
 							echo $signaled ;

@@ -116,18 +116,31 @@ class CommentaireManager extends DatabaseManager {
 
 	    // Retournons un tableau d'instances de l'objet Commentaire
 	    $data = $PDO_statement->fetchAll(\PDO::FETCH_ASSOC);
+	    var_dump($data);
 	    $commentaires = [];
-		for ($i=0; $i <= count($data); $i++) {
-			$commentaire[$i] = new Commentaire();
-		    $commentaire[$i]->setId($data[$i]['id']);
-		    $commentaire[$i]->setAuteur($data[$i]['auteur']);
-		    $commentaire[$i]->setCommentaire($data[$i]['commentaire']);
-		    $commentaire[$i]->setDateCommentaire($data[$i]['date_commentaire_fr']);
-			$commentaires[] = $commentaire[$i];
-		}
+	 //    for ($i=0; $i <= count($data); $i++) {
+		// 	$commentaire[$i] = new Commentaire();
+		//     $commentaire[$i]->setId($data[$i]['id']);
+		//     $commentaire[$i]->setAuteur($data[$i]['auteur']);
+		//     $commentaire[$i]->setCommentaire($data[$i]['commentaire']);
+		//     $commentaire[$i]->setDateCommentaire($data[$i]['date_commentaire_fr']);
 
+		// 	$commentaires[] = $commentaire[$i];
+		// }
+		foreach ($data as $key => $value) {
 
+            $commentaire = new Commentaire();
+            $commentaire->setId($data['id']);
+            $commentaire->setAuteur($data['auteur']);
+            $commentaire->setCommentaire($data['commentaire']);
+            $commentaire->setDateCommentaire($data['date_commentaire_fr']);
+            $commentaire->setSignalement($data['signalement']);
+
+            $commentaires[] = $commentaire;
+        }
+        var_dump($commentaires);
 	    return $commentaires;
+
 	}
 
 }
