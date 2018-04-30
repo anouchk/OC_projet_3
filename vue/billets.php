@@ -31,14 +31,14 @@ foreach($billets as $billet) {
 
 <div class="news">
     <h3>
-        <?php echo $billet['titre']; ?>
-        <em>le <?php echo $billet['date_creation_fr']; ?></em>
+        <?php echo $billet->getTitre(); ?>
+        <em>le <?php echo $billet->getDateCreation(); ?></em>
     </h3>
 
     <div>
-        <?php echo $billet['contenu']; ?>
+        <?php echo $billet->getContenu(); ?>
         <br />
-        <em><a href="index.php?section=commentaires&billet=<?php echo $billet['id']; ?>">Commentaires</a></em>
+        <em><a href="index.php?section=commentaires&billet=<?php echo $billet->getId(); ?>">Commentaires</a></em>
     </div>
 </div>
 

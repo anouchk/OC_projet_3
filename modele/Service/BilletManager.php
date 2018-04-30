@@ -71,7 +71,32 @@ class BilletManager extends DatabaseManager{
 	    $req->bindParam(':offset', $offset, \PDO::PARAM_INT);
 	    $req->bindParam(':limit', $limit, \PDO::PARAM_INT);
 	    $req->execute();
-	    $billets = $req->fetchAll(\PDO::FETCH_ASSOC);
+	    // $billets = $req->fetchAll(\PDO::FETCH_ASSOC);
+
+	    // Retournons un tableau d'instances de l'objet Billet
+	    $data = $req->fetchAll(\PDO::FETCH_ASSOC);
+
+	    $billets = [];
+	    for ($i=0; $i < count($data); $i++) {
+			$billet[$i] = new Billet();
+		    $billet[$i]->setId($data[$i]['id']);
+		    $billet[$i]->setContenu($data[$i]['contenu']);
+		    $billet[$i]->setTitre($data[$i]['titre']);
+		    $billet[$i]->setDateCreation($data[$i]['date_creation_fr']);
+
+			$billets[] = $billet[$i];
+		}
+
+		// variante
+		// foreach ($data as $key => $billet) {
+  //           $billet = new Billet();
+  //           $billet->setId($data[$key]['id']);
+  //           $billet->setContenu($data[$key]['contenu']);
+  //           $billet->setTitre($data[$key]['titre']);
+  //           $billet->setDateCreation($data[$key]['date_creation_fr']);
+  //           $billets[] = $billet;
+
+  //       }
 
 	    return $billets;
 
