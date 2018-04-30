@@ -107,7 +107,7 @@ class CommentaireManager extends DatabaseManager {
 	    $limit = (int) $limit;
 
 		// Récupération des commentaires
-		$PDO_statement = $bdd->prepare('SELECT id, auteur, commentaire, DATE_FORMAT(date_commentaire, \'%d/%m/%Y à %Hh%imin%ss\') AS date_commentaire_fr, signalement FROM commentaires WHERE id_billet=:id ORDER BY date_commentaire DESC LIMIT :offset, :limit');
+		$PDO_statement = $bdd->prepare('SELECT id, auteur, commentaire, DATE_FORMAT(date_commentaire, \'%d/%m/%Y à %Hh%imin%ss\') AS date_commentaire_fr, signalement, id_billet FROM commentaires WHERE id_billet=:id ORDER BY date_commentaire DESC LIMIT :offset, :limit');
 	    $PDO_statement->bindParam(':offset', $offset, \PDO::PARAM_INT);
 	    $PDO_statement->bindParam(':limit', $limit, \PDO::PARAM_INT);
 	    $PDO_statement->bindParam(':id', $idBillet, \PDO::PARAM_INT);
@@ -118,26 +118,30 @@ class CommentaireManager extends DatabaseManager {
 	    $data = $PDO_statement->fetchAll(\PDO::FETCH_ASSOC);
 	    var_dump($data);
 	    $commentaires = [];
-	 //    for ($i=0; $i <= count($data); $i++) {
-		// 	$commentaire[$i] = new Commentaire();
-		//     $commentaire[$i]->setId($data[$i]['id']);
-		//     $commentaire[$i]->setAuteur($data[$i]['auteur']);
-		//     $commentaire[$i]->setCommentaire($data[$i]['commentaire']);
-		//     $commentaire[$i]->setDateCommentaire($data[$i]['date_commentaire_fr']);
+	    for ($i=0; $i < count($data); $i++) {
+			$commentaire[$i] = new Commentaire();
+		    $commentaire[$i]->setId($data[$i]['id']);
+		    $commentaire[$i]->setIdBillet($data[$i]['id_billet']);
+		    $commentaire[$i]->setAuteur($data[$i]['auteur']);
+		    $commentaire[$i]->setCommentaire($data[$i]['commentaire']);
+		    $commentaire[$i]->setDateCommentaire($data[$i]['date_commentaire_fr']);
+		    $commentaire[$i]->setSignalement($data[$i]['signalement']);
 
-		// 	$commentaires[] = $commentaire[$i];
-		// }
-		foreach ($data as $key => $value) {
+			$commentaires[] = $commentaire[$i];
+		}
+		// foreach ($data as $key => $commentaire) {
 
-            $commentaire = new Commentaire();
-            $commentaire->setId($data['id']);
-            $commentaire->setAuteur($data['auteur']);
-            $commentaire->setCommentaire($data['commentaire']);
-            $commentaire->setDateCommentaire($data['date_commentaire_fr']);
-            $commentaire->setSignalement($data['signalement']);
+  //           $commentaire = new Commentaire();
+  //           $commentaire->setId($data['id']);
+  //           $commentaire->setIdBillet($data['id_billet']);
+  //           $commentaire->setAuteur($data['auteur']);
+  //           $commentaire->setCommentaire($data['commentaire']);
+  //           $commentaire->setDateCommentaire($data['date_commentaire_fr']);
+  //           $commentaire->setSignalement($data['signalement']);
 
-            $commentaires[] = $commentaire;
-        }
+  //           $commentaires[] = $commentaire;
+
+  //       }
         var_dump($commentaires);
 	    return $commentaires;
 
