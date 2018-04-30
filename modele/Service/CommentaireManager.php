@@ -116,7 +116,7 @@ class CommentaireManager extends DatabaseManager {
 
 	    // Retournons un tableau d'instances de l'objet Commentaire
 	    $data = $PDO_statement->fetchAll(\PDO::FETCH_ASSOC);
-	    var_dump($data);
+	    // var_dump($data);
 	    $commentaires = [];
 	    for ($i=0; $i < count($data); $i++) {
 			$commentaire[$i] = new Commentaire();
@@ -129,20 +129,21 @@ class CommentaireManager extends DatabaseManager {
 
 			$commentaires[] = $commentaire[$i];
 		}
+		// variante
 		// foreach ($data as $key => $commentaire) {
 
   //           $commentaire = new Commentaire();
-  //           $commentaire->setId($data['id']);
-  //           $commentaire->setIdBillet($data['id_billet']);
-  //           $commentaire->setAuteur($data['auteur']);
-  //           $commentaire->setCommentaire($data['commentaire']);
-  //           $commentaire->setDateCommentaire($data['date_commentaire_fr']);
-  //           $commentaire->setSignalement($data['signalement']);
+  //           $commentaire->setId($data[$key]['id']);
+  //           $commentaire->setIdBillet($data[$key]['id_billet']);
+  //           $commentaire->setAuteur($data[$key]['auteur']);
+  //           $commentaire->setCommentaire($data[$key]['commentaire']);
+  //           $commentaire->setDateCommentaire($data[$key]['date_commentaire_fr']);
+  //           $commentaire->setSignalement($data[$key]['signalement']);
 
   //           $commentaires[] = $commentaire;
 
   //       }
-        var_dump($commentaires);
+        // var_dump($commentaires);
 	    return $commentaires;
 
 	}

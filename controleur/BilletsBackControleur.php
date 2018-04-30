@@ -17,7 +17,7 @@ class BilletsBackControleur extends Controller {
 
 		if (isset($_SESSION) && ($_SESSION['connected']=="oui")) {
 
-			// Ici, on doit surtout sécuriser l'affichage. Doit-on vraiment ?
+			// Ici, on doit surtout sécuriser l'affichage. A considérer que l'écrivain puisse être malveillant envers son propre blog
 			foreach($billets as $cle => $billet) 
 			{ 
 				$commentaireManager =  $this->commentaireManager;
