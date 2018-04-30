@@ -6,6 +6,7 @@ class Billet
     private $titre;
     private $contenu;
     private $date_creation;
+    private $nbCommentaires;
     
     public function getId()
     {
@@ -45,5 +46,15 @@ class Billet
     public function setDateCreation($date_creation)
     {
         $this->date_creation = $date_creation;
+    }
+
+    public function getNbCommentaires()
+    {
+        return $this->nbCommentaires;
+    }
+
+    public function setNbCommentaires($nbCommentaires)
+    {
+        $this->nbCommentaires = $nbCommentaires;
     }
 }

@@ -17,14 +17,14 @@ class BilletsBackControleur extends Controller {
 
 		if (isset($_SESSION) && ($_SESSION['connected']=="oui")) {
 
-			// Ici, on doit surtout sécuriser l'affichage. A considérer que l'écrivain puisse être malveillant envers son propre blog
+			// Ici, on doit surtout sécuriser l'affichage. A considérer que l'écrivain puisse être malveillant envers son propre blog. Et on compte le nombre de commentaires pour chaque billet.
 			foreach($billets as $cle => $billet) 
 			{ 
 				$commentaireManager =  $this->commentaireManager;
-				$commentaires = $commentaireManager->get_commentaires(0,30, $billet['id']);
-			    $billets[$cle]['titre'] = htmlspecialchars($billet['titre']); 
-			    $billets[$cle]['contenu'] = nl2br(htmlspecialchars($billet['contenu'])); 
-			    $billets[$cle]['nbcommentaires'] = $commentaireManager->count_commentaires($billet['id']);
+				$commentaires = $commentaireManager->get_commentaires(0,30, $billet->getId());
+			    $billet->setTitre(htmlspecialchars($billet->getTitre())); 
+			    $billet->setContenu(htmlspecialchars($billet->getContenu()));
+			    $billet->setNbCommentaires($commentaireManager->count_commentaires($billet->getId()));
 			} 
 
 			$view_params = [
