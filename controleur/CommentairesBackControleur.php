@@ -21,8 +21,8 @@ class CommentairesBackControleur extends Controller {
 				// on sécurise l'affichage des commentaires
 				foreach($commentaires as $cle => $commentaire) 
 				{ 
-				    $commentaire[$cle]['auteur'] = htmlspecialchars($commentaire['auteur']); 
-				    $commentaire[$cle]['commentaire'] = nl2br(htmlspecialchars($commentaire['commentaire'])); 
+				    $commentaire->setAuteur(htmlspecialchars($commentaire->getAuteur()));
+		    		$commentaire->setCommentaire(nl2br(htmlspecialchars($commentaire->getCommentaire()))); 
 				} 
 				// lancer la requête de récupération des données du billet pour pouvoir afficher le titre du billet en haut de la liste des commentaires
 				$billetManager = $this->billetManager;

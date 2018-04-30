@@ -19,7 +19,7 @@
 
     	<a href="index.php?section=billets_back" class="btn btn-info"><i class="fas fa-arrow-alt-circle-left"></i> Retour à l'administration des billets</a>
 
-    	<h2>Commentaires du billet : <?php echo $billet['titre']; ?></h2>
+    	<h2>Commentaires du billet : <?php echo $billet->getTitre(); ?></h2>
 
     	<table class="table">
 		  <thead>
@@ -38,14 +38,14 @@
 			foreach($commentaires as $commentaire) :
 			?>
 		    <tr>
-		      <td><?php echo $commentaire['id']; ?></td>
-		      <td><?php echo $commentaire['auteur']; ?></td>
-		      <td><?php echo $commentaire['commentaire']; ?></td>
+		      <td><?php echo $commentaire->getId(); ?></td>
+		      <td><?php echo $commentaire->getAuteur(); ?></td>
+		      <td><?php echo $commentaire->getCommentaire(); ?></td>
 		      <td>
 		      	<?php 
-			      	if ($commentaire['signalement'] == 1) {
+			      	if ($commentaire->getSignalement() == 1) {
 			      		echo "<span class='signal'> OUI </span>"; 
-			      	} elseif ($commentaire['signalement'] == 0) {
+			      	} elseif ($commentaire->getSignalement() == 0) {
 			      		echo "<span class='non_signal'> NON </span>";
 			      	}
 		      	?>
@@ -53,28 +53,28 @@
 		      <td> 
 		      	<!-- Pour modifier : je veux afficher dans un form dans commentaire_back le contenu du commentaire dont l'id sera récupéré en POST-->
 		      	<form class="coteacote" method="post" action="index.php?section=modification_commentaire">
-       				<input type="hidden" name="idCommentaireModified" value="<?php echo $commentaire['id']; ?>"/>
+       				<input type="hidden" name="idCommentaireModified" value="<?php echo $commentaire->getId(); ?>"/>
        				<input type ="hidden" name="id2_billet" value="<?php echo $idBillet ?>">
        				<p><input type="submit" class="btn btn-primary" value="Modifier"></p>
     			</form>
 		      	
        			<!-- Button trigger modal -->
-       			<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#alert_suppr<?php echo $commentaire['id']; ?>">		Supprimer
+       			<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#alert_suppr<?php echo $commentaire->getId(); ?>">		Supprimer
        			</button>
 
 						<!-- Modal -->
-						<div class="modal fade" id="alert_suppr<?php echo $commentaire['id']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+						<div class="modal fade" id="alert_suppr<?php echo $commentaire->getId(); ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 						  <div class="modal-dialog" role="document">
 						    <div class="modal-content">
 						      <div class="modal-body">
-						        Etes-vous sûr de vouloir supprimer le commentaire "<?php echo $commentaire['commentaire']; ?>" de <?php echo $commentaire['auteur']; ?> ?
+						        Etes-vous sûr de vouloir supprimer le commentaire "<?php echo $commentaire->getCommentaire(); ?>" de <?php echo $commentaire->getAuteur(); ?> ?
 						      </div>
 						      <div class="modal-footer">
 						        <button type="button" class="btn btn-secondary" data-dismiss="modal">Oups, non</button>
 						        <!-- Pour supprimer : je veux lancer une requête DELETE sur le commentaire dont l'id sera récupéré en POST-->
 						      	<form method="post" action="index.php?section=suppression_commentaire">
-				       				<input type="hidden" name="idCommentaire" value="<?php echo $commentaire['id']; ?>"/>
-				       				<input type="hidden" name="idBillet" value="<?php echo $billet['id']; ?>"/>
+				       				<input type="hidden" name="idCommentaire" value="<?php echo $commentaire->getId(); ?>"/>
+				       				<input type="hidden" name="idBillet" value="<?php echo $billet->getId(); ?>"/>
 				       				<p><input type="submit" class="btn btn-secondary btn-secondary-descendu" value="Oui"></p>
 						        </form>
 						      </div>
