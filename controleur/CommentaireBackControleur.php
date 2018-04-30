@@ -18,8 +18,8 @@ class CommentaireBackControleur extends Controller {
 				$commentaireManager = $this->commentaireManager ;
 				$commentaire = $commentaireManager->get_commentaire($idCommentaire);
 				// sécurisons l'affichage 
-				$commentaire['auteur'] = htmlspecialchars($commentaire['auteur']); 
-			    $commentaire['commentaire'] = nl2br(htmlspecialchars($commentaire['commentaire'])); 
+				$commentaire->setAuteur(htmlspecialchars($commentaire->getAuteur()));
+		    	$commentaire->setCommentaire(nl2br(htmlspecialchars($commentaire->getCommentaire()))); 
 
 			    $idBillet = $_POST['id2_billet'];
 			    $billetManager = $this->billetManager;	
