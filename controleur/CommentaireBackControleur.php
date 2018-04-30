@@ -12,23 +12,27 @@ class CommentaireBackControleur extends Controller {
 	}
 
 	public function affichage_commentaire_a_modifier() {
-		if (!empty($_POST['idCommentaireModified'])) {
-			$idCommentaire = $_POST['idCommentaireModified'];
-			$commentaireManager = $this->commentaireManager ;
-			$commentaire = $commentaireManager->get_commentaire($idCommentaire);
-			// sécurisons l'affichage 
-			$commentaire['auteur'] = htmlspecialchars($commentaire['auteur']); 
-		    $commentaire['commentaire'] = nl2br(htmlspecialchars($commentaire['commentaire'])); 
+		if (isset($_SESSION) && ($_SESSION['connected']=="oui")) {
+			if (!empty($_POST['idCommentaireModified'])) {
+				$idCommentaire = $_POST['idCommentaireModified'];
+				$commentaireManager = $this->commentaireManager ;
+				$commentaire = $commentaireManager->get_commentaire($idCommentaire);
+				// sécurisons l'affichage 
+				$commentaire['auteur'] = htmlspecialchars($commentaire['auteur']); 
+			    $commentaire['commentaire'] = nl2br(htmlspecialchars($commentaire['commentaire'])); 
 
-		    $idBillet = $_POST['id2_billet'];
-		    $billetManager = $this->billetManager;	
-		    $billet = $billetManager->get_billet($idBillet);
+			    $idBillet = $_POST['id2_billet'];
+			    $billetManager = $this->billetManager;	
+			    $billet = $billetManager->get_billet($idBillet);
 
-		    $view_params = [
-		    	'billet' => $billet,
-		    	'commentaire' => $commentaire
-		    ];
-		    $this->render('vue/commentaire_back.php', $view_params);
+			    $view_params = [
+			    	'billet' => $billet,
+			    	'commentaire' => $commentaire
+			    ];
+			    $this->render('vue/commentaire_back.php', $view_params);
+			}
+		} else {
+			$this->redirect('index.php?section=login');
 		}
 	}
 

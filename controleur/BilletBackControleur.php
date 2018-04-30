@@ -10,14 +10,18 @@ class BilletBackControleur extends Controller {
 	}
 
 	public function affichage_billet_a_modifier() {
-		if (!empty($_POST['idBilletModified'])) {
-			$idBillet = $_POST['idBilletModified'];
-			$billetManager = $this->billetManager;
-			$billet = $billetManager->get_billet($idBillet);
-			$view_params = [
-				'billet' => $billet,
-			];
-			$this->render('vue/billet_back.php', $view_params); 
+		if (isset($_SESSION) && ($_SESSION['connected']=="oui")) {
+			if (!empty($_POST['idBilletModified'])) {
+				$idBillet = $_POST['idBilletModified'];
+				$billetManager = $this->billetManager;
+				$billet = $billetManager->get_billet($idBillet);
+				$view_params = [
+					'billet' => $billet,
+				];
+				$this->render('vue/billet_back.php', $view_params); 
+			}
+		} else {
+			$this->redirect('index.php?section=login');
 		}
 	}
 
@@ -30,8 +34,12 @@ class BilletBackControleur extends Controller {
 	} 
 
 	public function affichage_billet_a_creer() {
-		$view_params = [];
-		$this->render('vue/new_billet_back.php', $view_params); 
+		if (isset($_SESSION) && ($_SESSION['connected']=="oui")) {
+			$view_params = [];
+			$this->render('vue/new_billet_back.php', $view_params); 
+		} else {
+			$this->redirect('index.php?section=login');
+		}
 	}
 
 	public function enregistrement_nouveau_billet() {

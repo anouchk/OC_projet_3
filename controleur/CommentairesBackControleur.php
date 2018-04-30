@@ -13,27 +13,32 @@ class CommentairesBackControleur extends Controller {
 
 	public function commentaires_back_affichage_commentaires()
 	{
-		if (!empty($_GET['billet'])) {
-			$idBillet = $_GET['billet'];
-			$commentaireManager =  $this->commentaireManager;
-		    $commentaires = $commentaireManager->get_commentaires(0, 30, $idBillet);
-			// on sécurise l'affichage des commentaires
-			foreach($commentaires as $cle => $commentaire) 
-			{ 
-			    $commentaire[$cle]['auteur'] = htmlspecialchars($commentaire['auteur']); 
-			    $commentaire[$cle]['commentaire'] = nl2br(htmlspecialchars($commentaire['commentaire'])); 
-			} 
-			// lancer la requête de récupération des données du billet pour pouvoir afficher le titre du billet en haut de la liste des commentaires
-			$billetManager = $this->billetManager;
-			$billet = $billetManager->get_billet($idBillet);
-			$view_params = [
-    			'billet' => $billet,
-    			'commentaires' => $commentaires,
-    			'idBillet' => $idBillet
-    		];
+		if (isset($_SESSION) && ($_SESSION['connected']=="oui")) {
+			if (!empty($_GET['billet'])) {
+				$idBillet = $_GET['billet'];
+				$commentaireManager =  $this->commentaireManager;
+			    $commentaires = $commentaireManager->get_commentaires(0, 30, $idBillet);
+				// on sécurise l'affichage des commentaires
+				foreach($commentaires as $cle => $commentaire) 
+				{ 
+				    $commentaire[$cle]['auteur'] = htmlspecialchars($commentaire['auteur']); 
+				    $commentaire[$cle]['commentaire'] = nl2br(htmlspecialchars($commentaire['commentaire'])); 
+				} 
+				// lancer la requête de récupération des données du billet pour pouvoir afficher le titre du billet en haut de la liste des commentaires
+				$billetManager = $this->billetManager;
+				$billet = $billetManager->get_billet($idBillet);
+				$view_params = [
+	    			'billet' => $billet,
+	    			'commentaires' => $commentaires,
+	    			'idBillet' => $idBillet
+	    		];
 
-    	 	$this->render('vue/commentaires_back.php', $view_params); 
-		}   
+	    	 	$this->render('vue/commentaires_back.php', $view_params); 
+			} 
+		} else {
+
+			$this->redirect('index.php?section=login');
+		}  
 	}
 
 	public function commentaires_back_suppression_commentaire()
