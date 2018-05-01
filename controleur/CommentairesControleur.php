@@ -50,6 +50,8 @@ class CommentairesControleur extends Controller {
 			$commentaireManager =  $this->commentaireManager;
 			$commentaireManager->signal_commentaire($idCommentaire);
 			$idBillet=$_POST['id2_billet'];
+			var_dump($idBillet);
+			die;
 			$this->redirect('index.php?section=commentaires&billet='.$idBillet);
 		}
 	} 
