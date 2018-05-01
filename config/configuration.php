@@ -39,7 +39,7 @@ $match = [
 			'controllerCaller' => 'getCommentairesController',
 			'action' => 'commentaires_front_affichage_commentaires',
 		],
-		'#^signalement_commentaire$#' => [
+		'#^signalement_commentaire&billet=([0-9]+)$#' => [
 			'controllerCaller' => 'getCommentairesController',
 			'action' => 'commentaires_front_signalement_commentaire',
 		],
