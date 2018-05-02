@@ -29,6 +29,8 @@ class Container implements ContainerInterface {
 	private $billetBackController;
 	private $commentaireBackController;
 
+	private $twig;
+
 	public function __construct(array $configuration) {
 		$this->configuration = $configuration;
 
@@ -90,6 +92,17 @@ class Container implements ContainerInterface {
 
 	public function has($id) {
 		return array_key_exists($id, $this->services);
+	}
+
+	public function getTwig()
+	{
+		if ($this->twig === null) {
+			$loader = new \Twig_Loader_Filesystem('vue');
+			$this->twig = new \Twig_Environment($loader, array(
+				'cache' => 'cache_twig',
+			));
+		}
+		return $this->twig;
 	}
 
 	/*
