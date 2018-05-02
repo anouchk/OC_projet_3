@@ -25,7 +25,7 @@ class BilletsControleur extends Controller {
 			'connected' => $connected
 		];		
 	    
-	    $this->render('vue/billets.php', $view_params); 
+	    $this->render('billets.php', $view_params); 
 
 	}
 
