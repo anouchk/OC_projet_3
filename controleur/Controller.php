@@ -15,8 +15,7 @@ abstract class Controller {
 			'cache' => 'cache_twig',
 		));
 
-		$template = $twig->load($file);
-		echo $template->render([]);
+		echo $twig->render($file, []);
 
 		include_once $file;
 	}
