@@ -4,6 +4,9 @@ use modele\Entity\Commentaire;
 
 class CommentaireManager extends DatabaseManager {
 
+	/*
+	 * Ajoute un commentaire
+	 */
 	public function add_commentaire () {
 
 	    $bdd = $this->getBdd();
@@ -20,6 +23,9 @@ class CommentaireManager extends DatabaseManager {
 		$requete->execute();
 	}
 
+	/*
+	 * Récupère un commentaire
+	 */
 	public function get_commentaire($idCommentaire) {
 	
 	    $bdd = $this->getBdd();
@@ -39,6 +45,9 @@ class CommentaireManager extends DatabaseManager {
 	    return $commentaire ;
  	}
 
+ 	/*
+	 * Actualise un commentaire
+	 */
  	public function update_commentaire () {
 
 	    $bdd = $this->getBdd();
@@ -55,6 +64,9 @@ class CommentaireManager extends DatabaseManager {
 		$requete->execute();
 	}
 
+	/*
+	 * Supprimme un commentaire
+	 */
 	public function delete_commentaire($idCommentaire) {
 	
 		$bdd = $this->getBdd();
@@ -65,6 +77,9 @@ class CommentaireManager extends DatabaseManager {
 		$req -> execute($q);
 	}
 
+	/*
+	 * Signale un commentaire
+	 */
 	public function signal_commentaire($id_commentaire) {
 		$bdd = $this->getBdd();
 
@@ -73,6 +88,9 @@ class CommentaireManager extends DatabaseManager {
 		$req -> execute(array('id_commentaire' => $id_commentaire));
 	}
 
+	/*
+	 * Supprime le signalement d'un commentaire
+	 */
 	public function unsignal_commentaire($id_commentaire) {
 		$bdd = $this->getBdd();
 
@@ -81,6 +99,9 @@ class CommentaireManager extends DatabaseManager {
 		$req -> execute(array('id_commentaire' => $id_commentaire));
 	}
 
+	/*
+	 * Compteur de commentaires
+	 */
 	public function count_commentaires($idBillet) {
 	
 	    $bdd = $this->getBdd();
@@ -93,6 +114,9 @@ class CommentaireManager extends DatabaseManager {
 	    return $nombre_commentaires ;
 	}
 
+	/*
+	 * Récupère une liste de commentaires
+	 */
 	function get_commentaires($offset, $limit, $idBillet) {
    
 	    $bdd = $this->getBdd();
@@ -109,7 +133,7 @@ class CommentaireManager extends DatabaseManager {
 	    $limit = (int) $limit;
 
 		// Récupération des commentaires
-		$PDO_statement = $bdd->prepare('SELECT id, auteur, commentaire, DATE_FORMAT(date_commentaire, \'%d/%m/%Y à %Hh%imin%ss\') AS date_commentaire_fr, signalement, id_billet FROM commentaires WHERE id_billet=:id ORDER BY date_commentaire DESC LIMIT :offset, :limit');
+		$PDO_statement = $bdd->prepare('SELECT id, auteur, commentaire, DATE_FORMAT(date_commentaire, \'%d/%m/%Y à %Hh%imin%ss\') AS date_commentaire_fr, signalement, id_billet FROM commentaires WHERE id_billet=:id ORDER BY  date_commentaire DESC LIMIT :offset, :limit');
 	    $PDO_statement->bindParam(':offset', $offset, \PDO::PARAM_INT);
 	    $PDO_statement->bindParam(':limit', $limit, \PDO::PARAM_INT);
 	    $PDO_statement->bindParam(':id', $idBillet, \PDO::PARAM_INT);

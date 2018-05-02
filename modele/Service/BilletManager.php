@@ -4,6 +4,9 @@ use modele\Entity\Billet;
 
 class BilletManager extends DatabaseManager{
 
+	/*
+	 * Ajoute un billet
+	 */
 	public function add_billet() {
 
 	    $bdd = $this->getBdd();
@@ -18,6 +21,9 @@ class BilletManager extends DatabaseManager{
 		$requete->execute();
 	}
 
+	/*
+	 * Récupère un billet
+	 */
 	public function get_billet($idBillet) {
 
 	    $bdd = $this->getBdd();
@@ -35,6 +41,9 @@ class BilletManager extends DatabaseManager{
 	    return $billet ;
 	}
 
+	/*
+	 * Actualise un billet
+	 */
 	public function update_billet () {
 
 	    $bdd = $this->getBdd();
@@ -52,6 +61,9 @@ class BilletManager extends DatabaseManager{
 		$requete->execute();
 	}
 
+	/*
+	 * Supprime un billet
+	 */
 	public function delete_billet($id_billet) {
 
 		$bdd = $this->getBdd();
@@ -61,6 +73,9 @@ class BilletManager extends DatabaseManager{
 		$req -> execute(array('id_billet' => $id_billet));
 	}
 
+	/*
+	 * Récupère une liste de billets
+	 */
 	public function get_billets($offset, $limit) {
     
 	    $bdd = $this->getBdd();

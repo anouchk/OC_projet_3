@@ -39,6 +39,9 @@ class Container implements ContainerInterface {
 		];
 	}
  
+	/*
+	 * Récupère les éléments de la base de données en singleton
+	 */ 
 	public function getPDO()
 	{
 		if ($this->pdo === null) {
@@ -50,6 +53,9 @@ class Container implements ContainerInterface {
 		return $this->pdo;
 	}
 
+	/*
+	 * Récupération des services en singleton
+	 */
 	public function getBilletManager() {
 		if ($this->billetManager === null) {
 			$this->billetManager = new BilletManager($this->getPDO());
@@ -71,6 +77,9 @@ class Container implements ContainerInterface {
 		return $this->loginManager;
 	}
 
+	/*
+	 * Implémentation du Container en PSR 4
+	 */
 	public function get($id) {
 		if ($this->has($id)) {
 			return $this->services[$id];
@@ -83,6 +92,9 @@ class Container implements ContainerInterface {
 		return array_key_exists($id, $this->services);
 	}
 
+	/*
+	 * Récupération des controleurs en singleton
+	 */
 	public function getBilletsController()
 	{
 		if ($this->billetsController === null) {
