@@ -10,6 +10,11 @@ abstract class Controller {
 		extract($view_params);
 		// dans la vue il faudra faire des echo
 
+		$loader = new \Twig_Loader_Filesystem(__DIR__ . '/../vue');
+		$twig = new \Twig_Environment($loader, array(
+			'cache' => 'cache_twig',
+		));
+
 		include_once $file;
 	}
 
