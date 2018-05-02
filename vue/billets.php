@@ -13,39 +13,37 @@
 
     <body>
         
+        {#
         <?php if ($connected=="oui") {
             echo "<h3><a href='index.php?section=logout'>Deconnexion</a></h3>";
             echo "<h3><a href='index.php?section=login'>Admin</a></h3>";
         } elseif ($connected=="non") {
             echo "<h3><a href='index.php?section=login'>Admin</a></h3>";
         } ?>
+        #}
         
         <h1>Billet simple pour l'Alaska</h1>
         <p> Découvrez le nouveau roman de l'acteur et écrivain Jean Forteroche, à mesure qu'il se construit.</p>
         <p>Derniers épisodes :</p>
 
-<?php
-//var_dump($billets);
-foreach($billets as $billet) {
-?>
+
+
+{% for billet in billets %} 
 
 <div class="news">
     <h3>
-        <?php echo $billet->getTitre(); ?>
-        <em>le <?php echo $billet->getDateCreation(); ?></em>
+        {{ attribute(billet,getTitre) }}
+        <em>le {{ attribute (billet,getDateCreation) }}</em>
     </h3>
 
     <div>
-        <?php echo $billet->getContenu(); ?>
+        {{ attribute(billet,getContenu) }}
         <br />
-        <em><a href="index.php?section=commentaires&billet=<?php echo $billet->getId(); ?>">Commentaires</a></em>
+        <em><a href="index.php?section=commentaires&billet={{ attribute(billet,getId) }}">Commentaires</a></em>
     </div>
 </div>
 
-<?php
-
-}
-?>
+{% endfor %}
 
 </body>
 </html>
