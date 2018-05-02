@@ -68,7 +68,7 @@
 							<!-- Pour signaler : je veux modifier le boléen sur le commentaire dont l'id sera récupéré en POST-->
 					      	<form method="post" action="index.php?section=signalement_commentaire&billet=<?php echo $billet->getId(); ?>">
 			       				<input type="hidden" name="idCommentaireSignaled" value="<?php echo $commentaire->getId(); ?>"/>
-			       				<input type ="hidden" name="id2_billet" value="<?php $billet->getId(); ?>">
+			       				<input type ="hidden" name="id2_billet" value="<?php echo $billet->getId(); ?>">
 			       				<p><input type="submit" class="btn btn-secondary" value="Signaler ce commentaire">
 			    			</form>
 			    			
