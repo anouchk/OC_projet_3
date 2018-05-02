@@ -12,10 +12,11 @@ abstract class Controller {
 
 		$loader = new \Twig_Loader_Filesystem(__DIR__ . '/../vue');
 		$twig = new \Twig_Environment($loader, array(
-			'cache' => 'cache_twig',
+			'debug' => true,
 		));
+		$twig->addExtension(new \Twig_Extension_Debug());
 
-		echo $twig->render($file, []);
+		echo $twig->render($file, $view_params);
 
 		include_once $file;
 	}
