@@ -30,37 +30,36 @@
 		    </tr>
 		  </thead>
 		  <tbody>
-		  	<?php
-			//var_dump($billets);
-			foreach($billets as $billet) :
-			?>
+
+			{% for billet in billets %} 
+
 		    <tr>
-		      <td><?php echo $billet->getId(); ?></td>
-		      <td><?php echo $billet->getTitre(); ?></td>
-		      <td><a href="index.php?section=commentaires&billet=<?php echo $billet->getId(); ?>"><?php echo $billet->getTitre(); ?></a></td>
+		      <td>{{ billet.getId }}</td>
+		      <td><{{ billet.getTitre }}</td>
+		      <td><a href="index.php?section=commentaires&billet={{ billet.getId }}">{{ billet.getTitre }}</a></td>
 		      <td> 
 		      	<!-- Pour modifier : je veux afficher dans un form dans billet_back le contenu du billet dont l'id sera récupéré en POST-->
 		      	<form class="coteacote" method="post" action="index.php?section=modification_billet">
-       				<input type="hidden" name="idBilletModified" value="<?php echo $billet->getId(); ?>"/>
+       				<input type="hidden" name="idBilletModified" value="{{ billet.getId }}"/>
        				<p><input type="submit" class="btn btn-primary" value="Modifier"></p>
     			</form>
 		      	
        			<!-- Button trigger modal -->
-       			<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#alert_suppr<?php echo $billet->getId(); ?>">		Supprimer
+       			<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#alert_suppr{{ billet.getId }}">		Supprimer
        			</button>
 
 						<!-- Modal -->
-						<div class="modal fade" id="alert_suppr<?php echo $billet->getId(); ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+						<div class="modal fade" id="alert_suppr{{ billet.getId }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 						  <div class="modal-dialog" role="document">
 						    <div class="modal-content">
 						      <div class="modal-body">
-						        Etes-vous sûr de vouloir supprimer le billet "<?php echo $billet->getTitre(); ?>" ?
+						        Etes-vous sûr de vouloir supprimer le billet "{{ billet.getTitre }}" ?
 						      </div>
 						      <div class="modal-footer">
 						        <button type="button" class="btn btn-secondary" data-dismiss="modal">Oups, non</button>
 						        <!-- Pour supprimer : je veux lancer une requête DELETE sur le billet dont l'id sera récupéré en POST-->
 						      	<form method="post" action="index.php?section=suppression_billet">
-				       				<input type="hidden" name="idBilletASupprimer" value="<?php echo $billet->getId(); ?>"/>
+				       				<input type="hidden" name="idBilletASupprimer" value="{{ billet.getId }}"/>
 				       				<p><input type="submit" class="btn btn-secondary btn-secondary-slightly-descendu" value="Oui"></p>
 						        </form>
 						      </div>
@@ -68,11 +67,11 @@
 						  </div>
 						</div>    			
 		      </td>
-		      <td> <a href="index.php?section=commentaires_back&billet=<?php echo $billet->getId(); ?>"><button class="btn btn-primary"> (<?php echo $billet->getNbCommentaires()[0]; ?>) Modérer</button></a> <td>
+		      <td> <a href="index.php?section=commentaires_back&billet={{ billet.getId }}"><button class="btn btn-primary"> ({{ billet.getNbCommentaires[0] }}) Modérer</button></a> <td>
 		    </tr>
-		    <?php
-			endforeach;
-			?>
+
+		    {% endfor %}
+
 		  </tbody>
 		</table>
 	</body>
