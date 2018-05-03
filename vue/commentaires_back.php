@@ -40,11 +40,9 @@
 		      <td>{{ commentaire.getAuteur}}</td>
 		      <td><{{ commentaire.getCommentaire}}></td>
 		      <td>
-		      	{% if %}
-			      	{{ commentaire.getSignalement}} == 1 
-			      		<span class='signal'> OUI </span> 
-			    {% elseif %}
-			    	{{ commentaire.getSignalement}} == 0
+		      	{% if commentaire.getSignalement == 1 %}
+			      		<span class='signal'> OUI </span>
+			    {% elseif commentaire.getSignalement == 0 %}
 			      		<span class='non_signal'> NON </span>
 			    {% endif %}
 
@@ -82,9 +80,7 @@
 						</div>    			
 		      </td>
 		    </tr>
-		    <?php
-			endforeach;
-			?>
+		    {% endfor %}
 		  </tbody>
 		</table>
 
