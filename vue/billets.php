@@ -32,14 +32,14 @@
 
 <div class="news">
     <h3>
-        {{ attribute(billet,getTitre) }}
-        <em>le {{ attribute (billet,getDateCreation) }}</em>
+        {{ billet.getTitre }}
+        <em>le {{ billet.getDateCreation }}</em>
     </h3>
 
     <div>
-        {{ attribute(billet,getContenu) }}
+        {{ billet.getContenu }}
         <br />
-        <em><a href="index.php?section=commentaires&billet={{ attribute(billet,getId) }}">Commentaires</a></em>
+        <em><a href="index.php?section=commentaires&billet={{ billet.getId }}">Commentaires</a></em>
     </div>
 </div>
 
