@@ -14,17 +14,17 @@
     </head>
 
     <body>
-        <a href="index.php?section=commentaires_back&billet=<?php echo $billet->getId(); ?>" class="btn btn-info"><i class="fas fa-arrow-alt-circle-left"></i> Retour à la modération des commentaires</a>
-    	<h2>Commentaire du billet : <?php echo $billet->getTitre(); ?></h2>
+        <a href="index.php?section=commentaires_back&billet={{ billet.getId }}" class="btn btn-info"><i class="fas fa-arrow-alt-circle-left"></i> Retour à la modération des commentaires</a>
+    	<h2>Commentaire du billet : {{ billet.getTitre }}</h2>
 
     	<!-- il va falloir voir comment récupérer l'id du billet -->
     	<!-- Pour modifier : je veux modifier le contenu du le commentaire dont l'id sera récupéré en POST-->
-    	<form action="index.php?section=enregistrer_modification_commentaire&billet=<?php echo $billet->getId(); ?>" method="post">
-                <p>Posté le <?php echo $commentaire->getDateCommentaire(); ?> par <?php echo $commentaire->getAuteur(); ?></p>
+    	<form action="index.php?section=enregistrer_modification_commentaire&billet={{ billet.getId }}" method="post">
+                <p>Posté le {{ commentaire.getDateComentaire }} par {{ commentaire.getAuteur }}</p>
 			
-				<p><label> Message</label> : <input class="input_large" type="text" name="message" value= "<?php echo $commentaire->getCommentaire(); ?>"</p>
-                <input type="hidden" name="idCommentaireModified" value="<?php echo $commentaire->getId(); ?>"/>
-				<input type ="hidden" name="id2_billet" value="<?php echo $billet->getId();?>">
+				<p><label> Message</label> : <input class="input_large" type="text" name="message" value= "{{ commentaire.getCommentaire }}"</p>
+                <input type="hidden" name="idCommentaireModified" value="{{ commentaire.getId }}"/>
+				<input type ="hidden" name="id2_billet" value="{{ billet.getId }}">
 				<p><input type="submit" class="btn btn-secondary" value="Enregistrer la modification du commentaire" ></p>
 		</form>	
 
