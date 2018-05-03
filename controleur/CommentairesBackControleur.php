@@ -17,7 +17,7 @@ class CommentairesBackControleur extends Controller {
 			if (!empty($_GET['billet'])) {
 				$idBillet = $_GET['billet'];
 				$commentaireManager =  $this->commentaireManager;
-			    $commentaires = $commentaireManager->get_commentaires(0, 30, $idBillet);
+			    $commentaires = $commentaireManager->get_commentaires_back(0, 30, $idBillet);
 				// on sécurise l'affichage des commentaires
 				foreach($commentaires as $cle => $commentaire) 
 				{ 
