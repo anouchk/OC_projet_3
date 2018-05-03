@@ -33,7 +33,7 @@ class CommentairesBackControleur extends Controller {
 	    			'idBillet' => $idBillet
 	    		];
 
-	    	 	$this->render('vue/commentaires_back.php', $view_params); 
+	    	 	$this->render('commentaires_back.php', $view_params); 
 			} 
 		} else {
 
