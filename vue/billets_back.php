@@ -35,7 +35,7 @@
 
 		    <tr>
 		      <td>{{ billet.getId }}</td>
-		      <td><{{ billet.getTitre }}</td>
+		      <td>{{ billet.getTitre }}</td>
 		      <td><a href="index.php?section=commentaires&billet={{ billet.getId }}">{{ billet.getTitre }}</a></td>
 		      <td> 
 		      	<!-- Pour modifier : je veux afficher dans un form dans billet_back le contenu du billet dont l'id sera récupéré en POST-->
