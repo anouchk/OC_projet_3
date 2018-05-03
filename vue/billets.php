@@ -14,11 +14,11 @@
     <body>
         
         {%  if connected=="oui"  %}
-            echo "<h3><a href='index.php?section=logout'>Deconnexion</a></h3>";
-            echo "<h3><a href='index.php?section=login'>Admin</a></h3>";
-        {%  elseif connected=="non"  %}
-            echo "<h3><a href='index.php?section=login'>Admin</a></h3>";
+            <h3><a href='index.php?section=logout'>Deconnexion</a></h3>
         {% endif %}
+         <h3><a href='index.php?section=login'>Admin</a></h3>
+
+        
         
         <h1>Billet simple pour l'Alaska</h1>
         <p> Découvrez le nouveau roman de l'acteur et écrivain Jean Forteroche, à mesure qu'il se construit.</p>
