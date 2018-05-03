@@ -31,7 +31,7 @@ class BilletsBackControleur extends Controller {
 	    		'billets' => $billets,
 	    	];
 
-	    	$this->render('vue/billets_back.php', $view_params); 
+	    	$this->render('billets_back.php', $view_params); 
 
 		} elseif (isset($_SESSION) && ($_SESSION['connected']=="non")) {
 
