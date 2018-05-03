@@ -17,11 +17,9 @@
 
     <body>
     	{%  if connected=="oui"  %}
-            echo "<h3><a href='index.php?section=logout'>Deconnexion</a></h3>";
-            echo "<h3><a href='index.php?section=login'>Admin</a></h3>";
-        {%  elseif connected=="non"  %}
-            echo "<h3><a href='index.php?section=login'>Admin</a></h3>";
-       {% endif %}
+            <h3><a href='index.php?section=logout'>Deconnexion</a></h3>
+        {% endif %}
+         <h3><a href='index.php?section=login'>Admin</a></h3>
 
         <h1>Billet simple pour l'Alaska</h1>
         <a href="index.php?section=index" class="btn btn-secondary"><i class="fas fa-arrow-alt-circle-left"></i> Retour à la liste des billets</a>
@@ -55,22 +53,18 @@
 				<div>{{ commentaire.getCommentaire }}</div>
 				
 
-					{%  if {{ commentaire.getSignalement }} == 1 %}
-						signaled='<button id=" {{ commentaire.getId }}"
-						class="btn btn-danger">Commentaire signalé</button><br><br>'
-						echo signaled 
+					{%  if commentaire.getSignalement == 1 %}
+						<button id=" {{ commentaire.getId }}"
+						class="btn btn-danger">Commentaire signalé</button><br><br>						
 					{%  else  %}
-
-		
-
-					      	<form method="post" action="index.php?section=signalement_commentaire&billet={{ billet.getId }} ">
-			       				<input type="hidden" name="idCommentaireSignaled" value="{{ commentaire.getId }}"/>
-			       				<input type ="hidden" name="id2_billet" value="{{ billet.getId }}">
-			       				<p><input type="submit" class="btn btn-secondary" value="Signaler ce commentaire">
-			    			</form>
+					    <form method="post" action="index.php?section=signalement_commentaire&billet={{ billet.getId }} ">
+			       			<input type="hidden" name="idCommentaireSignaled" value="{{ commentaire.getId }}"/>
+			       			<input type ="hidden" name="id2_billet" value="{{ billet.getId }}">
+			       			<p><input type="submit" class="btn btn-secondary" value="Signaler ce commentaire">
+			    		</form>
+			    	{% endif %}
 			    			
 				{% endfor %}
-			
-			
+						
     </body>
 </html>
