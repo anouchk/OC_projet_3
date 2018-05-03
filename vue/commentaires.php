@@ -31,7 +31,7 @@
 				</h3>
 
 				<p> 
-					{{ billet.getContenu }}
+					{{ billet.getContenu | raw }}
 				</p>
 			 </div>
 
