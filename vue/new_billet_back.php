@@ -27,9 +27,9 @@
         <a href="index.php?section=billets_back" class="btn btn-info"><i class="fas fa-arrow-alt-circle-left"></i> Retour à l'administration des billets</a>
 
         <p class="signal">
-            <?php if (ISSET($message)) {
-                echo $message;
-            } ?>       
+            {% if (ISSET message %}
+                {{message}}
+            {% endif %}      
         </p>
 
 			<form action="index.php?section=enregistrer_nouveau_billet" method="post">
