@@ -29,7 +29,7 @@ class CommentaireBackControleur extends Controller {
 			    	'billet' => $billet,
 			    	'commentaire' => $commentaire
 			    ];
-			    $this->render('vue/commentaire_back.php', $view_params);
+			    $this->render('commentaire_back.php', $view_params);
 			}
 		} else {
 			$this->redirect('index.php?section=login');
