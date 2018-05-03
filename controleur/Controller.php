@@ -18,7 +18,6 @@ abstract class Controller {
 
 		echo $twig->render($file, $view_params);
 
-		include_once $file;
 	}
 
 	public function redirect($url)
