@@ -6,11 +6,10 @@
 	</head>
 	<body>
 
-		<?php
-		if($error) {
-			echo "<div>Identifiants erronés. Veuillez à nouveau saisir votre pseudo et votre mot de passe :</div>";
-		}
-		?>
+
+		{% if error %}
+			<div>Identifiants erronés. Veuillez à nouveau saisir votre pseudo et votre mot de passe :</div>
+		{% endif %}
 
 		<form action="index.php?section=login_traitement_formulaire" method="post">
 			<p><label for "pseudo"> Pseudo</label> : <input type="text" name="pseudo" id="pseudo" value=""></p>
