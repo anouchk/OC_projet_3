@@ -19,7 +19,7 @@ class LoginControleur extends Controller {
             $view_params = [
                 'error' => $error
             ];
-            $this->render('vue/login.php', $view_params);
+            $this->render('login.php', $view_params);
         }    
     }
 
