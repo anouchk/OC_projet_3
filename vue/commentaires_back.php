@@ -19,7 +19,7 @@
 
     	<a href="index.php?section=billets_back" class="btn btn-info"><i class="fas fa-arrow-alt-circle-left"></i> Retour à l'administration des billets</a>
 
-    	<h2>Commentaires du billet : <?php echo $billet->getTitre(); ?></h2>
+    	<h2>Commentaires du billet : {{ billet.getTitre }}</h2>
 
     	<table class="table">
 		  <thead>
@@ -32,49 +32,48 @@
 		    </tr>
 		  </thead>
 		  <tbody>
-		  	<?php
-			//var_dump($billets);
+		  	
+		  	{% for commentaire in commentaires %} 
 
-			foreach($commentaires as $commentaire) :
-			?>
 		    <tr>
-		      <td><?php echo $commentaire->getId(); ?></td>
-		      <td><?php echo $commentaire->getAuteur(); ?></td>
-		      <td><?php echo $commentaire->getCommentaire(); ?></td>
+		      <td>{{ commentaire.getId }}</td>
+		      <td>{{ commentaire.getAuteur}}</td>
+		      <td><{{ commentaire.getCommentaire}}></td>
 		      <td>
-		      	<?php 
-			      	if ($commentaire->getSignalement() == 1) {
-			      		echo "<span class='signal'> OUI </span>"; 
-			      	} elseif ($commentaire->getSignalement() == 0) {
-			      		echo "<span class='non_signal'> NON </span>";
-			      	}
-		      	?>
+		      	{% if %}
+			      	{{ commentaire.getSignalement}} == 1 
+			      		<span class='signal'> OUI </span> 
+			    {% elseif %}
+			    	{{ commentaire.getSignalement}} == 0
+			      		<span class='non_signal'> NON </span>
+			    {% endif %}
+
 		      </td>
 		      <td> 
 		      	<!-- Pour modifier : je veux afficher dans un form dans commentaire_back le contenu du commentaire dont l'id sera récupéré en POST-->
 		      	<form class="coteacote" method="post" action="index.php?section=modification_commentaire">
-       				<input type="hidden" name="idCommentaireModified" value="<?php echo $commentaire->getId(); ?>"/>
-       				<input type ="hidden" name="id2_billet" value="<?php echo $idBillet ?>">
+       				<input type="hidden" name="idCommentaireModified" value="{{ commentaire.getId }}"/>
+       				<input type ="hidden" name="id2_billet" value="{{ idBillet }}">
        				<p><input type="submit" class="btn btn-primary" value="Modifier"></p>
     			</form>
 		      	
        			<!-- Button trigger modal -->
-       			<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#alert_suppr<?php echo $commentaire->getId(); ?>">		Supprimer
+       			<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#alert_suppr{{ commentaire.getId }}">		Supprimer
        			</button>
 
 						<!-- Modal -->
-						<div class="modal fade" id="alert_suppr<?php echo $commentaire->getId(); ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+						<div class="modal fade" id="alert_suppr{{ commentaire.getId }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 						  <div class="modal-dialog" role="document">
 						    <div class="modal-content">
 						      <div class="modal-body">
-						        Etes-vous sûr de vouloir supprimer le commentaire "<?php echo $commentaire->getCommentaire(); ?>" de <?php echo $commentaire->getAuteur(); ?> ?
+						        Etes-vous sûr de vouloir supprimer le commentaire "{{ commentaire.getCommentaire }}" de {{ commentaire.getAuteur }} ?
 						      </div>
 						      <div class="modal-footer">
 						        <button type="button" class="btn btn-secondary" data-dismiss="modal">Oups, non</button>
 						        <!-- Pour supprimer : je veux lancer une requête DELETE sur le commentaire dont l'id sera récupéré en POST-->
 						      	<form method="post" action="index.php?section=suppression_commentaire">
-				       				<input type="hidden" name="idCommentaire" value="<?php echo $commentaire->getId(); ?>"/>
-				       				<input type="hidden" name="idBillet" value="<?php echo $billet->getId(); ?>"/>
+				       				<input type="hidden" name="idCommentaire" value="{{ commentaire.getId }}"/>
+				       				<input type="hidden" name="idBillet" value="{{ billet.getId }}"/>
 				       				<p><input type="submit" class="btn btn-secondary btn-secondary-descendu" value="Oui"></p>
 						        </form>
 						      </div>
