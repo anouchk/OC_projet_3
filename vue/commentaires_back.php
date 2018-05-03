@@ -38,7 +38,7 @@
 		    <tr>
 		      <td>{{ commentaire.getId }}</td>
 		      <td>{{ commentaire.getAuteur}}</td>
-		      <td><{{ commentaire.getCommentaire }}></td>
+		      <td>{{ commentaire.getCommentaire }}></td>
 		      <td>
 		      	{% if commentaire.getSignalement == 1 %}
 			      		<span class='signal'> OUI </span>
