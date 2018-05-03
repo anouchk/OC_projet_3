@@ -41,7 +41,7 @@ class CommentairesControleur extends Controller {
 		    $commentaire->setAuteur(htmlspecialchars($commentaire->getAuteur()));
 		    $commentaire->setCommentaire(nl2br(htmlspecialchars($commentaire->getCommentaire()))); 
 		} 
-		$this->render('vue/commentaires.php', $view_params);
+		$this->render('commentaires.php', $view_params);
 	}
 
 	public function commentaires_front_signalement_commentaire() {
