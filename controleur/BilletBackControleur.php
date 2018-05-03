@@ -46,7 +46,7 @@ class BilletBackControleur extends Controller {
 		if (!empty($_POST['titre_billet'])&& !empty($_POST['contenu_billet'])) {
 			$billetManager = $this->billetManager;	
 			$billetManager->add_billet();
-			$this->redirect('index.php?section=lection=billets_back');
+			$this->redirect('index.php?section=billets_back');
 		} else {
 			$message = "Le contenu et/ou le titre sont vides. Veuillez remplir le formulaire.";
 			$view_params = [
