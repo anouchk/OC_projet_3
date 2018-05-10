@@ -27,8 +27,11 @@ class BilletBackControleur extends Controller {
 
 	public function enregistrement_modification_billet() {
 		if (!empty($_POST['idBilletModified'])) {
-			$billetManager = $this->billetManager;		
-			$billetManager->update_billet();
+			$billetManager = $this->billetManager;	
+			// On a besoin du Billet à actualiser
+			// Le contrôleur ne le fait pas lui-même il va demander au BilletManager de le faire
+			$billet = $billetManager->get_billet($_POST['idBilletModified']);	
+			$billetManager->update_billet($billet);
 		}
 		$this->redirect('index.php?section=billets_back');
 	} 
