@@ -7,6 +7,18 @@ class Billet
     private $contenu;
     private $date_creation;
     private $nbCommentaires;
+
+    /**
+     * Ne retourne qu'un extrait du contenu de longueur $length (pour le chapeau de chaque billet en page d'accueil)
+     */
+    public function getExtract($length)
+    {
+       if (strlen($this->getContenu()) >= $length) {
+           return substr($this->getContenu(), 0, $length) . '[...]';
+       }
+
+       return $this->getContenu();
+    }
     
     /**
      * @return mixed
