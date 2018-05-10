@@ -41,10 +41,10 @@ class BilletManager extends DatabaseManager{
 	    return $billet ;
 	}
 
-	/*
+	/**
 	 * Actualise un billet
 	 */
-	public function update_billet () {
+	public function update_billet (Billet $billet) {
 
 	    $bdd = $this->getBdd();
 
@@ -55,9 +55,9 @@ class BilletManager extends DatabaseManager{
 			titre = :titre
 			WHERE id= :id
 		') ;
-		$requete->bindParam(':contenu', $_POST['contenu_billet']);
-		$requete->bindParam(':titre', $_POST['titre_billet']);
-		$requete->bindParam(':id', $_POST['idBilletModified']);
+		$requete->bindParam(':contenu', $billet->getContenu());
+		$requete->bindParam(':titre', $billet->getTitre());
+		$requete->bindParam(':id', $billet->getId());
 		$requete->execute();
 	}
 
