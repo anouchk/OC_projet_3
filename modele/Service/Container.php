@@ -47,7 +47,7 @@ class Container implements ContainerInterface {
 	public function getPDO()
 	{
 		if ($this->pdo === null) {
-			extract($this->configuration);
+			extract($this->configuration['database']);
 			$this->pdo = new \PDO($db_dsn, $db_user, $db_pass);
 			$this->pdo->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
 		}
