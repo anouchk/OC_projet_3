@@ -22,7 +22,8 @@ class BilletsControleur extends Controller {
 
 		$view_params = [
 			'billets' => $billetManager->get_billets(0, 30),
-			'connected' => $connected
+			'connected' => $connected,
+			'max_length' => $this->config['extract_max_length'],
 		];		
 	    
 	    $this->render('billets.php', $view_params); 
