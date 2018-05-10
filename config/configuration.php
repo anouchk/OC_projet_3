@@ -9,10 +9,12 @@ $configuration = [
 	// 'db_user' => 'root',
 	// 'db_pass' => 'root',
 
-	'db_dsn'  => 'mysql:host=mysql-projet3ana.alwaysdata.net;dbname=projet3ana_bdd',
-	'db_user' => '158666',
-	'db_pass' => 'projet3',
-
+	'database' => [
+		'db_dsn'  => 'mysql:host=mysql-projet3ana.alwaysdata.net;dbname=projet3ana_bdd',
+		'db_user' => '158666',
+		'db_pass' => 'projet3',
+	],
+	'extract_max_length' => 150,
 ]; 
 
 /*
