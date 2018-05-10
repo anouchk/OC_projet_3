@@ -2,9 +2,14 @@
 
 namespace controleur;
 
-// Notre super Controller pour systématiser les include et les redirections
+// Notre super Controller pour systématiser les include et les redirections vers la vue, et régler la longueur du chapeau
 abstract class Controller {
 
+	protected $config;
+
+	/**
+	 * Systématise le include 
+	 */
 	public function render($file, array $view_params = null)
 	{
 		extract($view_params);
@@ -20,8 +25,19 @@ abstract class Controller {
 
 	}
 
+	/**
+	 * Systémastise le header location
+	 */
 	public function redirect($url)
 	{
 		header('Location: '.$url);
+	}
+
+	/**
+	 * Une config pour tous les contrôleurs, pour pouvoir afinner la longueur de l'extrait du billet affiché en page d'accueil
+	 */
+	public function setConfig(array $config)
+	{
+		$this->config = $config;
 	}
 } 
