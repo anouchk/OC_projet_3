@@ -64,13 +64,13 @@ class BilletManager extends DatabaseManager{
 	/*
 	 * Supprime un billet
 	 */
-	public function delete_billet($id_billet) {
+	public function delete_billet(Billet $billet) {
 
 		$bdd = $this->getBdd();
 
 		$sql = "DELETE FROM billets WHERE id = :id_billet";
 		$req = $bdd -> prepare($sql);
-		$req -> execute(array('id_billet' => $id_billet));
+		$req -> execute(array('id_billet' => $billet->getId()));
 	}
 
 	/*
