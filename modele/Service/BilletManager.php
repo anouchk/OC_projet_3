@@ -21,18 +21,6 @@ class BilletManager extends DatabaseManager{
 		$requete->execute();
 	}
 
-	// en objet
-	class BilletManager {
-    private $db;
-    public function add(Billet $billet){
-        $req = $this->db->prepare('INSERT INTO billets(titre, contenu, date_fr) VALUES(:id, :titre, :contenu, :date_fr');
-        $req->execute(array(
-           'id'=>$billet->getId(),
-            'titre'=>$billet->getTitre()
-        ));
-    }
-}
-
 	/*
 	 * Récupère un billet
 	 */
