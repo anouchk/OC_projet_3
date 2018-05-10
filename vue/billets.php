@@ -33,7 +33,7 @@
     </h3>
 
     <div>
-        {{ billet.getContenu | raw }}
+        {{ billet.getExtract(max_length) | raw }}
         <br />
         <em><a href="index.php?section=commentaires&billet={{ billet.getId }}">Commentaires</a></em>
     </div>
