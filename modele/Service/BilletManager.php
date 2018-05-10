@@ -48,18 +48,18 @@ class BilletManager extends DatabaseManager{
 
 	    $bdd = $this->getBdd();
 
-		$requete = $bdd->prepare('
-			UPDATE billets
+        $req = $bdd->prepare('UPDATE billets
 			SET 
 			contenu = :contenu,
 			titre = :titre
 			WHERE id= :id
 		') ;
-		$requete->bindParam(':contenu', $billet->getContenu());
-		$requete->bindParam(':titre', $billet->getTitre());
-		$requete->bindParam(':id', $billet->getId());
-		$requete->execute();
-	}
+        $req->execute(array(
+           'id'=>$billet->getId(),
+            'titre'=>$billet->getTitre(),
+            'contenu'=> $billet->getContenu()
+        ));
+    }
 
 	/*
 	 * Supprime un billet
