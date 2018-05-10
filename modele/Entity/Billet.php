@@ -14,7 +14,7 @@ class Billet
     public function getExtract($length)
     {
        if (strlen($this->getContenu()) >= $length) {
-           return substr($this->getContenu(), 0, $length) . '[...]';
+           return substr($this->getContenu(), 0, $length) . ' [...]';
        }
 
        return $this->getContenu();

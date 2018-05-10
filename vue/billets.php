@@ -35,7 +35,7 @@
     <div>
         {{ billet.getExtract(max_length) | raw }}
         <br />
-        <em><a href="index.php?section=commentaires&billet={{ billet.getId }}">Commentaires</a></em>
+        <em><a href="index.php?section=commentaires&billet={{ billet.getId }}">Lire la suite et les commentaires</a></em>
     </div>
 </div>
 
