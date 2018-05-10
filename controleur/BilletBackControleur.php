@@ -62,7 +62,8 @@ class BilletBackControleur extends Controller {
 	public function suppression_billet() {
 		if (!empty($_POST['idBilletASupprimer'])) {
 			$billetManager = $this->billetManager;	
-			$billetManager->delete_billet($_POST['idBilletASupprimer']);
+			$billet = $billetManager->get_billet($_POST['idBilletASupprimer']);
+			$billetManager->delete_billet($billet);
 			$this->redirect('index.php?section=billets_back');
 		}
 	}
