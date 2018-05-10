@@ -33,11 +33,7 @@ class BilletManager extends DatabaseManager{
 	    $req->execute(array($id_Billet));
 	    $data = $req->fetch(\PDO::FETCH_ASSOC);
 
-	    $billet = new Billet();
-	    $billet->setId($data['id']);
-	    $billet->setTitre($data['titre']);
-	    $billet->setContenu($data['contenu']);
-	    $billet->setDateCreation($data['date_creation_fr']);
+	    $billet = new Billet($data);
 	    return $billet ;
 	}
 

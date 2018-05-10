@@ -8,6 +8,15 @@ class Billet
     private $date_creation;
     private $nbCommentaires;
 
+    // un constructeur pour passer à la classe Billet ses attributs en paramètre
+    public function __construct(array $data) {
+
+       $this->setId($data['id']);
+       $this->setTitre($data['titre']);
+       $this->setContenu($data['contenu']);
+       $this->setDateCreation($data['date_creation_fr']);
+    }
+
     /**
      * Ne retourne qu'un extrait du contenu de longueur $length (pour le chapeau de chaque billet en page d'accueil)
      */
