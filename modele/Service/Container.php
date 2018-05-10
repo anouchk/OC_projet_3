@@ -112,6 +112,7 @@ class Container implements ContainerInterface {
 	{
 		if ($this->billetsController === null) {
 			$this->billetsController = new BilletsControleur($this->getBilletManager());
+			$this->billetsController->setConfig($this->configuration);
 		}
 		return $this->billetsController;
 	}
