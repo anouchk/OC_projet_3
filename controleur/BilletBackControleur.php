@@ -1,6 +1,8 @@
 <?php
 namespace controleur;
 
+use modele\Entity\Billet;
+
 class BilletBackControleur extends Controller {
 
 	private $BilletManager;
