@@ -49,7 +49,7 @@ class BilletBackControleur extends Controller {
 
 	public function enregistrement_nouveau_billet() {
 		if (!empty($_POST['titre_billet'])&& !empty($_POST['contenu_billet'])) {
-			$billet = new Billet($data);
+			$billet = new Billet();
 			$billet->setTitre($_POST['titre_billet']);
 			$billet->setContenu($_POST['contenu_billet']);
 			$billetManager = $this->billetManager;	
