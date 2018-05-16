@@ -15,10 +15,11 @@ class BilletManager extends DatabaseManager{
 		// Effectuer ici la requête qui insère le billet rédigé avec $_POST dans la base de données 
 		$requete = $bdd->prepare('INSERT INTO billets(titre,contenu, date_creation) VALUES(:titre, :contenu, :date_creation)'); 
 		$date = date('Y-m-d H:i:s');
-		$requete->bindParam(':titre', $billet->getTitre());
-		$requete->bindParam(':contenu', $billet->getContenu());
-		$requete->bindParam(':date_creation', $date);
-		$requete->execute();
+		$requete->execute(array(
+			'titre'=>$billet->getTitre(),
+			'contenu'=>$billet->getContenu(),
+			'date_creation'=>$date
+		));
 	}
 
 	/*
