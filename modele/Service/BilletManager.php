@@ -7,7 +7,7 @@ class BilletManager extends DatabaseManager{
 	/*
 	 * Ajoute un billet
 	 */
-	public function add_billet() {
+	public function add_billet(Billet $billet) {
 
 	    $bdd = $this->getBdd();
 	    // $bdd = parent::getBdd(); ça marche aussi
@@ -15,8 +15,8 @@ class BilletManager extends DatabaseManager{
 		// Effectuer ici la requête qui insère le billet rédigé avec $_POST dans la base de données 
 		$requete = $bdd->prepare('INSERT INTO billets(titre,contenu, date_creation) VALUES(:titre, :contenu, :date_creation)'); 
 		$date = date('Y-m-d H:i:s');
-		$requete->bindParam(':titre', $_POST['titre_billet']);
-		$requete->bindParam(':contenu', $_POST['contenu_billet']);
+		$requete->bindParam(':titre', $billet->getTitre());
+		$requete->bindParam(':contenu', $billet->getContenu());
 		$requete->bindParam(':date_creation', $date);
 		$requete->execute();
 	}
@@ -89,7 +89,7 @@ class BilletManager extends DatabaseManager{
 
 	    $billets = [];
 	    for ($i=0; $i < count($data); $i++) {
-			$billet[$i] = new Billet();
+			$billet[$i] = new Billet($data);
 		    $billet[$i]->setId($data[$i]['id']);
 		    $billet[$i]->setContenu($data[$i]['contenu']);
 		    $billet[$i]->setTitre($data[$i]['titre']);
