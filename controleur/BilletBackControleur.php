@@ -33,7 +33,13 @@ class BilletBackControleur extends Controller {
 			$billetManager = $this->billetManager;	
 			// On a besoin du Billet à actualiser
 			// Le contrôleur ne le fait pas lui-même il va demander au BilletManager de le faire
-			$billet = $billetManager->get_billet($_POST['idBilletModified']);	
+			$billet = $billetManager->get_billet($_POST['idBilletModified']);
+
+			//Ici utiliser les setters pour mettre à jour l'instance de Billet
+			$billet->setTitre($_POST['titre_billet']);
+			$billet->setContenu($_POST['contenu_billet']);
+			$billet->setId($_POST['idBilletModified']);
+
 			$billetManager->update_billet($billet);
 		}
 		$this->redirect('index.php?section=billets_back');
