@@ -38,7 +38,7 @@ class BilletBackControleur extends Controller {
 			//Ici utiliser les setters pour mettre à jour l'instance de Billet
 			$billet->setTitre($_POST['titre_billet']);
 			$billet->setContenu($_POST['contenu_billet']);
-			$billet->setId($_POST['idBilletModified']);
+			// $billet->setId($_POST['idBilletModified']);
 
 			$billetManager->update_billet($billet);
 		}
