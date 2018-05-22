@@ -4,15 +4,17 @@
  * SETTINGS!
  */
 $configuration = [
-	// PDO credentials
-	// 'db_dsn'  => 'mysql:host=localhost;dbname=OC_projet_3',
-	// 'db_user' => 'root',
-	// 'db_pass' => 'root',
+	
 
 	'database' => [
-		'db_dsn'  => 'mysql:host=mysql-projet3ana.alwaysdata.net;dbname=projet3ana_bdd',
-		'db_user' => '158666',
-		'db_pass' => 'projet3',
+		// PDO credentials
+		'db_dsn'  => 'mysql:host=localhost;dbname=OC_projet_3',
+		'db_user' => 'root',
+		'db_pass' => 'root',
+		
+		// 'db_dsn'  => 'mysql:host=mysql-projet3ana.alwaysdata.net;dbname=projet3ana_bdd',
+		// 'db_user' => '158666',
+		// 'db_pass' => 'projet3',
 	],
 	'extract_max_length' => 150,
 ]; 
