@@ -1,6 +1,7 @@
 <?php
 namespace modele\Service;
 use modele\Entity\Commentaire;
+use modele\Entity\Billet;
 
 class CommentaireManager extends DatabaseManager {
 
@@ -49,20 +50,20 @@ class CommentaireManager extends DatabaseManager {
  	/*
 	 * Actualise un commentaire
 	 */
- 	public function update_commentaire () {
+ 	public function update_commentaire (Commentaire $commentaire) {
 
 	    $bdd = $this->getBdd();
-
-	    //Effectuer ici la requête qui met à jour le commentaire avec $_POST dans la base de données 
+ 		
 		$requete = $bdd->prepare('
 			UPDATE commentaires
 			SET 
 			commentaire = :commentaire
 			WHERE id= :id
 		') ;
-		$requete->bindParam(':commentaire', $_POST['message']);
-		$requete->bindParam(':id', $_POST['idCommentaireModified']);
-		$requete->execute();
+		$requete->execute(array(
+            'commentaire'=>$commentaire->getCommentaire(),
+            'id'=> $commentaire->getId()
+        ));
 	}
 
 	/*
