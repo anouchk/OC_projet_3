@@ -21,6 +21,7 @@ class BilletManager extends DatabaseManager{
 			'contenu'=>$billet->getContenu(),
 			'date_creation'=>$date
 		));
+		return $billet ;
 	}
 
 	/**
