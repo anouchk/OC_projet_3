@@ -4,7 +4,7 @@ namespace modele\Service;
 
 class BilletManager extends DatabaseManager{
 
-	/*
+	/**
 	 * Ajoute un billet
 	 */
 	public function add_billet(Billet $billet) {
@@ -22,7 +22,7 @@ class BilletManager extends DatabaseManager{
 		));
 	}
 
-	/*
+	/**
 	 * Récupère un billet
 	 */
 	public function get_billet($idBillet) {
