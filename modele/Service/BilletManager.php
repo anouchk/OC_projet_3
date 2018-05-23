@@ -5,10 +5,6 @@ use modele\Entity\Billet;
 
 class BilletManager extends DatabaseManager{
 
-	public function __construct($billet) {
-		$this->billet = $billet;
-	}
-
 	/**
 	 * Ajoute un billet
 	 */
