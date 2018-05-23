@@ -10,7 +10,6 @@ class CommentaireManager extends DatabaseManager {
 	public function add_commentaire (Commentaire $commentaire) {
 
 	    $bdd = $this->getBdd();
-	    $commentaire = new Commentaire ;
 
 		// Effectuer ici la requête qui insère le message reçu avec $_POST dans la base de données 
 		$requete = $bdd->prepare('INSERT INTO commentaires(id_billet,auteur,commentaire, date_commentaire, signalement) VALUES(:id_billet, :auteur, :commentaire, :date_commentaire, :signalement)'); 
@@ -20,7 +19,7 @@ class CommentaireManager extends DatabaseManager {
 			'auteur'=>$commentaire->getAuteur(),
 			'commentaire'=>$commentaire->getCommentaire(),
 			'date_commentaire'=>$date,
-			'signalement'=>$commentaire->getSignalemet()
+			'signalement'=>$commentaire->getSignalement()
 		));
 		return $commentaire ;
 	}
