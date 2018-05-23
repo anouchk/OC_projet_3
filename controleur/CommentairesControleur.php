@@ -1,5 +1,6 @@
 <?php 
 namespace controleur;
+use modele\Entity\Commentaire;
 
 class CommentairesControleur extends Controller {
 
@@ -18,11 +19,16 @@ class CommentairesControleur extends Controller {
 		$billetManager = $this->billetManager;
 		$commentaireManager = $this->commentaireManager;
 		if (!empty($_POST)) {
-			$commentaireManager->add_commentaire();
+			$commentaire = new Commentaire();
+			$signalement = 0;
+			$commentaire->setAuteur($_POST['pseudo']);
+			$commentaire->setCommentaire($_POST['message']);
+			$commentaire->setIdBillet($_POST['id2_billet']);
+			$commentaire->setSignalement($signalement);
+			$commentaireManager->add_commentaire($commentaire);
 		}
-		$idBillet=$_GET['billet'];
-		$billet = $billetManager->get_billet($idBillet);
-		$commentaires = $commentaireManager->get_commentaires(0, 30, $idBillet);
+		$billet = $billetManager->get_billet($_GET['billet']);
+		$commentaires = $commentaireManager->get_commentaires(0, 30, $_GET['billet']);
 
 		if (isset($_SESSION) && ($_SESSION['connected']=="oui")) {
 			$connected = "oui";
