@@ -1,6 +1,6 @@
 <?php
 namespace modele\Service;
-use modele\Entity\Billet;
+ 
 
 class BilletManager extends DatabaseManager{
 
@@ -12,7 +12,7 @@ class BilletManager extends DatabaseManager{
 	    $bdd = $this->getBdd();
 	    // $bdd = parent::getBdd(); ça marche aussi
 
-		// Effectuer ici la requête qui insère le billet rédigé avec $_POST dans la base de données 
+		// Effectuer ici la requête qui insère le billet rédigé dans la base de données 
 		$requete = $bdd->prepare('INSERT INTO billets(titre,contenu, date_creation) VALUES(:titre, :contenu, :date_creation)'); 
 		$date = date('Y-m-d H:i:s');
 		$requete->execute(array(

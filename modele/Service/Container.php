@@ -94,6 +94,9 @@ class Container implements ContainerInterface {
 		return array_key_exists($id, $this->services);
 	}
 
+	/**
+	 * Récupération de Twig en singleton
+	 */
 	public function getTwig()
 	{
 		if ($this->twig === null) {
@@ -105,7 +108,7 @@ class Container implements ContainerInterface {
 		return $this->twig;
 	}
 
-	/*
+	/**
 	 * Récupération des controleurs en singleton
 	 */
 	public function getBilletsController()
