@@ -17,9 +17,8 @@ class BilletBackControleur extends Controller {
 	public function affichage_billet_a_modifier() {
 		if (isset($_SESSION) && ($_SESSION['connected']=="oui")) {
 			if (!empty($_POST['idBilletModified'])) {
-				$idBillet = $_POST['idBilletModified'];
 				$billetManager = $this->billetManager;
-				$billet = $billetManager->get_billet($idBillet);
+				$billet = $billetManager->get_billet($_POST['idBilletModified']);
 				$view_params = [
 					'billet' => $billet,
 				];
