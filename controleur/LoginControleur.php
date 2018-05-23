@@ -11,6 +11,9 @@ class LoginControleur extends Controller {
         $this->logintManager = $loginManager;
     }
 
+    /**
+     * Affiche le formulaire de connexion si l'usager n'est pas déjà logué, sinon redirige directement vers le back, et affiche une erreur si les identifiants ne sons pas les bons
+     */
     public function login_completion_formulaire()
     {
         if (isset($_SESSION) && $_SESSION['connected']=="oui") {
@@ -24,6 +27,9 @@ class LoginControleur extends Controller {
         }    
     }
 
+    /**
+     * Vérifie que les identifiants sont les bons et renvoie vers le back si c'est le cas, sinon vers le formulaire de login avec un message d'erreur
+     */
     public function login_traitement_formulaire()
     {
         // Etape 1 : recupérer dans la bdd la ligne qui correspond au pseudo
@@ -48,6 +54,9 @@ class LoginControleur extends Controller {
         }
      }
 
+    /**
+     * Deconnecte l'usager
+     */ 
     public function logout()
     {
         session_destroy();

@@ -11,6 +11,9 @@ class CommentaireBackControleur extends Controller {
 		$this->commentaireManager = $commentaireManager;
 	}
 
+	/**
+     * Affiche le commentaire à modifier
+     */
 	public function affichage_commentaire_a_modifier() {
 		if (isset($_SESSION) && ($_SESSION['connected']=="oui")) {
 			if (!empty($_POST['idCommentaireModified'])) {
@@ -36,6 +39,9 @@ class CommentaireBackControleur extends Controller {
 		}
 	}
 
+	/**
+     * Enregistre la modération du commentaire, retire son signalement puis renvoie vers la page de modération des commentaires
+     */
 	public function enregistrement_modification_commentaire() {
 		if (!empty($_POST['idCommentaireModified'])) {	
 			$commentaireManager = $this->commentaireManager ; 

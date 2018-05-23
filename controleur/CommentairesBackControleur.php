@@ -11,6 +11,9 @@ class CommentairesBackControleur extends Controller {
 		$this->commentaireManager = $commentaireManager;
 	}
 
+	/**
+     * Affiche les commentaires associés au billet à modérer, en montrant ceux qui sont signalés en premier
+     */
 	public function commentaires_back_affichage_commentaires()
 	{
 		if (isset($_SESSION) && ($_SESSION['connected']=="oui")) {
@@ -41,6 +44,9 @@ class CommentairesBackControleur extends Controller {
 		}  
 	}
 
+	/**
+     * Supprime le commentaire que le modérateur veut supprimer
+     */	
 	public function commentaires_back_suppression_commentaire()
 	{	if (!empty($_POST['idCommentaire'])) {
 			$idBillet = $_POST['idBillet'];

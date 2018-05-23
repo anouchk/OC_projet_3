@@ -11,6 +11,9 @@ class BilletBackControleur extends Controller {
 		$this->billetManager = $billetManager;
 	}
 
+	/**
+     * Affiche le billet à modifier
+     */
 	public function affichage_billet_a_modifier() {
 		if (isset($_SESSION) && ($_SESSION['connected']=="oui")) {
 			if (!empty($_POST['idBilletModified'])) {
@@ -27,6 +30,9 @@ class BilletBackControleur extends Controller {
 		}
 	}
 
+	/**
+     * Enregistre la modification du billet et renvoie vers la liste des billets à modérer
+     */
 	public function enregistrement_modification_billet() {
 		if (!empty($_POST['idBilletModified'])) {
 			$billet = new Billet();
@@ -45,6 +51,9 @@ class BilletBackControleur extends Controller {
 		$this->redirect('index.php?section=billets_back');
 	} 
 
+	/**
+     * Affiche le formulaire de création d'un billet
+     */
 	public function affichage_billet_a_creer() {
 		if (isset($_SESSION) && ($_SESSION['connected']=="oui")) {
 			$view_params = [];
@@ -54,6 +63,9 @@ class BilletBackControleur extends Controller {
 		}
 	}
 
+	/**
+     * Enregistre la création d'un billet et renvoie vers la liste des billets à modérer si le titre et le contenu ont bien été renseignés, sinon, affiche un message d'erreur
+     */
 	public function enregistrement_nouveau_billet() {
 		if (!empty($_POST['titre_billet'])&& !empty($_POST['contenu_billet'])) {
 			$billet = new Billet();
@@ -71,6 +83,9 @@ class BilletBackControleur extends Controller {
 		}
 	}
 
+	/**
+     * Supprimme le billet que le modérateur veut supprimer
+     */
 	public function suppression_billet() {
 		if (!empty($_POST['idBilletASupprimer'])) {
 			$billetManager = $this->billetManager;	

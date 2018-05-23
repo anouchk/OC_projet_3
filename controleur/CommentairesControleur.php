@@ -11,6 +11,9 @@ class CommentairesControleur extends Controller {
 		$this->commentaireManager = $commentaireManager;
 	}
 
+	/**
+     * Affiche le contenu total d'un billet et ses commentaires du plus récent au plus ancien, après avoir ajouté un commentaire s'il vient d'être soumis par un internaute
+     */
 	public function commentaires_front_affichage_commentaires() {
 		$billetManager = $this->billetManager;
 		$commentaireManager = $this->commentaireManager;
@@ -44,6 +47,9 @@ class CommentairesControleur extends Controller {
 		$this->render('commentaires.php', $view_params);
 	}
 
+	/**
+     * Montre qu'un commentaire a été signalé par un internaute
+     */
 	public function commentaires_front_signalement_commentaire() {
 		if (!empty($_POST['idCommentaireSignaled'])) {
 			$idCommentaire = $_POST['idCommentaireSignaled'];

@@ -11,6 +11,9 @@ class BilletsBackControleur extends Controller {
 		$this->commentaireManager = $commentaireManager;
 	}
 
+	/**
+     * Affiche les billets à modérer dans le back, ainsi que le nombre de commentaires associés
+     */
 	public function billets_back_affichage_billets() {	
 		$billetManager = $this->billetManager;
 		$billets = $billetManager->get_billets(0,30);

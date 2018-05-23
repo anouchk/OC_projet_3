@@ -10,6 +10,9 @@ class BilletsControleur extends Controller {
 		$this->billetManager = $billetManager;
 	}
 
+	/**
+     * Affiche un extrait du contenu des billets en page d'accueil
+     */
 	public function billets_front_affichage_billets() {	
 
 		$billetManager = $this->billetManager;
