@@ -27,6 +27,7 @@ class CommentairesControleur extends Controller {
 			$commentaire->setSignalement($signalement);
 			$commentaireManager->add_commentaire($commentaire);
 		}
+		$idBillet=$_GET['billet'];
 		$billet = $billetManager->get_billet($_GET['billet']);
 		$commentaires = $commentaireManager->get_commentaires(0, 30, $_GET['billet']);
 
