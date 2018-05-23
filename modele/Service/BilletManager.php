@@ -1,5 +1,6 @@
 <?php
 namespace modele\Service;
+use modele\Entity\Billet;
  
 
 class BilletManager extends DatabaseManager{
