@@ -115,7 +115,7 @@ class CommentaireManager extends DatabaseManager {
 	}
 
 	/*
-	 * Récupère une liste de commentaires
+	 * Récupère une liste de commentaires ordonnés par date
 	 */
 	function get_commentaires($offset, $limit, $idBillet) {
    
@@ -175,7 +175,7 @@ class CommentaireManager extends DatabaseManager {
 	}
 
 	 /*
-	 * Récupère les commentaires pour les afficher dans le back-office
+	 * Récupère les commentaires pour les afficher dans le back-office ordonnés par signalement
 	 */
 
 	 function get_commentaires_back($offset, $limit, $idBillet) {
