@@ -5,11 +5,7 @@ use modele\Entity\Billet;
 
 class BilletBackControleur extends Controller {
 
-	private $BilletManager;
-
-	public function __construct($billetManager) {
-		$this->billetManager = $billetManager;
-	}
+	private $billetManager;
 
 	/**
      * Affiche le billet à modifier
