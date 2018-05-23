@@ -15,12 +15,13 @@ class CommentaireManager extends DatabaseManager {
 		// Effectuer ici la requête qui insère le message reçu avec $_POST dans la base de données 
 		$requete = $bdd->prepare('INSERT INTO commentaires(id_billet,auteur,commentaire, date_commentaire, signalement) VALUES(:id_billet, :auteur, :commentaire, :date_commentaire, :signalement)'); 
 		$date = date('Y-m-d H:i:s');
-		$requete->bindParam(':id_billet', $commentaire->getId());
-		$requete->bindParam(':auteur', $commentaire->getAuteur());
-		$requete->bindParam(':commentaire', $commentaire->getCommentaire());
-		$requete->bindParam(':date_commentaire', $date);
-		$requete->bindParam(':signalement', $commentaire->getSignalement());
-		$requete->execute();
+		$requete->execute(array(
+			'id_billet'=>$commentaire->getIdBillet(),
+			'auteur'=>$commentaire->getAuteur(),
+			'commentaire'=>$commentaire->getCommentaire(),
+			'date_commentaire'=>$date,
+			'signalement'=>$commentaire->getSignalemet()
+		));
 		return $commentaire ;
 	}
 
