@@ -48,7 +48,7 @@ class CommentaireBackControleur extends Controller {
 			$commentaire = $commentaireManager->get_commentaire($_POST['idCommentaireModified']);
 			$commentaire->setCommentaire($_POST['message']);
 			$commentaireManager->update_commentaire($commentaire);
-			$commentaireManager->unsignal_commentaire($_POST['idCommentaireModified']);
+			$commentaireManager->unsignal_commentaire($commentaire);
 			$idBillet=$_POST['id2_billet'];
 			$this->redirect('index.php?section=commentaires_back&billet='.$idBillet);
 		}

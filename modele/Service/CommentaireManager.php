@@ -96,23 +96,23 @@ class CommentaireManager extends DatabaseManager {
 	/*
 	 * Signale un commentaire
 	 */
-	public function signal_commentaire($id_commentaire) {
+	public function signal_commentaire(Commentaire $commentaire) {
 		$bdd = $this->getBdd();
 
 		$sql = "UPDATE commentaires SET signalement = 1 WHERE id = :id_commentaire"; 
 		$req = $bdd -> prepare($sql);
-		$req -> execute(array('id_commentaire' => $id_commentaire));
+		$req -> execute(array('id_commentaire' => $commentaire->getId()));
 	}
 
 	/*
 	 * Supprime le signalement d'un commentaire
 	 */
-	public function unsignal_commentaire($id_commentaire) {
+	public function unsignal_commentaire(Commentaire $commentaire) {
 		$bdd = $this->getBdd();
 
 		$sql = "UPDATE commentaires SET signalement = 0 WHERE id = :id_commentaire"; 
 		$req = $bdd -> prepare($sql);
-		$req -> execute(array('id_commentaire' => $id_commentaire));
+		$req -> execute(array('id_commentaire' => $commentaire->getId()));
 	}
 
 	/*

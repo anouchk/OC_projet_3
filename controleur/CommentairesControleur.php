@@ -56,9 +56,11 @@ class CommentairesControleur extends Controller {
      */
 	public function commentaires_front_signalement_commentaire() {
 		if (!empty($_POST['idCommentaireSignaled'])) {
-			$idCommentaire = $_POST['idCommentaireSignaled'];
 			$commentaireManager =  $this->commentaireManager;
-			$commentaireManager->signal_commentaire($idCommentaire);
+			// Le modèle retourne le commentaire signalé, dont l'id est passé en paramètre par le contrôleur
+			$commentaire = $commentaireManager->get_commentaire($_POST['idCommentaireSignaled']);
+			// Le modèle effectue le signal dans la base de données
+			$commentaireManager->signal_commentaire($commentaire);
 			$idBillet=$_POST['id2_billet'];
 			$this->redirect('index.php?section=commentaires&billet='.$idBillet);
 		}
