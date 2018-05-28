@@ -19,12 +19,9 @@ class CommentairesControleur extends Controller {
 		$billetManager = $this->billetManager;
 		$commentaireManager = $this->commentaireManager;
 		if (!empty($_POST)) {
-			$commentaire = new Commentaire();
-			$signalement = 0;
-			$commentaire->setAuteur($_POST['pseudo']);
-			$commentaire->setCommentaire($_POST['message']);
-			$commentaire->setIdBillet($_POST['id2_billet']);
-			$commentaire->setSignalement($signalement);
+			// Le modèle instancie l'entité Commentaire et le contrôleur récup§re en paramètre son auteur, le contenu du commentaire, l'id du billet concerné et initialise le signalement à zéro
+			$commentaire = $commentaireManager->create_commentaire($_POST['pseudo'], $_POST['message'], $_POST['id2_billet'], 0);
+			// Le modèle l'ajoute dans la base de données
 			$commentaireManager->add_commentaire($commentaire);
 		}
 		$idBillet=$_GET['billet'];

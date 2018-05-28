@@ -5,7 +5,21 @@ use modele\Entity\Billet;
 
 class CommentaireManager extends DatabaseManager {
 
-	/*
+	/**
+	 * Instancie l'entité Commentaire et la retourne
+	 */
+	public function create_commentaire($auteur, $message, $id_billet, $signalement) {
+	
+	$commentaire = new Commentaire();
+	$commentaire->setAuteur($auteur);
+	$commentaire->setCommentaire($message);
+	$commentaire->setIdBillet($id_billet);
+	$commentaire->setSignalement($signalement);
+
+	return $commentaire;
+	}
+
+	/**
 	 * Ajoute un commentaire
 	 */
 	public function add_commentaire (Commentaire $commentaire) {
