@@ -6,7 +6,18 @@ use modele\Entity\Billet;
 class BilletManager extends DatabaseManager{
 
 	/**
-	 * Ajoute un billet
+	 * Instancie un billet et le retourne
+	 */
+	public function create_billet($titre, $contenu) {
+
+		$billet = new Billet();
+		$billet->setTitre($titre);
+		$billet->setContenu($contenu);
+		return $billet;
+	}
+
+	/**
+	 * Ajoute un billet à la base de données
 	 */
 	public function add_billet(Billet $billet) {
 
@@ -21,7 +32,6 @@ class BilletManager extends DatabaseManager{
 			'contenu'=>$billet->getContenu(),
 			'date_creation'=>$date
 		));
-		return $billet ;
 	}
 
 	/**
