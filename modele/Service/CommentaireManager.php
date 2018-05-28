@@ -118,14 +118,12 @@ class CommentaireManager extends DatabaseManager {
 	/*
 	 * Compteur de commentaires
 	 */
-	public function count_commentaires($idBillet) {
+	public function count_commentaires(Billet $billet) {
 	
 	    $bdd = $this->getBdd();
-
-	    $id_Billet=$idBillet;
 	   
 	    $req = $bdd->prepare('SELECT count(*) FROM commentaires WHERE id_billet=?');
-	    $req->execute(array($id_Billet));
+	    $req->execute(array($billet->getId()));
 	    $nombre_commentaires = $req->fetch(\PDO::FETCH_NUM);
 	    return $nombre_commentaires ;
 	}

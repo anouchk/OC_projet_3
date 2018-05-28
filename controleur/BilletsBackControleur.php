@@ -27,7 +27,7 @@ class BilletsBackControleur extends Controller {
 				$commentaires = $commentaireManager->get_commentaires(0,30, $billet->getId());
 			    $billet->setTitre(htmlspecialchars($billet->getTitre())); 
 			    $billet->setContenu(htmlspecialchars($billet->getContenu()));
-			    $billet->setNbCommentaires($commentaireManager->count_commentaires($billet->getId()));
+			    $billet->setNbCommentaires($commentaireManager->count_commentaires($billet));
 			} 
 
 			$view_params = [
