@@ -34,10 +34,8 @@ class LoginControleur extends Controller {
     {
         // Etape 1 : recupérer dans la bdd la ligne qui correspond au pseudo
         $loginManager = $this->logintManager;
-        // On instancie l'entité Auteur
-        $auteur = new Auteur();
-        // Le contrôleur lance le setter récupérant le pseudo entré par l'utilisateur à la connexion
-        $auteur->setPseudo($_POST['pseudo']);
+        // Le modèle instancie l'entité Auteur et le contrôleur récup§re en paramètre le pseudo entré par l'utilisateur à la connexion
+        $auteur = $loginManager->create_auteur($_POST['pseudo']);
         // On demande au modèle d'effectuer la requête récupérant le mot de passe crypté correspondant au pseudo entré par l'utilisateur
         $resultat = $loginManager->Recuperation_ligne_correspondant_au_pseudo($auteur);
         // etape 2 : comparer le mot de passe crypté de la base de données avec celui entré par l'utilisateur dans le formulaire de connexion

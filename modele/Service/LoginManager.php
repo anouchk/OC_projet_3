@@ -5,6 +5,15 @@ use modele\Entity\Auteur;
 class LoginManager extends DatabaseManager {
 
 	/**
+	 * Instancie l'entité Auteur et la retourne
+	 */
+	public function create_auteur($pseudo) {
+		$auteur = new Auteur();
+		$auteur->setPseudo($pseudo);
+		return $auteur;
+	}
+
+	/**
 	 * Retourne le mot de passe crypté correspondant au pseudo entré par l'utilisateur
 	 */
 	public function Recuperation_ligne_correspondant_au_pseudo(Auteur $auteur) {
