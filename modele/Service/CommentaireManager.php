@@ -88,7 +88,7 @@ class CommentaireManager extends DatabaseManager {
 		$bdd = $this->getBdd();
 
 		$sql = "DELETE FROM commentaires WHERE id = :id";
-		$q = array('id' => $idCommentaire);
+		$q = array('id' => $commentaire->getId());
 		$req = $bdd -> prepare($sql);
 		$req -> execute($q);
 	}
