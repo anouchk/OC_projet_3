@@ -1,5 +1,8 @@
 # OC_projet_3
 Ce répertoire constitue le troisième projet de la formation "chef de projet multimédia - développement" suivie à distance auprès d'Openclassrooms.
+
+![OC](http://blog.openclassrooms.com/wp-content/uploads/2015/07/logo_blog.png)
+
 Ce projet m'a permis me familiariser avec l'architecture MVC (modèle-vue-controleur), la programmation orientée objet, et le php.
 Parmi ses points forts, le fait de construire un routeur à la main grâce aux expressions régulières !
 
@@ -8,7 +11,7 @@ Parmi ses points forts, le fait de construire un routeur à la main grâce aux e
 Vous venez de décrocher un contrat avec Jean Forteroche, acteur et écrivain. Il travaille actuellement sur son prochain roman, "Billet simple pour l'Alaska". Il souhaite innover et le publier par épisode en ligne sur son propre site.
 
 Seul problème : Jean n'aime pas WordPress et souhaite avoir son propre outil de blog, offrant des fonctionnalités plus simples. Vous allez donc devoir développer un moteur de blog en PHP et MySQL.
-![Simplon.co](https://s3-eu-west-1.amazonaws.com/sdz-upload/prod/upload/livre%20sable_80715814_magentael.jpg)
+![livre](https://s3-eu-west-1.amazonaws.com/sdz-upload/prod/upload/livre%20sable_80715814_magentael.jpg)
 
 *Le livre de Jean Forteroche reste à écrire... mais il sera publié en ligne !*
 
